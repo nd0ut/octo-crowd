@@ -39,3 +39,4 @@ gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootst
 gem 'slim-rails'
 gem 'devise'
 gem 'activeadmin', github: 'gregbell/active_admin'
+gem 'simple_form'
