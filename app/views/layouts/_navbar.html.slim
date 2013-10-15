@@ -1,0 +1,25 @@
+nav.navbar.navbar-static-top role='navigation'
+
+  .navbar-header
+    a.navbar-brand href='#' OctoCrowd
+
+  ul.nav.navbar-nav.navbar-right
+    - unless signed_in?
+      li class='#{'active' if current_page?(new_user_session_path)}'
+        = link_to :new_user_session do
+          i.icon-signin  Log in
+
+      li class='#{'active' if current_page?(new_user_registration_path)}'
+        = link_to :new_user_registration do
+          i.icon-plus-sign  Sign up
+
+    - else
+      li.dropdown
+        a.dropdown-toggle href='#' data-toggle='dropdown'
+          = current_user.email
+          '
+          i.icon-caret-down
+
+        ul.dropdown-menu
+          li= link_to :destroy_user_session, :method => :delete do
+            i.icon-signout  Log out
