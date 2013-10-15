@@ -1,11 +1,21 @@
 .row
   .col-md-6.col-md-offset-4
     .panel
-      .panel-heading Sign Up
+      .panel-heading
+        .row
+          .col-md-7.col-md-push-6.social
+            = render 'partials/social_buttons'
+          .col-md-5.col-md-pull-7
+            span
+              h2 Sign Up
+
       .panel-body
         = simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
           = f.input :username
           = f.input :email
           = f.input :password
           = f.input :password_confirmation
-          = f.button :submit
+          = button_tag(type: 'submit', class: 'btn btn-lg btn-primary btn-block') do
+            i.icon-ok.large
+            | &nbsp;&nbsp;
+            | Submit
