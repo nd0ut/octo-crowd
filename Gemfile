@@ -40,3 +40,11 @@ gem 'slim-rails'
 gem 'devise'
 gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'simple_form'
+
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'omniauth-vkontakte'
+
+gem 'pry-rails', :group => :development
+
+gem "letter_opener", :group => :development
