@@ -37,3 +37,5 @@ gem 'less-rails'
 gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git', :branch => 'bootstrap3'
 
 gem 'slim-rails'
+gem 'devise'
+gem 'activeadmin', github: 'gregbell/active_admin'
