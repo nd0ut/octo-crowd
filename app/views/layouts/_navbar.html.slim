@@ -1,7 +1,10 @@
 nav.navbar.navbar-static-top role='navigation'
 
   .navbar-header
-    a.navbar-brand href='#' OctoCrowd
+    a.navbar-brand href='#'
+      i.icon-home.icon-large
+      | &nbsp;&nbsp;
+      | OctoCrowd
 
   ul.nav.navbar-nav.navbar-right
     - unless signed_in?
@@ -16,9 +19,9 @@ nav.navbar.navbar-static-top role='navigation'
     - else
       li.dropdown
         a.dropdown-toggle href='#' data-toggle='dropdown'
-          = current_user.email
-          '
-          i.icon-caret-down
+          = current_user.username
+          | &nbsp;&nbsp;
+          i.icon-caret-down.icon-large
 
         ul.dropdown-menu
           li= link_to :destroy_user_session, :method => :delete do

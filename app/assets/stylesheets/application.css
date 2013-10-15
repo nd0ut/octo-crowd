@@ -10,5 +10,6 @@
  *
  *= require_self
  *= require_tree ./autoload
+ *= require_tree ./layouts
  *= require_tree ./pages
  */
