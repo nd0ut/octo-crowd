@@ -1,5 +1,8 @@
 module ApplicationHelper
   def session_provider
-    session['devise.user_attributes'].try(:[], 'provider')
+    provider = session['devise.user_attributes'].try(:[], 'provider')
+    return nil unless provider
+
+    provider.underscore.humanize.downcase
   end
 end

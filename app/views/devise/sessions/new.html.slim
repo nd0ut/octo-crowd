@@ -8,9 +8,6 @@
           .col-md-6.col-md-pull-6
             span
               h2 Log in
-              - if session_provider.present?
-                span.label.label-default
-                  = session_provider
 
       .panel-body
         = simple_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
