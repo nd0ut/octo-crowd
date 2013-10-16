@@ -11,4 +11,5 @@
  *= require_self
  *= require_tree ./autoload
  *= require_tree ./layouts
+ *= require redactor-rails
  */

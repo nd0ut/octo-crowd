@@ -48,3 +48,7 @@ gem 'omniauth-vkontakte'
 gem 'pry-rails', :group => :development
 
 gem "letter_opener", :group => :development
+
+gem 'redactor-rails'
+gem "carrierwave"
+gem "mini_magick"
