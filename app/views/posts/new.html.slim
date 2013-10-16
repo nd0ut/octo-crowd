@@ -1,1 +1,14 @@
-| new post
+.page-header
+  h1 Create new post
+
+= simple_form_for(@post) do |f|
+  = f.input :title
+
+  = f.input :body, as: :text, input_html: { class: 'redactor', rows: 100 }
+
+  .row
+    .col-md-2
+      button.btn.btn-primary.btn-block
+        i.icon-ok.large
+        | &nbsp;&nbsp;
+        | Submit
