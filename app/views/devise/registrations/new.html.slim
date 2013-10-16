@@ -16,9 +16,21 @@
         = simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
           = f.input :username
           = f.input :email
-          = f.input :password
-          = f.input :password_confirmation
-          = button_tag(type: 'submit', class: 'btn btn-lg btn-primary btn-block') do
-            i.icon-ok.large
-            | &nbsp;&nbsp;
-            | Submit
+
+          - unless session_provider.present?
+            = f.input :password
+            = f.input :password_confirmation
+
+          .row
+            div class=('col-md-8' if session_provider.present?)
+              button.btn.btn-lg.btn-primary.btn-block
+                i.icon-ok.large
+                | &nbsp;&nbsp;
+                | Submit
+
+            - if session_provider.present?
+              .col-md-4
+                button.btn.btn-lg.btn-danger.btn-block name='reset'
+                  i.icon-off.large
+                  | &nbsp;&nbsp;
+                  | Cancel

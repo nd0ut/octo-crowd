@@ -11,6 +11,7 @@ class User < ActiveRecord::Base
       user.uid = auth.uid
       user.username = auth.info.nickname.present? ? auth.info.nickname : auth.info.name
       user.email = auth.info.email
+      user.password = Devise.friendly_token[0,20]
     end
 
     user
@@ -20,7 +21,7 @@ class User < ActiveRecord::Base
     if session['devise.user_attributes']
       new(session['devise.user_attributes']) do |user|
         user.attributes = params
-        user.valid?
+        user.password = Devise.friendly_token[0,20]
       end
     else
       super
