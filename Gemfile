@@ -57,3 +57,4 @@ gem "mini_magick"
 gem 'chosen-rails'
 gem 'jquery-turbolinks'
 gem 'draper'
+gem 'state_machine'
