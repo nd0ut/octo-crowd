@@ -11,7 +11,7 @@ class Post < ActiveRecord::Base
       transition any => :accepted
     end
 
-    event :deny do
+    event :reject do
       transition any => :rejected
     end
   end
