@@ -1,10 +1,19 @@
 .row
   .col-lg-9
     - @posts.each do |post|
-      .row
+      .row.post
         .panel
           .panel-heading
-            h2= post.title
+            .heading
+              =link_to post_path(post) do
+                h3= post.title
+            .categories
+              ul.list-inline
+                - post.categories.each do |c|
+                  li
+                    =link_to category_path(c) do
+                      .small= c.name
+
 
           .panel-body
             p= raw post.body

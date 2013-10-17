@@ -10,6 +10,7 @@ OctoCrowd::Application.routes.draw do
   ActiveAdmin.routes(self)
 
   resources :posts
+  resources :categories
 
   root 'home#index'
 end
