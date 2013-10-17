@@ -1,1 +1,19 @@
-test
+.row
+  .col-lg-9
+    - @posts.each do |post|
+      .row
+        .panel
+          .panel-heading
+            h2= post.title
+
+          .panel-body
+            p= raw post.body
+
+
+  .col-lg-3
+    .panel
+      .panel-heading
+        h2 Categories
+
+      .panel-body
+        | as
