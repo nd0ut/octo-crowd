@@ -4,16 +4,40 @@
 		"selected_items":
 		[
 			[
+				"mod",
+				"mod	module .. end"
+			],
+			[
+				"min",
+				"min-height"
+			],
+			[
+				"se",
+				"session_key"
+			],
+			[
+				"inl",
+				"inline-block"
+			],
+			[
+				"tex",
+				"text-decoration"
+			],
+			[
+				"mar",
+				"margin-top"
+			],
+			[
+				"padd",
+				"padding-left"
+			],
+			[
 				"sor",
 				"source_root"
 			],
 			[
 				"so",
 				"source_root"
-			],
-			[
-				"mar",
-				"margin"
 			],
 			[
 				"def",
@@ -30,10 +54,6 @@
 			[
 				"cl",
 				"cla	Create controller class"
-			],
-			[
-				"min",
-				"min-height"
 			],
 			[
 				"sto",
@@ -222,10 +242,6 @@
 			[
 				"lis",
 				"listening_now"
-			],
-			[
-				"se",
-				"session"
 			],
 			[
 				"req",
@@ -498,34 +514,66 @@
 			[
 				"reg",
 				"register_not_done_count"
-			],
-			[
-				"scr",
-				"scrollbar"
-			],
-			[
-				"au",
-				"autoplayInterval"
-			],
-			[
-				"liste",
-				"listening_now"
-			],
-			[
-				"record",
-				"recordingInterval"
 			]
 		]
 	},
 	"buffers":
 	[
+		{
+			"file": "app/views/posts/new.html.slim",
+			"settings":
+			{
+				"buffer_size": 461,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "config/initializers/simple_form_bootstrap.rb",
+			"settings":
+			{
+				"buffer_size": 1878,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "config/initializers/simple_form.rb",
+			"settings":
+			{
+				"buffer_size": 5749,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "Packages/User/Ruby.sublime-build",
 	"command_palette":
 	{
-		"height": 274.0,
+		"height": 340.0,
 		"selected_items":
 		[
+			[
+				"mig",
+				"Migrations list"
+			],
+			[
+				"alig",
+				"Align Tabular"
+			],
+			[
+				"mi",
+				"Migrations list"
+			],
+			[
+				"ali",
+				"Align Tabular"
+			],
+			[
+				"al",
+				"Align Tabular"
+			],
+			[
+				"migra",
+				"Migrations list"
+			],
 			[
 				"instal",
 				"Package Control: Install Package"
@@ -533,14 +581,6 @@
 			[
 				"prett",
 				"HTMLPrettify"
-			],
-			[
-				"ali",
-				"Align Tabular"
-			],
-			[
-				"alig",
-				"Align Tabular"
 			],
 			[
 				"upper",
@@ -553,14 +593,6 @@
 			[
 				"alia",
 				"Snippet: alias_method .."
-			],
-			[
-				"mi",
-				"Migrations list"
-			],
-			[
-				"mig",
-				"Migrations list"
 			],
 			[
 				"install",
@@ -581,10 +613,6 @@
 			[
 				"align",
 				"Preferences: Alignment Key Bindings – Default"
-			],
-			[
-				"migra",
-				"Migrations list"
 			],
 			[
 				"miga",
@@ -727,7 +755,7 @@
 				"Git: Log"
 			]
 		],
-		"width": 514.0
+		"width": 450.0
 	},
 	"console":
 	{
@@ -752,6 +780,76 @@
 	},
 	"file_history":
 	[
+		"/home/nd0ut/workspace/octo-crowd/config/initializers/simple_form_bootstrap.rb",
+		"/home/nd0ut/workspace/octo-crowd/db/migrate/20131017132355_drop_posts_categories.rb",
+		"/home/nd0ut/workspace/octo-crowd/app/views/posts/new.html.slim",
+		"/home/nd0ut/workspace/octo-crowd/db/migrate/20131017132154_create_categories_posts.rb",
+		"/home/nd0ut/workspace/octo-crowd/db/migrate/20131017062954_create_posts_categories.rb",
+		"/home/nd0ut/workspace/octo-crowd/db/migrate/20131017132117_create_categories_posts_table.rb",
+		"/home/nd0ut/workspace/octo-crowd/app/helpers/application_helper.rb",
+		"/home/nd0ut/workspace/octo-crowd/app/views/layouts/_navbar.html.slim",
+		"/home/nd0ut/workspace/octo-crowd/app/assets/javascripts/application.js",
+		"/home/nd0ut/workspace/octo-crowd/Gemfile",
+		"/home/nd0ut/workspace/octo-crowd/app/controllers/home_controller.rb",
+		"/home/nd0ut/workspace/octo-crowd/app/views/layouts/application.html.slim",
+		"/home/nd0ut/workspace/octo-crowd/app/views/home/index.html.slim",
+		"/home/nd0ut/workspace/octo-crowd/config/routes.rb",
+		"/home/nd0ut/workspace/octo-crowd/app/controllers/categories_controller.rb",
+		"/home/nd0ut/workspace/octo-crowd/app/views/categories/index.html.slim",
+		"/home/nd0ut/workspace/octo-crowd/config/initializers/active_admin.rb",
+		"/home/nd0ut/workspace/octo-crowd/app/assets/stylesheets/layouts/footer.css.sass",
+		"/home/nd0ut/workspace/octo-crowd/app/admin/post.rb",
+		"/home/nd0ut/workspace/octo-crowd/app/admin/category.rb",
+		"/home/nd0ut/workspace/octo-crowd/db/migrate/20131017074232_rename_category_name_column.rb",
+		"/home/nd0ut/workspace/octo-crowd/app/models/category.rb",
+		"/home/nd0ut/workspace/octo-crowd/app/controllers/posts_controller.rb",
+		"/home/nd0ut/workspace/octo-crowd/app/views/posts/show.html.slim",
+		"/home/nd0ut/workspace/octo-crowd/app/models/post.rb",
+		"/home/nd0ut/workspace/octo-crowd/db/migrate/20131017062855_create_posts_categories_table.rb",
+		"/home/nd0ut/workspace/octo-crowd/app/assets/javascripts/redactor-rails/config.js",
+		"/home/nd0ut/workspace/octo-crowd/app/assets/stylesheets/autoload/global.css.sass",
+		"/home/nd0ut/workspace/octo-crowd/app/views/devise/registrations/new.html.slim",
+		"/home/nd0ut/workspace/octo-crowd/app/assets/javascripts/redactor-rails/style.css",
+		"/home/nd0ut/workspace/octo-crowd/config.ru",
+		"/home/nd0ut/workspace/octo-crowd/app/assets/stylesheets/application.css",
+		"/home/nd0ut/workspace/octo-crowd/app/controllers/users/posts_controller.rb",
+		"/home/nd0ut/workspace/octo-crowd/db/migrate/20131016211420_create_posts.rb",
+		"/home/nd0ut/workspace/octo-crowd/app/controllers/users/omniauth_callbacks_controller.rb",
+		"/home/nd0ut/workspace/octo-crowd/app/models/user.rb",
+		"/home/nd0ut/workspace/octo-crowd/app/controllers/users/registrations_controller.rb",
+		"/home/nd0ut/workspace/octo-crowd/app/controllers/application_controller.rb",
+		"/home/nd0ut/workspace/octo-crowd/config/initializers/client_side_validations.rb",
+		"/home/nd0ut/workspace/octo-crowd/app/views/devise/sessions/new.html.slim",
+		"/home/nd0ut/workspace/octo-crowd/app/views/layouts/_footer.html.slim",
+		"/home/nd0ut/workspace/octo-crowd/app/assets/stylesheets/layouts/navbar.css.sass",
+		"/home/nd0ut/workspace/octo-crowd/app/views/partials/_social_buttons.html.slim",
+		"/home/nd0ut/workspace/octo-crowd/config/initializers/devise.rb",
+		"/home/nd0ut/workspace/octo-crowd/app/assets/stylesheets/autoload/devise_views.css.sass",
+		"/home/nd0ut/workspace/octo-crowd/db/migrate/20131015070958_add_admin_to_user.rb",
+		"/home/nd0ut/workspace/octo-crowd/db/schema.rb",
+		"/home/nd0ut/workspace/octo-crowd/config/environments/development.rb",
+		"/home/nd0ut/workspace/octo-crowd/db/migrate/20131015210002_add_confirmable_to_users.rb",
+		"/home/nd0ut/workspace/octo-crowd/db/migrate/20131015070921_add_username_to_user.rb",
+		"/home/nd0ut/workspace/octo-crowd/db/migrate/20131015070914_devise_create_users.rb",
+		"/home/nd0ut/workspace/octo-crowd/db/migrate/20131015202457_add_omniauth_to_users.rb",
+		"/home/nd0ut/workspace/octo-crowd/config/initializers/simple_form.rb",
+		"/home/nd0ut/workspace/octo-crowd/config/locales/simple_form.en.yml",
+		"/home/nd0ut/workspace/octo-crowd/config/locales/devise.en.yml",
+		"/home/nd0ut/workspace/octo-crowd/db/migrate/20131015184421_add_username_to_user.rb",
+		"/home/nd0ut/workspace/octo-crowd/app/assets/stylesheets/autoload/bootstrap_and_overrides.css.less",
+		"/home/nd0ut/workspace/octo-crowd/app/views/devise/registrations/new.html.erb",
+		"/home/nd0ut/workspace/octo-crowd/config/initializers/formtastic.rb",
+		"/home/nd0ut/workspace/octo-crowd/app/assets/stylesheets/global.css.sass",
+		"/home/nd0ut/workspace/octo-crowd/app/admin/user.rb",
+		"/home/nd0ut/workspace/octo-crowd/db/migrate/20131015070820_devise_create_admin_users.rb",
+		"/home/nd0ut/workspace/octo-crowd/db/migrate/20131015070004_add_admin_to_user.rb",
+		"/home/nd0ut/workspace/octo-crowd/db/migrate/20131015065055_add_devise_to_users.rb",
+		"/home/nd0ut/workspace/octo-crowd/db/migrate/20131015064915_devise_create_users.rb",
+		"/home/nd0ut/workspace/octo-crowd/db/migrate/20131015065057_create_active_admin_comments.rb",
+		"/home/nd0ut/workspace/octo-crowd/app/assets/stylesheets/bootstrap_and_overrides.css.less",
+		"/home/nd0ut/workspace/octo-crowd/app/assets/stylesheets/home.css.sass",
+		"/home/nd0ut/workspace/octo-crowd/app/assets/stylesheets/home.css.less",
+		"/home/nd0ut/workspace/octo-crowd/app/views/layouts/application.slim",
 		"/home/nd0ut/Downloads/com.extradea.vk-1/smali/com/extradea/vk/LoginActivity$2$1.smali",
 		"/home/nd0ut/Downloads/com.extradea.vk-1/smali/com/extradea/vk/VKApplication.smali",
 		"/home/nd0ut/Downloads/com.extradea.vk-1/smali/com/google/android/gms/gcm/GoogleCloudMessaging.smali",
@@ -809,77 +907,7 @@
 		"/home/nd0ut/workspace/present-code/config/routes.rb",
 		"/home/nd0ut/workspace/present-code/config/initializers/imgkit.rb",
 		"/home/nd0ut/workspace/present-code/app/assets/javascripts/highlight-js/highlight.js",
-		"/home/nd0ut/workspace/present-code/app/views/layouts/application.slim",
-		"/home/nd0ut/workspace/present-code/app/assets/javascripts/highlight.js",
-		"/home/nd0ut/workspace/present-code/config/initializers/mime_types.rb",
-		"/home/nd0ut/workspace/evrasia/lib/tasks/parse.rake",
-		"/home/nd0ut/workspace/evrasia/lib/tasks/parse_stocks.rake",
-		"/home/nd0ut/workspace/evrasia/app/assets/stylesheets/menu.sass",
-		"/home/nd0ut/workspace/evrasia/app/views/layouts/_menu.slim",
-		"/home/nd0ut/workspace/evrasia/app/assets/stylesheets/global.sass",
-		"/home/nd0ut/workspace/evrasia/lib/evrasia_constants.rb",
-		"/home/nd0ut/workspace/evrasia/lib/tasks/evrasia_constants.rb",
-		"/home/nd0ut/workspace/evrasia/config/initializers/evrasia_constants.rb",
-		"/home/nd0ut/workspace/evrasia/app/views/home/index.slim",
-		"/home/nd0ut/workspace/evrasia/app/assets/stylesheets/semantic-ui/views.less",
-		"/home/nd0ut/workspace/evrasia/app/assets/javascripts/semantic-ui.js",
-		"/home/nd0ut/workspace/evrasia/app/assets/stylesheets/semantic-ui/modules.less",
-		"/home/nd0ut/workspace/semantic-ui-rails/lib/generators/semantic/install/templates/semantic-ui.js",
-		"/home/nd0ut/workspace/semantic-ui-rails/lib/tasks/update.rake",
-		"/home/nd0ut/workspace/semantic-ui-rails/lib/semantic.thor",
-		"/home/nd0ut/workspace/semantic-ui-rails/lib/updater.rb",
-		"/home/nd0ut/workspace/semantic-ui-rails/Rakefile",
-		"/home/nd0ut/workspace/evrasia/app/assets/stylesheets/variables.sass",
-		"/home/nd0ut/workspace/evrasia/app/views/layouts/application.slim",
-		"/home/nd0ut/workspace/evrasia/README.md",
-		"/home/nd0ut/workspace/evrasia/README.markdown",
-		"/home/nd0ut/workspace/evrasia/app/assets/javascripts/application.js",
-		"/home/nd0ut/workspace/evrasia/app/assets/stylesheets/semantic-ui/elements.less",
-		"/home/nd0ut/workspace/evrasia/app/assets/stylesheets/semantic-ui/collections.less",
-		"/home/nd0ut/workspace/evrasia/app/assets/stylesheets/semantic-ui.less",
-		"/home/nd0ut/workspace/evrasia/app/assets/stylesheets/application.sass",
-		"/home/nd0ut/workspace/evrasia/app/assets/stylesheets/semantic_ui.less",
-		"/home/nd0ut/workspace/evrasia/config.rb",
-		"/home/nd0ut/workspace/evrasia/app/assets/javascripts/home.js.coffee",
-		"/home/nd0ut/workspace/evrasia/app/assets/stylesheets/home.css.sass",
-		"/home/nd0ut/workspace/evrasia/app/controllers/home_controller.rb",
-		"/home/nd0ut/workspace/evrasia/app/controllers/application_controller.rb",
-		"/home/nd0ut/workspace/evrasia/config/routes.rb",
-		"/home/nd0ut/workspace/semantic-ui/semantic-ui.gemspec",
-		"/home/nd0ut/workspace/croice/app/controllers/api/channel_controller.rb",
-		"/home/nd0ut/workspace/croice/app/views/broadcasts/show_cancel.html.haml",
-		"/home/nd0ut/workspace/croice/app/views/broadcasts/edit.html.haml",
-		"/home/nd0ut/workspace/croice/config/locales/en.yml",
-		"/home/nd0ut/workspace/croice/app/views/layouts/application.html.haml",
-		"/home/nd0ut/workspace/croice/config/routes.rb",
-		"/home/nd0ut/workspace/croice/app/views/broadcasts/_second_step.html.haml",
-		"/home/nd0ut/workspace/croice/app/models/broadcast.rb",
-		"/home/nd0ut/workspace/croice/app/views/broadcasts/new.html.haml",
-		"/home/nd0ut/workspace/croice/app/views/devise/shared/_links.erb",
-		"/home/nd0ut/workspace/croice/app/views/devise/registrations/new.html.erb",
-		"/home/nd0ut/workspace/croice/config/locales/devise.en.yml",
-		"/home/nd0ut/workspace/croice/app/views/devise/sessions/new.html.erb",
-		"/home/nd0ut/workspace/croice/app/views/widgets/_scheduled.html.haml",
-		"/home/nd0ut/workspace/croice/app/views/widgets/_on_air.html.haml",
-		"/home/nd0ut/workspace/croice/app/views/widgets/_channel_info.html.haml",
-		"/home/nd0ut/workspace/croice/app/views/layouts/_footer.html.haml",
-		"/home/nd0ut/workspace/croice/app/views/home/index.html.haml",
-		"/home/nd0ut/workspace/croice/app/controllers/home_controller.rb",
-		"/home/nd0ut/workspace/croice/app/views/layouts/landing.html.haml",
-		"/home/nd0ut/workspace/croice/app/views/home/dashboard.html.haml",
-		"/home/nd0ut/workspace/croice/app/views/channels/_embed_code.html.haml",
-		"/home/nd0ut/workspace/croice/app/assets/javascripts/dashboard.js",
-		"/home/nd0ut/workspace/croice/app/controllers/users/sessions_controller.rb",
-		"/home/nd0ut/workspace/croice/app/views/widgets/show_state_preview.html.haml",
-		"/home/nd0ut/workspace/croice/app/assets/javascripts/widget/libs/widget_preview.js.coffee",
-		"/home/nd0ut/workspace/croice/app/assets/javascripts/widget/widget_preview.js.coffee",
-		"/home/nd0ut/workspace/croice/app/controllers/broadcasts_controller.rb",
-		"/home/nd0ut/workspace/croice/app/assets/javascripts/application.js",
-		"/home/nd0ut/workspace/croice/app/controllers/application_controller.rb",
-		"/home/nd0ut/workspace/croice/app/helpers/application_helper.rb",
-		"/home/nd0ut/workspace/croice/Gemfile",
-		"/home/nd0ut/workspace/croice/app/views/broadcasts/_first_step.html.haml",
-		"/home/nd0ut/workspace/croice/app/assets/javascripts/widget_preview_forms.coffee"
+		"/home/nd0ut/workspace/present-code/app/views/layouts/application.slim"
 	],
 	"find":
 	{
@@ -935,6 +963,68 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"conrt",
+			"select",
+			"posts_categories",
+			"labeled_icon",
+			"turbo",
+			"user_id",
+			"restaurants_users",
+			"vertical",
+			"separator",
+			"devise.facebook_data",
+			"pry",
+			"}'",
+			"'#{",
+			"#{",
+			"OmniauthCallbacksController",
+			"omniauth_callbacks",
+			"OmniauthCallbacksController",
+			"new_with_session",
+			"sign_up",
+			" ",
+			" btn",
+			"type: 'submit',",
+			"button_tag",
+			"omniauth_callbacks",
+			"block",
+			"form",
+			"user",
+			"appen",
+			"def ",
+			"pry",
+			"large",
+			"-sign",
+			"3",
+			"9",
+			"Create",
+			"Create User",
+			"Create",
+			"padding",
+			"current_user",
+			"button",
+			"submit",
+			"Create",
+			"Create User",
+			"Create",
+			")",
+			"password",
+			"<%= ",
+			"end",
+			" %>",
+			";",
+			"input",
+			"control",
+			"button",
+			"control-group",
+			"controls",
+			"<%= ",
+			"get",
+			"superadmin",
+			"admin_users",
+			"default",
+			"superadmin",
+			"\"",
 			"client_id",
 			"grant_type",
 			"grand_type",
@@ -1000,69 +1090,7 @@
 			"assets",
 			"\"",
 			"font-url",
-			"semantic-ui",
-			"\"",
-			"font-url",
-			"font-url(",
-			"semantic-ui",
-			"\"",
-			"font-path",
-			"semantic-ui/basic.icons",
-			"-url",
-			"url(",
-			"url",
-			"(\"",
-			"basic.icons",
-			"(basic.icons",
-			"basic.icons.eot",
-			"../fonts/",
-			"url",
-			"fonts/",
-			"fonts/icons",
-			"fonts/icons.eot",
-			"url",
-			"../",
-			"url",
-			"component",
-			"\"\"",
-			"\"\",",
-			"underscore",
-			"        \"",
-			"phantom",
-			"viewportSize",
-			"options",
-			"page",
-			"phantom",
-			"page",
-			"var",
-			".raised",
-			"stacked.segment",
-			".i",
-			"p.description",
-			".css",
-			"active",
-			"semantic-ui/",
-			"fonts_path",
-			"fonts",
-			"javascripts_path",
-			"h '",
-			" '",
-			"#{",
-			"-rf",
-			"r",
-			"views",
-			"collections",
-			"\"",
-			"say_status",
-			"STEP",
-			"      binding.pry\n",
-			"self.",
-			"working",
-			"pdater.",
-			"clone",
-			"self.",
-			"workong_dir",
-			"destination_root"
+			"semantic-ui"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1148,8 +1176,495 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "app/views/posts/new.html.slim",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 461,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								435,
+								435
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
+							"bh_regions":
+							[
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close"
+							],
+							"csslint_options":
+							{
+								"adjoining-classes": "warning",
+								"box-model": true,
+								"box-sizing": "warning",
+								"compatible-vendor-prefixes": "warning",
+								"display-property-grouping": true,
+								"duplicate-background-images": "warning",
+								"duplicate-properties": true,
+								"empty-rules": true,
+								"errors": true,
+								"fallback-colors": "warning",
+								"floats": "warning",
+								"font-faces": "warning",
+								"font-sizes": "warning",
+								"gradients": "warning",
+								"ids": "warning",
+								"import": "warning",
+								"important": "warning",
+								"known-properties": true,
+								"outline-none": "warning",
+								"overqualified-elements": "warning",
+								"qualified-headings": "warning",
+								"regex-selectors": "warning",
+								"rules-count": "warning",
+								"shorthand": "warning",
+								"star-property-hack": "warning",
+								"text-indent": "warning",
+								"underscore-property-hack": "warning",
+								"unique-headings": "warning",
+								"universal-selector": "warning",
+								"vendor-prefix": true,
+								"zero-units": "warning"
+							},
+							"gjslint_ignore":
+							[
+								110
+							],
+							"gjslint_options":
+							[
+							],
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"browser": true,
+								"evil": true,
+								"regexdash": true,
+								"sub": true,
+								"trailing": true,
+								"wsh": true
+							},
+							"pep8": true,
+							"pep8_ignore":
+							[
+								"E501"
+							],
+							"perl_linter": "perlcritic",
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"sublimelinter": true,
+							"sublimelinter_delay": 2,
+							"sublimelinter_disable":
+							[
+							],
+							"sublimelinter_executable_map":
+							{
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": true,
+							"sublimelinter_gutter_marks_theme": "simple",
+							"sublimelinter_mark_style": "none",
+							"sublimelinter_notes": false,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": false,
+							"sublimelinter_syntax_map":
+							{
+								"C++": "c",
+								"Python Django": "python",
+								"Ruby on Rails": "ruby"
+							},
+							"sublimelinter_wrap_find": true,
+							"syntax": "Packages/ruby-slim.tmbundle/Syntaxes/Ruby Slim.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "config/initializers/simple_form_bootstrap.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1878,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								135,
+								135
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
+							"bh_regions":
+							[
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close"
+							],
+							"csslint_options":
+							{
+								"adjoining-classes": "warning",
+								"box-model": true,
+								"box-sizing": "warning",
+								"compatible-vendor-prefixes": "warning",
+								"display-property-grouping": true,
+								"duplicate-background-images": "warning",
+								"duplicate-properties": true,
+								"empty-rules": true,
+								"errors": true,
+								"fallback-colors": "warning",
+								"floats": "warning",
+								"font-faces": "warning",
+								"font-sizes": "warning",
+								"gradients": "warning",
+								"ids": "warning",
+								"import": "warning",
+								"important": "warning",
+								"known-properties": true,
+								"outline-none": "warning",
+								"overqualified-elements": "warning",
+								"qualified-headings": "warning",
+								"regex-selectors": "warning",
+								"rules-count": "warning",
+								"shorthand": "warning",
+								"star-property-hack": "warning",
+								"text-indent": "warning",
+								"underscore-property-hack": "warning",
+								"unique-headings": "warning",
+								"universal-selector": "warning",
+								"vendor-prefix": true,
+								"zero-units": "warning"
+							},
+							"gjslint_ignore":
+							[
+								110
+							],
+							"gjslint_options":
+							[
+							],
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"browser": true,
+								"evil": true,
+								"regexdash": true,
+								"sub": true,
+								"trailing": true,
+								"wsh": true
+							},
+							"pep8": true,
+							"pep8_ignore":
+							[
+								"E501"
+							],
+							"perl_linter": "perlcritic",
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"sublimelinter": true,
+							"sublimelinter_delay": 2,
+							"sublimelinter_disable":
+							[
+							],
+							"sublimelinter_executable_map":
+							{
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": true,
+							"sublimelinter_gutter_marks_theme": "simple",
+							"sublimelinter_mark_style": "none",
+							"sublimelinter_notes": false,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": false,
+							"sublimelinter_syntax_map":
+							{
+								"C++": "c",
+								"Python Django": "python",
+								"Ruby on Rails": "ruby"
+							},
+							"sublimelinter_wrap_find": true,
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "config/initializers/simple_form.rb",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 5749,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5738,
+								5738
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
+							"bh_regions":
+							[
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close"
+							],
+							"csslint_options":
+							{
+								"adjoining-classes": "warning",
+								"box-model": true,
+								"box-sizing": "warning",
+								"compatible-vendor-prefixes": "warning",
+								"display-property-grouping": true,
+								"duplicate-background-images": "warning",
+								"duplicate-properties": true,
+								"empty-rules": true,
+								"errors": true,
+								"fallback-colors": "warning",
+								"floats": "warning",
+								"font-faces": "warning",
+								"font-sizes": "warning",
+								"gradients": "warning",
+								"ids": "warning",
+								"import": "warning",
+								"important": "warning",
+								"known-properties": true,
+								"outline-none": "warning",
+								"overqualified-elements": "warning",
+								"qualified-headings": "warning",
+								"regex-selectors": "warning",
+								"rules-count": "warning",
+								"shorthand": "warning",
+								"star-property-hack": "warning",
+								"text-indent": "warning",
+								"underscore-property-hack": "warning",
+								"unique-headings": "warning",
+								"universal-selector": "warning",
+								"vendor-prefix": true,
+								"zero-units": "warning"
+							},
+							"gjslint_ignore":
+							[
+								110
+							],
+							"gjslint_options":
+							[
+							],
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"browser": true,
+								"evil": true,
+								"regexdash": true,
+								"sub": true,
+								"trailing": true,
+								"wsh": true
+							},
+							"pep8": true,
+							"pep8_ignore":
+							[
+								"E501"
+							],
+							"perl_linter": "perlcritic",
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"sublimelinter": true,
+							"sublimelinter_delay": 2,
+							"sublimelinter_disable":
+							[
+							],
+							"sublimelinter_executable_map":
+							{
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": true,
+							"sublimelinter_gutter_marks_theme": "simple",
+							"sublimelinter_mark_style": "none",
+							"sublimelinter_notes": false,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": false,
+							"sublimelinter_syntax_map":
+							{
+								"C++": "c",
+								"Python Django": "python",
+								"Ruby on Rails": "ruby"
+							},
+							"sublimelinter_wrap_find": true,
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1687.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -1212,12 +1727,264 @@
 		"selected_items":
 		[
 			[
-				"style",
-				"res/values/styles.xml"
+				"boots",
+				"config/initializers/simple_form_bootstrap.rb"
+			],
+			[
+				"new",
+				"app/views/posts/new.html.slim"
+			],
+			[
+				"apphe",
+				"app/helpers/application_helper.rb"
+			],
+			[
+				"appjs",
+				"app/assets/javascripts/application.js"
+			],
+			[
+				"navba",
+				"app/views/layouts/_navbar.html.slim"
+			],
+			[
+				"navbar",
+				"app/views/layouts/_navbar.html.slim"
+			],
+			[
+				"appsl",
+				"app/views/layouts/application.html.slim"
+			],
+			[
+				"homeco",
+				"app/controllers/home_controller.rb"
+			],
+			[
+				"route",
+				"config/routes.rb"
+			],
+			[
+				"acti",
+				"config/initializers/active_admin.rb"
+			],
+			[
+				"foote",
+				"app/assets/stylesheets/layouts/footer.css.sass"
+			],
+			[
+				"nav",
+				"app/views/layouts/_navbar.html.slim"
+			],
+			[
+				"post",
+				"app/models/post.rb"
+			],
+			[
+				"cate",
+				"app/models/category.rb"
+			],
+			[
+				"postc",
+				"app/controllers/posts_controller.rb"
+			],
+			[
+				"conf",
+				"app/assets/javascripts/redactor-rails/config.js"
+			],
+			[
+				"co",
+				"app/assets/javascripts/redactor-rails/config.js"
+			],
+			[
+				"cof",
+				"config.ru"
+			],
+			[
+				"appcss",
+				"app/assets/stylesheets/application.css"
+			],
+			[
+				"gem",
+				"Gemfile"
+			],
+			[
+				"ro",
+				"config/routes.rb"
+			],
+			[
+				"create",
+				"db/migrate/20131016211420_create_posts.rb"
+			],
+			[
+				"regc",
+				"app/controllers/users/registrations_controller.rb"
+			],
+			[
+				"regi",
+				"app/controllers/users/registrations_controller.rb"
+			],
+			[
+				"user",
+				"app/models/user.rb"
+			],
+			[
+				"omni",
+				"app/controllers/users/omniauth_callbacks_controller.rb"
+			],
+			[
+				"appc",
+				"app/controllers/application_controller.rb"
+			],
+			[
+				"omn",
+				"app/controllers/users/omniauth_callbacks_controller.rb"
+			],
+			[
+				"omi",
+				"app/controllers/users/omniauth_callbacks_controller.rb"
+			],
+			[
+				"appco",
+				"app/controllers/application_controller.rb"
+			],
+			[
+				"clien",
+				"config/initializers/client_side_validations.rb"
 			],
 			[
 				"gemf",
 				"Gemfile"
+			],
+			[
+				"boot",
+				"config/initializers/simple_form_bootstrap.rb"
+			],
+			[
+				"navr",
+				"app/views/layouts/_navbar.html.slim"
+			],
+			[
+				"navb",
+				"app/assets/stylesheets/layouts/navbar.css.sass"
+			],
+			[
+				"news",
+				"app/views/devise/sessions/new.html.slim"
+			],
+			[
+				"om",
+				"app/controllers/users/omniauth_callbacks_controller.rb"
+			],
+			[
+				"soc",
+				"app/views/partials/_social_buttons.html.slim"
+			],
+			[
+				"devis",
+				"config/initializers/devise.rb"
+			],
+			[
+				"sim",
+				"config/initializers/simple_form_bootstrap.rb"
+			],
+			[
+				"soci",
+				"app/views/partials/_social_buttons.html.slim"
+			],
+			[
+				"deve",
+				"config/environments/development.rb"
+			],
+			[
+				"sche",
+				"db/schema.rb"
+			],
+			[
+				"sch",
+				"db/schema.rb"
+			],
+			[
+				"devise",
+				"db/migrate/20131015070914_devise_create_users.rb"
+			],
+			[
+				"routes",
+				"config/routes.rb"
+			],
+			[
+				"devi",
+				"app/assets/stylesheets/autoload/devise_views.css.sass"
+			],
+			[
+				"simpl",
+				"config/initializers/simple_form_bootstrap.rb"
+			],
+			[
+				"mig",
+				"db/migrate/20131015184421_add_username_to_user.rb"
+			],
+			[
+				"global",
+				"app/assets/stylesheets/autoload/global.css.sass"
+			],
+			[
+				"simp",
+				"config/initializers/simple_form_bootstrap.rb"
+			],
+			[
+				"simpe",
+				"config/locales/simple_form.en.yml"
+			],
+			[
+				"apps",
+				"app/views/layouts/application.html.slim"
+			],
+			[
+				"app",
+				"app/views/layouts/application.html.slim"
+			],
+			[
+				"gloa",
+				"app/assets/stylesheets/autoload/global.css.sass"
+			],
+			[
+				"glov",
+				"config/locales/devise.en.yml"
+			],
+			[
+				"simple",
+				"config/initializers/simple_form.rb"
+			],
+			[
+				"apcss",
+				"app/assets/stylesheets/application.css"
+			],
+			[
+				"form",
+				"config/initializers/formtastic.rb"
+			],
+			[
+				"apccs",
+				"app/assets/stylesheets/application.css"
+			],
+			[
+				"for",
+				"config/initializers/formtastic.rb"
+			],
+			[
+				"act",
+				"config/initializers/active_admin.rb"
+			],
+			[
+				"dev",
+				"config/initializers/devise.rb"
+			],
+			[
+				"activ",
+				"config/initializers/active_admin.rb"
+			],
+			[
+				"style",
+				"res/values/styles.xml"
 			],
 			[
 				"index",
@@ -1232,14 +1999,6 @@
 				"app/views/screenshot/view.slim"
 			],
 			[
-				"appco",
-				"node-js/src/app.coffee"
-			],
-			[
-				"appc",
-				"config/application.rb"
-			],
-			[
 				"inde",
 				"app/views/home/index.slim"
 			],
@@ -1252,16 +2011,8 @@
 				"vendor/assets/stylesheets/semantic-ui/elements/icon.less"
 			],
 			[
-				"gem",
-				"Gemfile"
-			],
-			[
 				"h",
 				"app/controllers/home_controller.rb"
-			],
-			[
-				"route",
-				"config/routes.rb"
 			],
 			[
 				"hig",
@@ -1294,14 +2045,6 @@
 			[
 				"s",
 				"semantic-ui-rails.gemspec"
-			],
-			[
-				"appcss",
-				"app/assets/stylesheets/application.css"
-			],
-			[
-				"appjs",
-				"app/assets/javascripts/application.js"
 			],
 			[
 				"contr",
@@ -1352,32 +2095,12 @@
 				"app/views/broadcasts/_second_step.html.haml"
 			],
 			[
-				"new",
-				"app/views/broadcasts/new.html.haml"
-			],
-			[
-				"devise",
-				"config/locales/devise.en.yml"
-			],
-			[
-				"routes",
-				"config/routes.rb"
-			],
-			[
-				"devis",
-				"config/locales/devise.en.yml"
-			],
-			[
 				"en.y",
 				"config/locales/en.yml"
 			],
 			[
 				"channelinf",
 				"app/views/widgets/_channel_info.html.haml"
-			],
-			[
-				"homeco",
-				"app/controllers/home_controller.rb"
 			],
 			[
 				"landing",
@@ -1418,10 +2141,6 @@
 			[
 				"first",
 				"app/views/broadcasts/_first_step.html.haml"
-			],
-			[
-				"sche",
-				"db/schema.rb"
 			],
 			[
 				"promt",
@@ -1518,210 +2237,6 @@
 			[
 				"shar",
 				"app/views/channels/_share.slim"
-			],
-			[
-				"faq",
-				"app/views/home/faq.html.haml"
-			],
-			[
-				"home",
-				"app/controllers/home_controller.rb"
-			],
-			[
-				"steplo",
-				"app/views/broadcasts/_steps_logic.js.erb"
-			],
-			[
-				"other",
-				"app/assets/stylesheets/other_style.css.scss"
-			],
-			[
-				"sharing",
-				"app/assets/javascripts/broadcasting_room/blocks/main_panel/sharing_menu.js.coffee"
-			],
-			[
-				"third",
-				"app/views/broadcasts/_third_step.html.haml"
-			],
-			[
-				"bootstra",
-				"app/assets/stylesheets/other/bootstrap_and_overrides.css.less"
-			],
-			[
-				"simplef",
-				"config/initializers/simple_form.rb"
-			],
-			[
-				"prompt",
-				"app/assets/stylesheets/other/impromptu.sass"
-			],
-			[
-				"prom",
-				"app/assets/stylesheets/other/impromptu.sass"
-			],
-			[
-				"promp",
-				"vendor/assets/javascripts/jquery.impromptu.js"
-			],
-			[
-				"appj",
-				"app/assets/javascripts/application.js"
-			],
-			[
-				"others",
-				"app/assets/stylesheets/other_style.css.scss"
-			],
-			[
-				"broro",
-				"app/views/channels/_broadcasting_room.html.haml"
-			],
-			[
-				"my",
-				"app/views/channels/my.html.haml"
-			],
-			[
-				"widgets",
-				"app/assets/stylesheets/widgets_style.css.scss"
-			],
-			[
-				"_broadcast",
-				"app/views/home/_broadcasts.html.haml"
-			],
-			[
-				"_broa",
-				"app/views/home/_broadcasts.html.haml"
-			],
-			[
-				"prod",
-				"config/settings/production.yml"
-			],
-			[
-				"init",
-				"app/views/channels/_init_broadcasting_room.js.erb"
-			],
-			[
-				"maina",
-				"app/assets/javascripts/broadcasting_room/blocks/main_panel.js.coffee"
-			],
-			[
-				"main",
-				"app/assets/javascripts/broadcasting_room/blocks/main_panel.js.coffee"
-			],
-			[
-				"mainpa",
-				"app/assets/javascripts/broadcasting_room/blocks/main_panel.js.coffee"
-			],
-			[
-				"chaco",
-				"app/controllers/channels_controller.rb"
-			],
-			[
-				"finish",
-				"app/views/devise/registrations/finish_sign_up.haml"
-			],
-			[
-				"toke",
-				"app/controllers/api/tokens_controller.rb"
-			],
-			[
-				"user",
-				"app/models/user.rb"
-			],
-			[
-				"flas",
-				"app/views/layouts/_flashes.html.erb"
-			],
-			[
-				"flashe",
-				"app/views/layouts/_flashes.html.erb"
-			],
-			[
-				"rokenc",
-				"app/controllers/api/tokens_controller.rb"
-			],
-			[
-				"broco",
-				"app/controllers/api/broadcast_controller.rb"
-			],
-			[
-				"broaco",
-				"app/uploaders/broadcast_cover_uploader.rb"
-			],
-			[
-				"broadco",
-				"app/controllers/broadcasts_controller.rb"
-			],
-			[
-				"boot",
-				"app/assets/stylesheets/other/bootstrap_and_overrides.css.less"
-			],
-			[
-				"_broad",
-				"app/views/home/_broadcasts.html.haml"
-			],
-			[
-				"regi",
-				"app/controllers/users/registrations_controller.rb"
-			],
-			[
-				"session",
-				"app/controllers/users/sessions_controller.rb"
-			],
-			[
-				"bootst",
-				"app/assets/stylesheets/other/bootstrap_and_overrides.css.less"
-			],
-			[
-				"apph",
-				"app/views/layouts/application.html.haml"
-			],
-			[
-				"jobs",
-				"lib/models/broadcast/jobs.rb"
-			],
-			[
-				"onair",
-				"app/views/widgets/_on_air.html.haml"
-			],
-			[
-				"sched",
-				"app/views/widgets/_scheduled.html.haml"
-			],
-			[
-				"widget",
-				"app/assets/javascripts/widget/libs/widget.js.coffee"
-			],
-			[
-				"userinf",
-				"app/assets/javascripts/widget/libs/user_info.coffee"
-			],
-			[
-				"widgetjs",
-				"app/assets/javascripts/widget/libs/widget.js.coffee"
-			],
-			[
-				"chanc",
-				"app/controllers/channels_controller.rb"
-			],
-			[
-				"schema",
-				"db/schema.rb"
-			],
-			[
-				"vali",
-				"lib/models/user/validations.rb"
-			],
-			[
-				"chan",
-				"app/controllers/channels_controller.rb"
-			],
-			[
-				"broaro",
-				"app/views/channels/_broadcasting_room.html.haml"
-			],
-			[
-				"righ",
-				"app/views/channels/_right_tabs.html.haml"
 			]
 		],
 		"width": 0.0
@@ -1761,7 +2276,7 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 212.0,
+	"side_bar_width": 374.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
