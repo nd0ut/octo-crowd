@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131017062954) do
+ActiveRecord::Schema.define(version: 20131017132355) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -34,6 +34,15 @@ ActiveRecord::Schema.define(version: 20131017062954) do
     t.datetime "updated_at"
   end
 
+  create_table "categories_posts", id: false, force: true do |t|
+    t.integer "category_id"
+    t.integer "post_id"
+  end
+
+  add_index "categories_posts", ["category_id", "post_id"], name: "index_categories_posts_on_category_id_and_post_id"
+  add_index "categories_posts", ["category_id"], name: "index_categories_posts_on_category_id"
+  add_index "categories_posts", ["post_id"], name: "index_categories_posts_on_post_id"
+
   create_table "posts", force: true do |t|
     t.integer  "author_id"
     t.string   "title"
@@ -43,15 +52,6 @@ ActiveRecord::Schema.define(version: 20131017062954) do
   end
 
   add_index "posts", ["author_id"], name: "index_posts_on_author_id"
-
-  create_table "posts_categories", id: false, force: true do |t|
-    t.integer "post_id"
-    t.integer "category_id"
-  end
-
-  add_index "posts_categories", ["category_id"], name: "index_posts_categories_on_category_id"
-  add_index "posts_categories", ["post_id", "category_id"], name: "index_posts_categories_on_post_id_and_category_id"
-  add_index "posts_categories", ["post_id"], name: "index_posts_categories_on_post_id"
 
   create_table "redactor_assets", force: true do |t|
     t.integer  "user_id"
