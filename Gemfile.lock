@@ -100,6 +100,10 @@ GEM
       railties (>= 3.2.6, < 5)
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
+    draper (1.2.1)
+      actionpack (>= 3.0)
+      activesupport (>= 3.0)
+      request_store (~> 1.0.3)
     erubis (2.7.0)
     execjs (2.0.2)
     faraday (0.8.8)
@@ -210,6 +214,7 @@ GEM
       mime-types
       orm_adapter
     ref (1.0.5)
+    request_store (1.0.5)
     responders (1.0.0)
       railties (>= 3.2, < 5)
     sass (3.2.12)
@@ -273,6 +278,7 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   compass-rails!
   devise
+  draper
   jbuilder (~> 1.2)
   jquery-rails
   jquery-turbolinks
