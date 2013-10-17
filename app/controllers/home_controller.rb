@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
   def index
-    @posts = Post.order('updated_at desc')
+    @posts = Post.with_moderation_state(:accepted).order('updated_at desc')
   end
 end
