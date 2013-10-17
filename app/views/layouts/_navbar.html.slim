@@ -17,6 +17,13 @@ nav.navbar.navbar-static-top role='navigation'
           i.icon-plus-sign  Sign up
 
     - else
+      li class=('active' if current_page?(new_post_path))
+        =link_to :new_post do
+          i.icon-pencil
+          | &nbsp;&nbsp;
+          | Write post
+
+      li.divider-vertical
       li.dropdown
         a.dropdown-toggle href='#' data-toggle='dropdown'
           = current_user.username
