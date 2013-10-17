@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
 
   devise :omniauthable, :omniauth_providers => [:facebook, :vkontakte]
 
-  has_many :posts, foreign_key: 'author_id'
+  has_many :posts, foreign_key: 'author_id', dependent: :destroy
 
   def self.from_omniauth(auth)
     user = where(provider: auth.provider, uid: auth.uid.to_s).first_or_initialize do |user|
