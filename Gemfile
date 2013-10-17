@@ -55,3 +55,4 @@ gem 'redactor-rails'
 gem "carrierwave"
 gem "mini_magick"
 gem 'chosen-rails'
+gem 'jquery-turbolinks'
