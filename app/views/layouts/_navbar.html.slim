@@ -28,7 +28,7 @@ nav.navbar.navbar-static-top role='navigation'
 
         ul.dropdown-menu
           - if current_user.admin?
-            li= link_to :admin_root do
+            li= link_to :admin_root, data: { 'no-turbolink' => nil } do
               = icon_with_label 'Admin', 'icon-key'
 
           li= link_to :destroy_user_session, :method => :delete do
