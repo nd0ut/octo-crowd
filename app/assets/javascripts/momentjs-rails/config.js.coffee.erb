@@ -1,0 +1,10 @@
+$ ->
+  $('.momentjs-calendar').each ->
+    moment.lang("<%= I18n.locale %>")
+
+    post_time = $(this).attr('data-time')
+
+    relative_time = moment(post_time).calendar()
+
+    $(this).html(relative_time)
+
