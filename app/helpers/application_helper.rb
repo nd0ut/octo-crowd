@@ -6,8 +6,8 @@ module ApplicationHelper
     provider.underscore.humanize.downcase
   end
 
-  def icon_with_label(label, icon_class)
-    "<i class=\"#{icon_class}\"></i>&nbsp; &nbsp;#{label}</a>".html_safe
+  def icon_with_label(label, icon_class, label_options = nil)
+    "<i class=\"#{icon_class}\"></i>&nbsp;&nbsp;#{content_tag :span, label, label_options}</a>".html_safe
   end
 
   def label_with_icon(label, icon_class)
