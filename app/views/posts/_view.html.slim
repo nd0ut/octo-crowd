@@ -1,0 +1,32 @@
+.row.post
+  .panel
+    .panel-heading
+      h3.panel-title.title
+        i.icon-caret-right
+        | &nbsp;&nbsp;
+        =link_to post.title, post_path(post)
+
+      .categories
+        ul.list-inline
+          - categories = post.categories.decorate
+          - categories.each_with_index do |c, i|
+            li
+              =link_to category_path(c) do
+                .small.text-success
+                  = c.name
+                  = ',' if i != categories.length - 1
+
+
+    .panel-body
+      p= raw post.body
+
+    .panel-footer
+      .row
+        .col-lg-3
+          .pull-left
+            = icon_with_label nil, 'icon-time', class: 'momentjs-calendar', data: { time: post.time }
+        .col-lg-3
+        .col-lg-3
+        .col-lg-3
+          .pull-right
+            = icon_with_label post.author.username, 'icon-user'
