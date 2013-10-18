@@ -1,5 +1,6 @@
 class CategoriesController < ApplicationController
   def show
-    @posts = Category.find(params[:id]).posts
+    # params[:id] is the name of the cotegory, not the id
+    @posts = Category.where(name: params[:id]).first.posts
   end
 end
