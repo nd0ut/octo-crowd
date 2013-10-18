@@ -1,2 +1,12 @@
-- @posts.each do |post|
-  = post.title
+.row
+  .col-lg-9
+    - @posts.decorate.each do |post|
+      = render partial: 'posts/view', locals: { post: post }
+
+  .col-lg-3
+    .panel
+      .panel-heading
+        h2 Categories
+
+      .panel-body
+        | as
