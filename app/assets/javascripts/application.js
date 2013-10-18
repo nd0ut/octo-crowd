@@ -17,6 +17,8 @@
 //= require twitter/bootstrap
 //= require chosen-jquery
 //= require redactor-rails
+//= require moment
+//= require moment/ru.js
 //
 //= require turbolinks
 //= require_tree .
