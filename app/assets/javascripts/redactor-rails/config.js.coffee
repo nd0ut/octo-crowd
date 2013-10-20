@@ -5,7 +5,7 @@ $(document).ready ->
   params = undefined
   params = csrf_param + "=" + encodeURIComponent(csrf_token)  if csrf_param isnt `undefined` and csrf_token isnt `undefined`
 
-  $(".redactor").redactor
+  $(".js-new-post.redactor").redactor
     imageUpload:  "/redactor_rails/pictures?" + params
     imageGetJson: "/redactor_rails/pictures"
     fileUpload:   "/redactor_rails/documents?" + params
@@ -22,3 +22,13 @@ $(document).ready ->
         title:    'Cut'
         callback: (buttonName, buttonDOM, buttonObject) ->
           this.insertHtml('<cut/><br>');
+
+
+  $(".js-new-comment .redactor").redactor
+    imageUpload:  "/redactor_rails/pictures?" + params
+    imageGetJson: "/redactor_rails/pictures"
+    fileUpload:   "/redactor_rails/documents?" + params
+    fileGetJson:  "/redactor_rails/documents"
+    path:         "/assets/redactor-rails"
+    css:          "style.css"
+    minHeight:    150

@@ -11,7 +11,10 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find(params[:id])
+    @post = Post.find(params[:id]).decorate
+    @comments = CommentDecorator.decorate_collection(@post.comments.all)
+
+    @new_comment = Comment.new
   end
 
   private

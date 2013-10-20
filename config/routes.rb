@@ -9,7 +9,10 @@ OctoCrowd::Application.routes.draw do
 
   ActiveAdmin.routes(self)
 
-  resources :posts
+  resources :posts do
+    post 'comments', to: 'posts/comments#create'
+  end
+
   resources :categories
 
   root 'home#index'

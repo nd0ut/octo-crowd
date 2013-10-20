@@ -2,7 +2,7 @@
   .page-header
     h1 Create new post
 
-.row
+.row.js-new-post
   = simple_form_for(@post) do |f|
     = f.association :categories, collection: Category.all.decorate, include_blank: true, input_html: { class: 'chosen-select' }
 
