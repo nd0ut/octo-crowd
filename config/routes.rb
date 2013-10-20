@@ -15,5 +15,5 @@ OctoCrowd::Application.routes.draw do
 
   resources :categories
 
-  root 'home#index'
+  root 'posts#index'
 end
