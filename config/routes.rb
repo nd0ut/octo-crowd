@@ -11,6 +11,7 @@ OctoCrowd::Application.routes.draw do
 
   resources :posts do
     post 'comments', to: 'posts/comments#create'
+    delete 'comments/:comment_id', to: 'posts/comments#destroy', as: :destroy_comment
   end
 
   resources :categories

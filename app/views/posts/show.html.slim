@@ -1,9 +1,9 @@
-.post
+.post data-post-id="#{@post.id}"
   / Post body
   .row
     .panel
       .panel-heading
-        a.js-delete href="#" data-post-id="#{@post.id}"
+        a.js-post-delete href="#"
           i.pull-right.icon-remove
 
         h1.panel-title.title
@@ -45,7 +45,7 @@
       h3 Comments
 
       - @comments.each do |c|
-        .comment
+        .comment data-comment-id="#{c.id}"
           .bs-callout.bs-callout-info
             .head
               .pull-left
@@ -54,6 +54,8 @@
                 h4= c.author_name
               .small.pull-right
                 = icon_with_label nil, 'icon-time', class: 'momentjs-calendar', data: { time: c.time }
+                a.js-comment-delete href="#"
+                  i.pull-right.icon-remove
               .clearfix
 
             .body
