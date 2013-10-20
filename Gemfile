@@ -60,4 +60,3 @@ gem 'draper'
 gem 'state_machine'
 gem 'momentjs-rails'
 gem 'quiet_assets', :group => :development
-gem 'acts_as_commentable_with_threading', :git => 'git@github.com:danielgatis/acts_as_commentable_with_threading.git', :branch => 'rails4'
