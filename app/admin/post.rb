@@ -5,11 +5,18 @@ ActiveAdmin.register Post do
     column :title
     column :created_at
     default_actions
+  end
 
-    actions do |post|
-      link_to "Accept", accept_admin_post_path(post), :class => "member_link", method: :put
-      link_to "Reject", reject_admin_post_path(post), :class => "member_link", method: :put
-    end
+  action_item :only => :show do
+    link_to('View on site', post_path(post))
+  end
+
+  action_item :only => :show do
+    link_to('Accept', accept_admin_post_path(post), method: :put)
+  end
+
+  action_item :only => :show do
+    link_to('Reject', reject_admin_post_path(post), method: :put)
   end
 
   member_action :accept, :method => :put do
