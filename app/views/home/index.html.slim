@@ -1,7 +1,7 @@
 .row
   .col-lg-9
     - @posts.decorate.each do |post|
-      = render partial: 'posts/view', locals: { post: post }
+      = render partial: 'post', locals: { post: post }
 
   .col-lg-3
     .panel
