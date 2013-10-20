@@ -15,7 +15,7 @@ class Post < ActiveRecord::Base
                     length: { minimum: 3, maximum: 140 }
 
   validates :categories,  presence: true,
-                          length: { minimum: 1, maximum: 2 }
+                          length: { minimum: 1, maximum: 3 }
 
 
   def sanitize_html
