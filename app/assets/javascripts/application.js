@@ -19,6 +19,7 @@
 //= require redactor-rails
 //= require moment
 //= require moment/ru.js
+//= require js-routes
 //
 //= require turbolinks
 //= require_tree .

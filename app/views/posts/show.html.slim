@@ -3,7 +3,10 @@
   .row
     .panel
       .panel-heading
-        h3.panel-title.title
+        a.js-delete href="#" data-post-id="#{@post.id}"
+          i.pull-right.icon-remove
+
+        h1.panel-title.title
           i.icon-caret-right
           | &nbsp;&nbsp;
           = @post.title

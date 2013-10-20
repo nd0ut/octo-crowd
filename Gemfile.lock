@@ -34,6 +34,13 @@ GIT
       rails (>= 3.1)
       railties (>= 3.1)
 
+GIT
+  remote: git@github.com:le0pard/js-routes.git
+  revision: d9143cb1bed79ec4bba8c1a89fe5289202614447
+  specs:
+    js-routes (0.9.3)
+      rails (>= 3.2)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -241,6 +248,11 @@ GEM
     simple_form (3.0.0)
       actionpack (>= 4.0.0, < 4.1)
       activemodel (>= 4.0.0, < 4.1)
+    skim (0.9.3)
+      coffee-script
+      coffee-script-source (>= 1.2.0)
+      slim (~> 2.0.0)
+      sprockets
     slim (2.0.1)
       temple (~> 0.6.6)
       tilt (>= 1.3.3, < 2.1)
@@ -298,6 +310,7 @@ DEPENDENCIES
   jbuilder (~> 1.2)
   jquery-rails
   jquery-turbolinks
+  js-routes!
   kaminari
   less-rails
   letter_opener
@@ -315,6 +328,7 @@ DEPENDENCIES
   sass-rails (~> 4.0.0)
   sdoc
   simple_form
+  skim
   slim-rails
   sqlite3
   state_machine
