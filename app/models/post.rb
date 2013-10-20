@@ -4,6 +4,8 @@ require 'sanitize'
 class Post < ActiveRecord::Base
   acts_as_commentable
 
+  default_scope -> { order('created_at DESC') }
+
   belongs_to :author, class_name: 'User'
   has_and_belongs_to_many :categories
 
