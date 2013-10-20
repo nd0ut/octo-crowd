@@ -59,3 +59,4 @@ gem 'jquery-turbolinks'
 gem 'draper'
 gem 'state_machine'
 gem 'momentjs-rails'
+gem 'quiet_assets', :group => :development
