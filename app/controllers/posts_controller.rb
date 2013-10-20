@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.with_moderation_state(:accepted)
+    @posts = Post.with_moderation_state(:accepted).page(params[:page])
   end
 
   def new

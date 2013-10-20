@@ -62,3 +62,4 @@ gem 'momentjs-rails'
 gem 'quiet_assets', :group => :development
 gem 'acts_as_commentable'
 gem 'sanitize'
+gem 'kaminari'

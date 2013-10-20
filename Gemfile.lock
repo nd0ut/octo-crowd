@@ -294,6 +294,7 @@ DEPENDENCIES
   jbuilder (~> 1.2)
   jquery-rails
   jquery-turbolinks
+  kaminari
   less-rails
   letter_opener
   mini_magick

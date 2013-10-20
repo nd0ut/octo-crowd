@@ -16,4 +16,6 @@ OctoCrowd::Application.routes.draw do
   resources :categories
 
   root 'posts#index'
+
+  get '/page/:page', to: 'posts#index'
 end
