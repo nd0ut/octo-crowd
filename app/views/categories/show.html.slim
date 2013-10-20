@@ -1,5 +1,8 @@
 .row
   .col-lg-8
+    .page-header
+      h1= @category.decorate.name
+
     - @posts.decorate.each do |post|
       = render partial: 'posts/post', locals: { post: post }
 

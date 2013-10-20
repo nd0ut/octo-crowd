@@ -1,6 +1,7 @@
 class CategoriesController < ApplicationController
   def show
-    @posts = Category.find(params[:id]).posts.page(params[:page])
+    @category = Category.find(params[:id])
+    @posts = @category.posts.page(params[:page])
     @categories = Category.all.decorate
   end
 end
