@@ -24,6 +24,14 @@ GIT
       sass-rails
 
 GIT
+  remote: git://github.com/radar/by_star
+  revision: 453f100644d3b0e8ef00c5666ae817e8752bc268
+  specs:
+    by_star (2.1.0.beta2)
+      activerecord
+      chronic
+
+GIT
   remote: git://github.com/seyhunak/twitter-bootstrap-rails.git
   revision: dc5536d3aaf92ad04ea215bcfb42dbf62139da60
   branch: bootstrap3
@@ -88,6 +96,7 @@ GEM
       compass-rails (>= 1.0)
       railties (>= 3.0)
       sass-rails (>= 3.2)
+    chronic (0.10.2)
     chunky_png (1.2.9)
     coderay (1.0.9)
     coffee-rails (4.0.1)
@@ -300,6 +309,7 @@ PLATFORMS
 DEPENDENCIES
   activeadmin!
   acts_as_commentable
+  by_star!
   carrierwave
   chosen-rails
   coffee-rails (~> 4.0.0)

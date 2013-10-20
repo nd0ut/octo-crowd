@@ -67,3 +67,4 @@ gem 'factory_girl'
 gem 'lorem-ipsum-me'
 gem "js-routes", git: 'git@github.com:le0pard/js-routes.git'
 gem 'skim'
+gem 'by_star', :git => "git://github.com/radar/by_star"
