@@ -1,0 +1,23 @@
+- comment = comment.decorate
+
+.comment data-comment-id="#{comment.id}"
+  .bs-callout.bs-callout-info
+    .head
+      .pull-left
+        i.icon-user
+        | &nbsp;&nbsp;
+        h4= comment.author_name
+      .small.pull-right
+        = icon_with_label nil, 'icon-time', class: 'momentjs-calendar', data: { time: comment.time }
+        a.js-comment-delete href="#"
+          i.pull-right.icon-remove
+      .clearfix
+
+    .body
+      p= raw comment.body
+
+    .footer
+      a.js-comment-answer href="#"
+        = icon_with_label 'Answer', 'icon-comment'
+
+      .js-new-comment

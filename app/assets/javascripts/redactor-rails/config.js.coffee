@@ -1,4 +1,4 @@
-$(document).ready ->
+@initRedactor = ->
   csrf_token = $("meta[name=csrf-token]").attr("content")
   csrf_param = $("meta[name=csrf-param]").attr("content")
 
@@ -32,3 +32,6 @@ $(document).ready ->
     path:         "/assets/redactor-rails"
     css:          "style.css"
     minHeight:    150
+
+$(document).ready ->
+  @initRedactor()

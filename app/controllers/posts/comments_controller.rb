@@ -1,14 +1,21 @@
 class Posts::CommentsController < ApplicationController
   def create
-    @post = Post.find(params[:post_id]).decorate
-    @post.comments.create(user: current_user || nil, comment: params[:comment][:comment])
+    post = Post.find(params[:post_id]).decorate
+    user = current_user || nil
+    comment = Comment.build_from( post, user.try(:id), params[:comment][:body] )
+    comment.save
 
-    redirect_to @post
+    if parent = post.comment_threads.where(id: params[:parent]).first
+      comment.move_to_child_of(parent)
+    end
+
+
+    redirect_to post
   end
 
   def destroy
     @post = Post.find(params[:post_id])
-    @comment = @post.comments.find(params[:comment_id])
+    @comment = @post.comment_threads.find(params[:comment_id])
 
     if current_user.admin? or current_user == @comment.user
       @comment.destroy

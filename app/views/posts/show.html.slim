@@ -45,21 +45,7 @@
       h3 Comments
 
       - @comments.each do |c|
-        .comment data-comment-id="#{c.id}"
-          .bs-callout.bs-callout-info
-            .head
-              .pull-left
-                i.icon-user
-                | &nbsp;&nbsp;
-                h4= c.author_name
-              .small.pull-right
-                = icon_with_label nil, 'icon-time', class: 'momentjs-calendar', data: { time: c.time }
-                a.js-comment-delete href="#"
-                  i.pull-right.icon-remove
-              .clearfix
-
-            .body
-              p= raw c.comment
+        = render partial: 'comment_thread', locals: { parent_comment: c }
 
 
   / New comment
@@ -67,7 +53,7 @@
     h4 Write comment
 
     = simple_form_for(@new_comment, url: post_comments_path(@post)) do |f|
-      = f.input :comment, as: :text, label: false, input_html: { class: 'redactor' }
+      = f.input :body, as: :text, label: false, input_html: { class: 'redactor' }
 
       button.btn.btn-primary
         = icon_with_label 'Submit', 'icon-ok large'
