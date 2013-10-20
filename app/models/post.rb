@@ -12,8 +12,11 @@ class Post < ActiveRecord::Base
   before_save :sanitize_html
 
   validates :title, presence: true,
-                    allow_blank: false,
                     length: { minimum: 3, maximum: 140 }
+
+  validates :categories,  presence: true,
+                          length: { minimum: 1, maximum: 2 }
+
 
   def sanitize_html
     self.title = Sanitize.clean(title, Sanitize::Config::SPECIAL)
