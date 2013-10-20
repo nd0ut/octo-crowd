@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   def index
     @posts = Post.with_moderation_state(:accepted).page(params[:page])
+    @categories = Category.all.decorate
   end
 
   def new
