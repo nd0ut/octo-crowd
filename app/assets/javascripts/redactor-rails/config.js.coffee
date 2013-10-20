@@ -13,6 +13,7 @@ $(document).ready ->
     path:         "/assets/redactor-rails"
     css:          "style.css"
     minHeight:    200
+    removeEmptyTags: false
 
 
     buttonsAdd: ['|', 'cut']
@@ -20,4 +21,4 @@ $(document).ready ->
       cut:
         title:    'Cut'
         callback: (buttonName, buttonDOM, buttonObject) ->
-          this.insertHtmlAdvanced('<cut/>');
+          this.insertHtml('<cut/><br>');
