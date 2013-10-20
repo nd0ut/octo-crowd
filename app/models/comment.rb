@@ -12,4 +12,11 @@ class Comment < ActiveRecord::Base
 
   # NOTE: Comments belong to a user
   belongs_to :user
+
+  before_save :sanitize_html
+
+  def sanitize_html
+    self.title = Sanitize.clean(title, Sanitize::Config::SPECIAL)
+    self.body  = Sanitize.clean(body, Sanitize::Config::SPECIAL)
+  end
 end
