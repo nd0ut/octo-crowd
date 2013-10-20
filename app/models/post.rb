@@ -14,8 +14,8 @@ class Post < ActiveRecord::Base
                     length: { minimum: 3, maximum: 140 }
 
   def sanitize_html
-    self.title = Sanitize.clean(title, Sanitize::Config::RELAXED)
-    self.body  = Sanitize.clean(body, Sanitize::Config::RELAXED)
+    self.title = Sanitize.clean(title, Sanitize::Config::SPECIAL)
+    self.body  = Sanitize.clean(body, Sanitize::Config::SPECIAL)
   end
 
   state_machine :moderation_state, :initial => :waiting do
