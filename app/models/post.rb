@@ -19,8 +19,8 @@ class Post < ActiveRecord::Base
 
 
   def sanitize_html
-    self.title = Sanitize.clean(title, Sanitize::Config::SPECIAL)
-    self.body  = Sanitize.clean(body, Sanitize::Config::SPECIAL)
+    self.title = Sanitize.clean(title, Sanitize::Config::POST)
+    self.body  = Sanitize.clean(body, Sanitize::Config::POST)
   end
 
   state_machine :moderation_state, :initial => :waiting do

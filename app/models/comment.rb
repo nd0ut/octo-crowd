@@ -16,7 +16,6 @@ class Comment < ActiveRecord::Base
   before_save :sanitize_html
 
   def sanitize_html
-    self.title = Sanitize.clean(title, Sanitize::Config::SPECIAL)
-    self.body  = Sanitize.clean(body, Sanitize::Config::SPECIAL)
+    self.comment  = Sanitize.clean(comment, Sanitize::Config::COMMENT)
   end
 end
