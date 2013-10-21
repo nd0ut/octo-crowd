@@ -19,7 +19,7 @@
 
     .panel-body
       p= raw post.announce
-      = link_to 'Read next', post_path(post), class: 'btn btn-default btn-xs'
+      = post.read_next_link
 
     .panel-footer
       .row
