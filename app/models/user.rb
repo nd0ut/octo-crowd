@@ -6,6 +6,21 @@ class User < ActiveRecord::Base
   devise :omniauthable, :omniauth_providers => [:facebook, :vkontakte]
 
   has_many :posts, foreign_key: 'author_id', dependent: :destroy
+  has_one :subscription
+
+  after_create :create_subscription
+
+  def add_subscription_to(category)
+    self.subscription.categories << category
+  end
+
+  def remove_subscription_from(category)
+    self.subscription.categories.delete(category)
+  end
+
+  def has_subscription_to?(category)
+    self.subscription.categories.where(id: category.id).present?
+  end
 
   def self.from_omniauth(auth)
     user = where(provider: auth.provider, uid: auth.uid.to_s).first_or_initialize do |user|
@@ -28,5 +43,10 @@ class User < ActiveRecord::Base
     else
       super
     end
+  end
+
+  private
+  def create_subscription
+    Subscription.create(user_id: self.id)
   end
 end
