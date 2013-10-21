@@ -23,11 +23,11 @@ class Post < ActiveRecord::Base
     self.body  = Sanitize.clean(body, Sanitize::Config::POST)
   end
 
-  def remove_unnecessary_cuts
-    cut_html = '<cut></cut>'
+  CUT_HTML = '<cut></cut>'
 
+  def remove_unnecessary_cuts
     cut_num = 0
-    self.body = body.gsub(cut_html) do |match|
+    self.body = body.gsub(CUT_HTML) do |match|
       cut_num = cut_num + 1
       cut_num == 1 ? match : ""
     end
