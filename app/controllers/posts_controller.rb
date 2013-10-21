@@ -45,6 +45,15 @@ class PostsController < ApplicationController
 
   end
 
+  def preview
+    @post = current_user.posts.new(post_params).decorate
+
+    respond_to do |format|
+      format.html { redirect_to @post }
+      format.json { render json: { html: render_to_string(partial: 'posts/post_preview.html.slim', locals: { post: @post }) } }
+    end
+  end
+
   private
   def post_params
     params.require(:post).permit(:title, :body, category_ids: [])

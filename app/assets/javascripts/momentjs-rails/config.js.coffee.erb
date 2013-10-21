@@ -1,4 +1,4 @@
-$ ->
+@momentjs_init = ->
   $('.momentjs-calendar').each ->
     moment.lang("<%= I18n.locale %>")
 
@@ -7,4 +7,10 @@ $ ->
     relative_time = moment(post_time).calendar()
 
     $(this).html(relative_time)
+
+
+$ ->
+  @momentjs_init()
+
+
 

@@ -1,3 +1,12 @@
+.js-post-preview style="display: none"
+  .row
+    .page-header
+      h1 Preview
+      a.btn.btn-link.js-preview-hide
+        = label_with_icon 'Hide', 'icon-angle-up'
+
+  .row.js-post-preview-container
+
 .row
   .page-header
     h1 Create new post
@@ -11,6 +20,10 @@
     = f.input :body, as: :text, input_html: { class: 'redactor' }
 
     .row
-      .col-md-2
+      .col-lg-2
         button.btn.btn-primary.btn-block
           = icon_with_label 'Submit', 'icon-ok large'
+
+      .col-lg-2
+        .btn.btn-warning
+          .js-preview-btn= icon_with_label 'Preview', 'icon-eye-open large'
