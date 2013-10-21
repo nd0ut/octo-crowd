@@ -13,7 +13,11 @@
 
 .row.js-new-post
   = simple_form_for(@post) do |f|
-    = f.association :categories, collection: Category.all.decorate, include_blank: true, input_html: { class: 'chosen-select' }
+    .row
+      .col-lg-6
+        = f.association :categories, collection: Category.all.decorate, include_blank: true, input_html: { class: 'chosen-select' }
+      .col-lg-6
+        = f.input :tag_list
 
     = f.input :title
 

@@ -71,3 +71,5 @@ gem 'by_star', :git => "git://github.com/radar/by_star"
 gem 'sinatra', '>= 1.3.0', :require => nil
 gem 'sidekiq'
 gem "devise-async"
+gem 'acts-as-taggable-on'
+gem 'twitter-typeahead-rails', :git => "git://github.com/yourabi/twitter-typeahead-rails.git"

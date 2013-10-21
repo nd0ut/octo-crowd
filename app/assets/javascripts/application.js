@@ -20,6 +20,8 @@
 //= require moment
 //= require moment/ru.js
 //= require js-routes
+//= require twitter/typeahead
+//= require bootstrap-tokenfield
 //
 //= require turbolinks
 //= require_tree .

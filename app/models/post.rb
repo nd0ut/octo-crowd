@@ -3,6 +3,7 @@ require 'sanitize'
 
 class Post < ActiveRecord::Base
   acts_as_commentable
+  acts_as_taggable
 
   default_scope -> { order('created_at DESC') }
 

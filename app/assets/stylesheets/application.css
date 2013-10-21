@@ -15,4 +15,5 @@
  *= require_tree ./layouts
  *= require redactor-rails
  *= require chosen
+ *= require bootstrap-tokenfield
  */

@@ -19,3 +19,5 @@ $ ->
 
   $('.js-preview-hide').click ->
     $('.js-post-preview').slideUp()
+
+  $('#post_tag_list').tokenfield()
