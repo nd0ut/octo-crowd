@@ -1,11 +1,11 @@
 .row
-  .col-md-7.col-md-offset-5
+  .col-lg-6.col-lg-offset-3
     .panel
       .panel-heading
         .row
-          .col-md-6.col-md-push-6.social
+          .col-lg-6.col-lg-push-6.social
             = render 'partials/social_buttons'
-          .col-md-6.col-md-pull-6
+          .col-lg-6.col-lg-pull-6
             span
               h2 Sign Up
               - if session_provider.present?
@@ -22,14 +22,14 @@
             = f.input :password_confirmation
 
           .row
-            div class=('col-md-8' if session_provider.present?)
+            div class=('col-lg-8' if session_provider.present?)
               button.btn.btn-lg.btn-primary.btn-block
                 i.icon-ok.large
                 | &nbsp;&nbsp;
                 | Submit
 
             - if session_provider.present?
-              .col-md-4
+              .col-lg-4
                 button.btn.btn-lg.btn-danger.btn-block name='reset'
                   i.icon-off.large
                   | &nbsp;&nbsp;
