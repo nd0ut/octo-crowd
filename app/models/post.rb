@@ -47,6 +47,14 @@ class Post < ActiveRecord::Base
     end
 
     after_transition :waiting => :accepted do |post|
+      UserMailer.delay.post_accepted(post)
+    end
+
+    after_transition :waiting => :rejected do |post|
+      UserMailer.delay.post_rejected(post)
+    end
+
+    after_transition :waiting => :accepted do |post|
       post.categories.each do |c|
         c.subscriptions.each do |s|
           UserMailer.delay.announce_post(s.user, post, c)

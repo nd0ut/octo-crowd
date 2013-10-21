@@ -2,13 +2,13 @@ class UserMailer < ActionMailer::Base
   default from: "mailer@octo-crowd.com"
 
   def post_accepted(post)
-    @post = post
-    mail(to: @post.author.email, subject: 'Welcome to My Awesome Site')
+    @post = post.decorate
+    mail(to: @post.author.email, subject: 'Your post accepted')
   end
 
   def post_rejected(post)
-    @post = post
-    mail(to: @post.author.email, subject: 'Welcome to My Awesome Site')
+    @post = post.decorate
+    mail(to: @post.author.email, subject: 'Your post rejected. Sorry.')
   end
 
   def announce_post(user, post, category)

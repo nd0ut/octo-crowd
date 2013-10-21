@@ -1,8 +1,8 @@
 class PostDecorator < Draper::Decorator
   delegate_all
 
-  def read_next_link
-    h.link_to 'Read next', h.post_url(object), class: 'btn btn-default btn-xs'
+  def read_next_link(label = 'Read next')
+    h.link_to label, h.post_url(object), class: 'btn btn-default btn-xs'
   end
 
   def announce
