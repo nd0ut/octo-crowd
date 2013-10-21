@@ -21,19 +21,19 @@
       p= raw post.announce
       = post.read_next_link
 
-      .panel-footer
-        .row
-          .col-lg-9
-            i.icon-tags
-            span.text-primary.tags
-              - tags = post.tags
-              - tags.each_with_index do |tag, i|
-                = link_to tag.name do
-                  span.tag= tag.name
-                = ', ' if i != tags.length - 1
+    .panel-footer
+      .row
+        .col-lg-6
+          i.icon-tags
+          span.text-primary.tags
+            - tags = post.tags
+            - tags.each_with_index do |tag, i|
+              = link_to tag.name do
+                span.tag= tag.name
+              = ', ' if i != tags.length - 1
 
-          .col-lg-2
-            = icon_with_label nil, 'icon-time', class: 'momentjs-calendar', data: { time: post.time }
-          .col-lg-1
-            .pull-right
-              = icon_with_label post.author.username, 'icon-user'
+        .col-lg-4
+          = icon_with_label nil, 'icon-time', class: 'momentjs-calendar', data: { time: post.time }
+        .col-lg-2
+          .pull-right
+            = icon_with_label post.author.username, 'icon-user'
