@@ -19,7 +19,7 @@
                 =link_to category_path(c) do
                   .small.text-success
                     = c.name
-                    = ',' if i != categories.length - 1
+                = ',' if i != categories.length - 1
 
 
       .panel-body
@@ -27,12 +27,18 @@
 
       .panel-footer
         .row
-          .col-lg-3
-            .pull-left
-              = icon_with_label nil, 'icon-time', class: 'momentjs-calendar', data: { time: @post.time }
-          .col-lg-3
-          .col-lg-3
-          .col-lg-3
+          .col-lg-9
+            i.icon-tags
+            span.text-primary.tags
+              - tags = @post.tags
+              - tags.each_with_index do |tag, i|
+                = link_to '#' do
+                  span.tag= tag.name
+                = ', ' if i != tags.length - 1
+
+          .col-lg-2
+            = icon_with_label nil, 'icon-time', class: 'momentjs-calendar', data: { time: @post.time }
+          .col-lg-1
             .pull-right
               = icon_with_label @post.author.username, 'icon-user'
 

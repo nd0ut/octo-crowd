@@ -47,6 +47,7 @@ class PostsController < ApplicationController
 
   def preview
     @post = current_user.posts.new(post_params).decorate
+    @tags = post_params[:tag_list].split(', ')
 
     respond_to do |format|
       format.html { redirect_to @post }

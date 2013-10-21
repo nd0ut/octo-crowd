@@ -10,6 +10,11 @@ $ ->
       success: (data) ->
         $('.js-post-preview-container').html(data.html)
         $('.js-post-preview').slideDown()
+
+        $('html, body').animate({
+            scrollTop: ($('.js-post-preview').first().offset().top)
+        },500);
+
         window.momentjs_init()
 
 
