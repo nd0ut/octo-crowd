@@ -10,6 +10,8 @@
  *
  *= require_self
  *= require_tree ./autoload
+ *= require_tree ./pages
+ *= require_tree ./elements
  *= require_tree ./layouts
  *= require redactor-rails
  *= require chosen

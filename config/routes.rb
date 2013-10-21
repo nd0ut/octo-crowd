@@ -16,7 +16,10 @@ OctoCrowd::Application.routes.draw do
     delete 'comments/:comment_id', to: 'posts/comments#destroy', as: :destroy_comment
   end
 
-  resources :categories
+  resources :categories do
+    post 'unsubscribe'
+    post 'subscribe'
+  end
 
   root 'posts#index'
   get '/page/:page', to: 'posts#index'
