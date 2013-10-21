@@ -9,6 +9,7 @@ class Post < ActiveRecord::Base
 
   belongs_to :author, class_name: 'User'
   has_and_belongs_to_many :categories
+  has_many :comments, foreign_key: 'commentable_id', dependent: :destroy
 
   validates :title, presence: true,
                     length: { minimum: 3, maximum: 140 }

@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
   devise :omniauthable, :omniauth_providers => [:facebook, :vkontakte]
 
   has_many :posts, foreign_key: 'author_id', dependent: :destroy
-  has_one :subscription
+  has_one :subscription, dependent: :destroy
 
   after_create :create_subscription
 
