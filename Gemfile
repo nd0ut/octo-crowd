@@ -68,3 +68,6 @@ gem 'lorem-ipsum-me'
 gem "js-routes", git: 'git@github.com:le0pard/js-routes.git'
 gem 'skim'
 gem 'by_star', :git => "git://github.com/radar/by_star"
+gem 'sinatra', '>= 1.3.0', :require => nil
+gem 'sidekiq'
+gem "devise-async"

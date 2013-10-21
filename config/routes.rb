@@ -1,3 +1,5 @@
+require 'sidekiq/web'
+
 OctoCrowd::Application.routes.draw do
   mount RedactorRails::Engine => '/redactor_rails'
   devise_for :users, :controllers => {
@@ -17,6 +19,10 @@ OctoCrowd::Application.routes.draw do
   resources :categories
 
   root 'posts#index'
-
   get '/page/:page', to: 'posts#index'
+
+  authenticate :user, lambda { |u| u.admin? } do
+    mount Sidekiq::Web => '/sidekiq'
+  end
 end
+
