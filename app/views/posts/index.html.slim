@@ -10,7 +10,7 @@
 
       .list-group
         - @categories.each do |c|
-          - subscribed = current_user.has_subscription_to?(c)
+          - subscribed = current_user.try(:has_subscription_to?, c)
 
           = link_to category_path(c), class: "category list-group-item", data: { category_id: c.id, subscribed: subscribed } do
             = c.name
