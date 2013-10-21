@@ -5,7 +5,7 @@ select.form-control + .chosen-container.chosen-container-single .chosen-single {
     padding: 6px 12px;
     font-size: 14px;
     line-height: 1.428571429;
-    color: #555;
+    color: #555555;
     vertical-align: middle;
     background-color: #fff;
     border: 1px solid #ccc;
@@ -69,7 +69,7 @@ select.form-control + .chosen-container .chosen-results li.active-result {
     clear: both;
     font-weight: normal;
     line-height: 1.428571429;
-    color: #333;
+    color: #555555;
     white-space: nowrap;
     background-image:none;
 }
@@ -108,27 +108,25 @@ select.form-control + .chosen-container-multi .chosen-choices li.search-field in
 }
 
 select.form-control + .chosen-container-multi .chosen-choices li.search-choice {
-
-    background-image: none;
-    padding: 1px 24px 3px 5px;
-    margin: 0 6px 0 0;
-    font-size: 14px;
-    font-weight: normal;
-    line-height: 1.428571429;
-    text-align: center;
-    white-space: nowrap;
-    vertical-align: middle;
-    cursor: pointer;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    color: #333;
-    background-color: #FFF;
-    border-color: #CCC;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box; /* Firefox */
+  display: inline-block;
+  border: 1px solid #d9d9d9;
+  background-color: #ededed;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  white-space: nowrap;
+  margin: 2px 5px 2px 0;
+  height: 22px;
+  vertical-align: top;
+  cursor: default;
+  background-image: none;
+  color: #555555;
 }
 
 select.form-control + .chosen-container-multi .chosen-choices li.search-choice .search-choice-close {
-    top:6px;
-    right:6px;
+
 }
 
 select.form-control + .chosen-container-multi.chosen-container-active .chosen-choices,
