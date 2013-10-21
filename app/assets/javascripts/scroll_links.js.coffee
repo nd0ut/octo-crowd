@@ -1,5 +1,5 @@
 $ ->
-  offset = 220
+  offset = 300
   duration = 500
 
   $(window).scroll ->
