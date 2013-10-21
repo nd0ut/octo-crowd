@@ -2,7 +2,7 @@ class Posts::CommentsController < ApplicationController
   def create
     post = Post.find(params[:post_id]).decorate
     user = current_user || nil
-    comment = Comment.build_from( post, user.try(:id), params[:comment][:body] )
+    comment = Comment.build_from(post, user.try(:id), params[:comment][:body] )
     comment.save
 
     if parent = post.comment_threads.where(id: params[:parent]).first
