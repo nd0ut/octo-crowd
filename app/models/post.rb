@@ -13,8 +13,15 @@ class Post < ActiveRecord::Base
   validates :title, presence: true,
                     length: { minimum: 3, maximum: 140 }
 
+  validates :body, presence: true,
+                    length: { minimum: 10 }
+
+
   validates :categories,  presence: true,
                           length: { minimum: 1, maximum: 3 }
+
+  validates :tag_list, presence: true,
+                       length: { minimum: 1, maximum: 10 }
 
   before_save :sanitize_html
   before_save :remove_unnecessary_cuts
