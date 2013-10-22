@@ -1,0 +1,36 @@
+.row
+  .col-lg-8
+    .row.page-header
+      h1
+        | Search for
+        - if @tag
+          | &nbsp;
+          span.label.label-default.js-search-tag= @tag
+
+    .posts
+      - PostDecorator.decorate_collection(@posts).each do |post|
+        = render partial: 'post', locals: { post: post }
+
+  .col-lg-3.col-lg-offset-1
+    .category-list
+      h3 Categories
+
+      .list-group
+        - @categories.each do |c|
+          - subscribed = current_user.try(:has_subscription_to?, c)
+
+          = link_to category_path(c), class: "category list-group-item", data: { category_id: c.id, subscribed: subscribed } do
+            = c.name
+
+            - if current_user
+
+              .js-hidden-menu.pull-right
+                .js-subscribe
+                  i.icon-bookmark.js-subscribed style="#{'display: none' unless subscribed}"
+                  i.icon-bookmark-empty.js-unsubscribed style="#{'display: none' if subscribed}"
+
+
+
+
+.row
+  = paginate @posts, :theme => 'twitter-bootstrap-3'

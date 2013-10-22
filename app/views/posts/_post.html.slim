@@ -28,7 +28,7 @@
           span.text-primary.tags
             - tags = post.tags
             - tags.each_with_index do |tag, i|
-              = link_to tag.name do
+              = link_to tag_search_path(tag.name) do
                 span.tag= tag.name
               = ', ' if i != tags.length - 1
 

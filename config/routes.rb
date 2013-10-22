@@ -23,6 +23,9 @@ OctoCrowd::Application.routes.draw do
     post 'subscribe'
   end
 
+  get '/tag/:tag', to: 'posts#by_tag', as: :tag_search
+  post '/search', to: 'posts#search', as: :search
+
   root 'posts#index'
   get '/page/:page', to: 'posts#index'
 

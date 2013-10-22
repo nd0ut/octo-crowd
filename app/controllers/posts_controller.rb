@@ -1,11 +1,6 @@
 class PostsController < ApplicationController
   def index
-    if query = params[:search]
-      @posts = Post.search(query)
-    else
-      @posts = Post.with_moderation_state(:accepted).page(params[:page])
-    end
-
+    @posts = Post.with_moderation_state(:accepted).page(params[:page])
     @categories = Category.all.decorate
   end
 
@@ -58,6 +53,21 @@ class PostsController < ApplicationController
       format.html { redirect_to @post }
       format.json { render json: { html: render_to_string(partial: 'posts/post_preview.html.slim', locals: { post: @post }) } }
     end
+  end
+
+  def by_tag
+    @tag = params[:tag]
+    @posts = Post.tagged_with(@tag).page(params[:page])
+    @categories = Category.all.decorate
+
+    render 'search'
+  end
+
+  def search
+    @posts = Post.search(params[:search]).page(params[:page])
+    @categories = Category.all.decorate
+
+    render 'search'
   end
 
   private
