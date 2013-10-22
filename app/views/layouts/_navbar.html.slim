@@ -10,7 +10,7 @@ nav.navbar.navbar-static-top role='navigation'
     .search.navbar-left
       = simple_form_for '', url: search_path do |f|
         .navbar-form role="search"
-          = f.input :search, input_html: { value: params[:search], class: 'js-search-input form-control' }, label: false
+          = f.input :search, input_html: { value: params[:search], class: 'js-search-input form-control', placeholder: 'Search' }, label: false
           = button_tag '#', class: 'js-search-btn btn btn-link'do
             i.icon-search.icon-large
 
