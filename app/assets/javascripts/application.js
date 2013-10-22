@@ -22,6 +22,7 @@
 //= require js-routes
 //= require twitter/typeahead
 //= require bootstrap-tokenfield
+//= require jquery.highlight
 //
 //= require turbolinks
 //= require_tree .
