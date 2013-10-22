@@ -76,3 +76,9 @@ gem 'acts-as-taggable-on'
 gem 'twitter-typeahead-rails', :git => "git://github.com/yourabi/twitter-typeahead-rails.git"
 gem 'mysql2'
 gem 'thinking-sphinx'
+gem 'capistrano', '~> 3.0.0'
+
+group :development do
+  gem 'capistrano-rails'
+  gem 'sepastian-capistrano3-unicorn', :require => false
+end

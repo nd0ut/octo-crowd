@@ -109,6 +109,12 @@ GEM
       sass (>= 3.2.0)
       thor
     builder (3.1.4)
+    capistrano (3.0.0)
+      i18n
+      rake (>= 10.0.0)
+      sshkit (>= 0.0.23)
+    capistrano-rails (1.0.0)
+      capistrano
     carrierwave (0.9.0)
       activemodel (>= 3.2.0)
       activesupport (>= 3.2.0)
@@ -211,6 +217,9 @@ GEM
     multi_json (1.8.2)
     multipart-post (1.2.0)
     mysql2 (0.3.13)
+    net-scp (1.1.2)
+      net-ssh (>= 2.6.5)
+    net-ssh (2.7.0)
     nokogiri (1.6.0)
       mini_portile (~> 0.5.0)
     oauth2 (0.8.1)
@@ -291,6 +300,8 @@ GEM
     sdoc (0.3.20)
       json (>= 1.1.3)
       rdoc (~> 3.10)
+    sepastian-capistrano3-unicorn (0.3.0)
+      capistrano (~> 3.0.0)
     sidekiq (2.15.2)
       celluloid (>= 0.15.2)
       connection_pool (>= 1.0.0)
@@ -328,9 +339,15 @@ GEM
       activesupport (>= 3.0)
       sprockets (~> 2.8)
     sqlite3 (1.3.8)
+    sshkit (1.1.0)
+      net-scp
+      net-ssh
+      term-ansicolor
     state_machine (1.2.0)
     subexec (0.2.3)
     temple (0.6.7)
+    term-ansicolor (1.2.2)
+      tins (~> 0.8)
     therubyracer (0.12.0)
       libv8 (~> 3.16.14.0)
       ref
@@ -345,6 +362,7 @@ GEM
       atomic
     tilt (1.4.1)
     timers (1.1.0)
+    tins (0.12.0)
     treetop (1.4.15)
       polyglot
       polyglot (>= 0.3.1)
@@ -365,6 +383,8 @@ DEPENDENCIES
   acts-as-taggable-on
   acts_as_commentable_with_threading!
   by_star!
+  capistrano (~> 3.0.0)
+  capistrano-rails
   carrierwave
   chosen-rails
   coffee-rails (~> 4.0.0)
@@ -395,6 +415,7 @@ DEPENDENCIES
   sanitize
   sass-rails (~> 4.0.0)
   sdoc
+  sepastian-capistrano3-unicorn
   sidekiq
   simple_form
   sinatra (>= 1.3.0)
