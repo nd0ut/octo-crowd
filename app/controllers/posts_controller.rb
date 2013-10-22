@@ -64,13 +64,17 @@ class PostsController < ApplicationController
   end
 
   def search
-    @posts = Post.search(params[:search]).page(params[:page])
+    @posts = Post.search(search_query).page(params[:page])
     @categories = Category.all.decorate
 
     render 'search'
   end
 
   private
+  def search_query
+    ActionController::Base.helpers.strip_tags(params[:search])
+  end
+
   def post_params
     params.require(:post).permit(:title, :body, :tag_list, category_ids: [])
   end
