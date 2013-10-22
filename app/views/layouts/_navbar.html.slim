@@ -7,6 +7,13 @@ nav.navbar.navbar-static-top role='navigation'
       | OctoCrowd
 
   ul.nav.navbar-nav.navbar-right
+    .search.navbar-left
+      = simple_form_for '', url: search_path do |f|
+        .navbar-form role="search"
+          = f.input :query, label: false, class: 'js-search form-control'
+          = button_tag '#', class: 'js-search btn btn-link'do
+            i.icon-search.icon-large
+
     - unless signed_in?
       li class=('active' if current_page?(new_user_session_path))
         = link_to :new_user_session do
