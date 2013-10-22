@@ -1,6 +1,11 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.with_moderation_state(:accepted).page(params[:page])
+    if query = params[:search]
+      @posts = Post.search(query)
+    else
+      @posts = Post.with_moderation_state(:accepted).page(params[:page])
+    end
+
     @categories = Category.all.decorate
   end
 
@@ -55,7 +60,6 @@ class PostsController < ApplicationController
     end
   end
 
-  private
   def post_params
     params.require(:post).permit(:title, :body, :tag_list, category_ids: [])
   end
