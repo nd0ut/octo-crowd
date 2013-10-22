@@ -64,7 +64,8 @@ class PostsController < ApplicationController
   end
 
   def search
-    @posts = Post.search(search_query).page(params[:page])
+    @query = search_query
+    @posts = Post.search(@query).page(params[:page])
     @categories = Category.all.decorate
 
     render 'search'
@@ -72,7 +73,7 @@ class PostsController < ApplicationController
 
   private
   def search_query
-    ActionController::Base.helpers.strip_tags(params[:search])
+    Riddle::Query.escape(ActionController::Base.helpers.strip_tags(params[:search]))
   end
 
   def post_params

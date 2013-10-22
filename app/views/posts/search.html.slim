@@ -11,7 +11,7 @@
 
     .posts
       - PostDecorator.decorate_collection(@posts).each do |post|
-        = render partial: 'post', locals: { post: post }
+        = render partial: 'post_search', locals: { post: post, query: @query }
 
   .col-lg-3.col-lg-offset-1
     .category-list
