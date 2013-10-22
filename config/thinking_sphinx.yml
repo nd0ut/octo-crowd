@@ -1,9 +1,17 @@
 development:
   enable_star: 1
   min_infix_len: 1
+  morphology: stem_enru
+  expand_keywords: 1
+
 test:
   enable_star: 1
   min_infix_len: 1
+  morphology: stem_enru
+  expand_keywords: 1
+
 production:
   enable_star: 1
   min_infix_len: 1
+  morphology: stem_enru
+  expand_keywords: 1
