@@ -7,13 +7,16 @@
 # Ignore bundler config.
 /.bundle
 
-# Ignore the default SQLite database.
+# Ignore databases
 /db/*.sqlite3
 /db/*.sqlite3-journal
+
+# Ignore sphinx files
 /db/sphinx/*
+/config/*.sphinx*
 
 # Ignore all logfiles and tempfiles.
-/log/*.log
+/log/*
 /tmp
 
 # Sublime files
