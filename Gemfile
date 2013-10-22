@@ -74,3 +74,5 @@ gem 'sidekiq'
 gem "devise-async"
 gem 'acts-as-taggable-on'
 gem 'twitter-typeahead-rails', :git => "git://github.com/yourabi/twitter-typeahead-rails.git"
+gem 'mysql2'
+gem 'thinking-sphinx'
