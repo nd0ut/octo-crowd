@@ -284,7 +284,7 @@ GEM
       polyamorous (~> 0.6.0)
     rdoc (3.12.2)
       json (~> 1.4)
-    redactor-rails (0.4)
+    redactor-rails (0.3.7)
       devise
       mime-types
       orm_adapter
@@ -423,7 +423,7 @@ DEPENDENCIES
   pry-rails
   quiet_assets
   rails (= 4.0.0)
-  redactor-rails (~> 0.3)
+  redactor-rails (= 0.3.7)
   sanitize
   sass-rails (~> 4.0.0)
   sdoc
