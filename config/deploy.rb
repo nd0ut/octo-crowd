@@ -16,7 +16,7 @@ set :pty, true
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
 set :keep_releases, 1
 
-set :rvm_type, :system
+set :rvm_type, :user
 set :rvm_ruby_version, '2.0.0@rails4'
 
 namespace :deploy do
