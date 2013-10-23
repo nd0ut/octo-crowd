@@ -23,6 +23,8 @@ set :bundle_cmd, '/home/rails/.rvm/bin/OctoCrowd_bundle'
 
 before 'unicorn:start', 'rvm:hook'
 
+after 'deploy', 'unicorn:restart'
+
 namespace :deploy do
 
   desc 'Restart application'
