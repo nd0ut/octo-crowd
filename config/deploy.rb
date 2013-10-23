@@ -1,4 +1,4 @@
-set :application, 'Octo Crowd'
+set :application, 'octo-crowd'
 set :repo_url, 'git@github.com:nd0ut/octo-crowd.git'
 set :branch, 'master'
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
@@ -15,6 +15,9 @@ set :pty, true
 
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
 set :keep_releases, 1
+
+set :rvm_type, :system
+set :rvm_ruby_version, '2.0.0@rails4'
 
 namespace :deploy do
 
