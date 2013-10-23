@@ -1,7 +1,7 @@
 class CategoriesController < ApplicationController
   def show
     @category = Category.find(params[:id])
-    @posts = @category.posts.page(params[:page])
+    @posts = @category.posts.with_moderation_state(:accepted).page(params[:page])
     @categories = Category.all.decorate
   end
 
