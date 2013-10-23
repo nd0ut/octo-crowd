@@ -1,4 +1,4 @@
-set :application, 'octo-crowd'
+set :application, 'OctoCrowd'
 set :repo_url, 'git@github.com:nd0ut/octo-crowd.git'
 set :branch, 'master'
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
@@ -13,11 +13,11 @@ set :pty, true
 # set :linked_files, %w{config/database.yml}
 set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
 
-# set :default_env, { path: "/usr/local/rvm/bin:$PATH" }
+set :default_env, { path: "/usr/local/rvm/bin:$PATH" }
 set :keep_releases, 1
 
-set :rvm_type, :auto
-set :rvm_ruby_version, '2.0.0@rails4'
+# set :rvm_type, :auto
+# set :rvm_ruby_version, '2.0.0@rails4'
 
 before 'unicorn:start', 'rvm:hook'
 

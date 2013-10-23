@@ -43,11 +43,11 @@ group :development do
   gem 'quiet_assets'
   gem 'letter_opener'
 
-  gem 'capistrano', '~> 3.0.0'
   gem 'capistrano-rails', require: false
   gem 'sepastian-capistrano3-unicorn', require: false
-  gem 'capistrano-rvm', require: false
+  gem 'capistrano-ext', require: false
   gem 'capistrano-bundler', require: false
+  gem 'capistrano-rails', require: false
 end
 
 group :production do
@@ -60,6 +60,10 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-vkontakte'
 gem 'devise-async'
+
+# capistrano
+gem 'capistrano', '~> 3.0.0'
+gem 'capistrano-rvm', '~> 0.0.2'
 
 # other
 gem 'carrierwave'
