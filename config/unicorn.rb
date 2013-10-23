@@ -22,7 +22,7 @@ stderr_path File.join(shared, 'log/unicorn.error.log')
 stdout_path File.join(shared, 'log/unicorn.access.log')
 
 # Set master PID location
-pid File.join(shared, 'pids/unicorn.pid')
+pid File.join(shared, 'tmp/pids/unicorn.pid')
 
 before_fork do |server, worker|
   ActiveRecord::Base.connection.disconnect!
