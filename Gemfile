@@ -46,7 +46,6 @@ group :development do
   gem 'capistrano', '~> 3.0.0'
   gem 'capistrano-rails', require: false
   gem 'sepastian-capistrano3-unicorn', require: false
-  gem 'rvm-capistrano', require: false
 end
 
 # devise
