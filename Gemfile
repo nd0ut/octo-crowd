@@ -80,5 +80,5 @@ gem 'capistrano', '~> 3.0.0'
 
 group :development do
   gem 'capistrano-rails', :require => false
-  gem 'capistrano-unicorn', :require => false
+  gem 'sepastian-capistrano3-unicorn', :require => false
 end
