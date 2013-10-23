@@ -1,84 +1,84 @@
 source 'https://rubygems.org'
 
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
 
-# Use sqlite3 as the database for Active Record
+# db adapters
 gem 'sqlite3'
 gem 'pg'
 
-# Use SCSS for stylesheets
+# sphinx
+gem 'mysql2'
+gem 'thinking-sphinx'
+
+# middleware
 gem 'sass-rails', '~> 4.0.0'
-
 gem 'compass-rails', github: 'Compass/compass-rails'
-
-# Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
-
-# Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 4.0.0'
-
-# See https://github.com/sstephenson/execjs#readme for more supported runtimes
-# gem 'therubyracer', platforms: :ruby
-
-# Use jquery as the JavaScript library
-gem 'jquery-rails'
-
-# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-gem 'turbolinks'
-
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
+gem 'therubyracer'
+gem 'less-rails'
+gem 'slim-rails'
+gem 'skim'
 gem 'jbuilder', '~> 1.2'
+
+
+# js libraries
+gem 'jquery-rails'
+gem 'turbolinks'
+gem 'jquery-turbolinks'
+gem 'redactor-rails'
+gem 'chosen-rails'
+gem 'momentjs-rails'
+gem 'js-routes', git: 'git@github.com:le0pard/js-routes.git'
+gem 'twitter-typeahead-rails', git: 'git://github.com/yourabi/twitter-typeahead-rails.git'
+
+
+# frontend
+gem 'twitter-bootstrap-rails', git: 'git://github.com/seyhunak/twitter-bootstrap-rails.git', branch: 'bootstrap3'
+gem 'simple_form'
+
+# development
+group :development do
+  gem 'pry-rails'
+  gem 'quiet_assets'
+  gem 'letter_opener'
+
+  gem 'capistrano', '~> 3.0.0'
+  gem 'capistrano-rails', require: false
+  gem 'sepastian-capistrano3-unicorn', require: false
+end
+
+# devise
+gem 'devise'
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'omniauth-vkontakte'
+gem 'devise-async'
+
+# other
+gem 'carrierwave'
+gem 'mini_magick'
+gem 'draper'
+gem 'state_machine'
+gem 'acts_as_commentable_with_threading', git: 'git@github.com:ebbflowgo/acts_as_commentable_with_threading.git', branch: 'rails4'
+gem 'sanitize'
+gem 'kaminari'
+gem 'factory_girl'
+gem 'lorem-ipsum-me'
+gem 'by_star', git: 'git://github.com/radar/by_star'
+gem 'sinatra', '>= 1.3.0', require: nil
+gem 'sidekiq'
+gem 'acts-as-taggable-on'
+gem 'activeadmin', github: 'gregbell/active_admin'
+
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
 end
 
-gem 'therubyracer'
-gem 'less-rails'
-gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git', :branch => 'bootstrap3'
 
-gem 'slim-rails'
-gem 'devise'
-gem 'activeadmin', github: 'gregbell/active_admin'
-gem 'simple_form'
 
-gem 'omniauth'
-gem 'omniauth-facebook'
-gem 'omniauth-vkontakte'
 
-gem 'pry-rails', :group => :development
 
-gem "letter_opener", :group => :development
 
-gem 'redactor-rails'
-gem "carrierwave"
-gem "mini_magick"
-gem 'chosen-rails'
-gem 'jquery-turbolinks'
-gem 'draper'
-gem 'state_machine'
-gem 'momentjs-rails'
-gem 'quiet_assets', :group => :development
-gem 'acts_as_commentable_with_threading', git: 'git@github.com:ebbflowgo/acts_as_commentable_with_threading.git', branch: 'rails4'
-gem 'sanitize'
-gem 'kaminari'
-gem 'factory_girl'
-gem 'lorem-ipsum-me'
-gem "js-routes", git: 'git@github.com:le0pard/js-routes.git'
-gem 'skim'
-gem 'by_star', :git => "git://github.com/radar/by_star"
-gem 'sinatra', '>= 1.3.0', :require => nil
-gem 'sidekiq'
-gem "devise-async"
-gem 'acts-as-taggable-on'
-gem 'twitter-typeahead-rails', :git => "git://github.com/yourabi/twitter-typeahead-rails.git"
-gem 'mysql2'
-gem 'thinking-sphinx'
-gem 'capistrano', '~> 3.0.0'
-
-group :development do
-  gem 'capistrano-rails', :require => false
-  gem 'sepastian-capistrano3-unicorn', :require => false
-end
