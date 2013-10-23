@@ -19,8 +19,6 @@ set :keep_releases, 1
 set :rvm_type, :system
 set :rvm_ruby_version, '2.0.0@rails4'
 
-before 'deploy:setup', 'rvm:hook'
-
 namespace :deploy do
 
   desc 'Restart application'
