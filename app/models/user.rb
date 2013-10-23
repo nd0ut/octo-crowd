@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable,
          :confirmable, :async
 
-  devise :omniauthable, :omniauth_providers => [:facebook, :vkontakte, :twitter]
+  devise :omniauthable, :omniauth_providers => [:facebook, :vkontakte, :twitter, :github]
 
   has_many :posts, foreign_key: 'author_id', dependent: :destroy
   has_one :subscription, dependent: :destroy

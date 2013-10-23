@@ -60,6 +60,7 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-vkontakte'
 gem 'omniauth-twitter'
+gem "omniauth-github"
 gem 'devise-async'
 
 # capistrano
