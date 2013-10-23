@@ -1,5 +1,6 @@
 development:
   adapter: postgresql
+  host: localhost
   encoding: unicode
   database: octo-crowd-development
   pool: 5
@@ -7,6 +8,7 @@ development:
 
 test:
   adapter: postgresql
+  host: localhost
   encoding: unicode
   database: octo-crowd-test
   pool: 5
@@ -14,6 +16,7 @@ test:
 
 production:
   adapter: postgresql
+  host: localhost
   encoding: unicode
   database: octo-crowd-production
   pool: 5
