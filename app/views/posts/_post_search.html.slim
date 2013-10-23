@@ -18,7 +18,13 @@
 
 
     .panel-body
-      p= raw post.search_fragment(@query)
+      p
+        - if text = post.search_fragment(@query)
+          = raw text
+        - else
+          = raw post.announce
+          = post.read_next_link
+
 
     .panel-footer
       .row

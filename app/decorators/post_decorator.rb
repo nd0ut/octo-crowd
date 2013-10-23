@@ -5,7 +5,7 @@ class PostDecorator < Draper::Decorator
   delegate_all
 
   def read_next_link(label = 'Read next')
-    h.link_to label, h.post_url(object), class: 'btn btn-default btn-xs'
+    h.link_to label, h.post_url(object), class: 'btn btn-default btn-xs read-next'
   end
 
   def announce
@@ -21,7 +21,7 @@ class PostDecorator < Draper::Decorator
   end
 
   def search_fragment(query)
-    fragments = object.body.scan(/(?<=)([^.!?]+#{query}[^.!?]+)(?=(\.|!|\?))/)
+    fragments = object.body.strip_tags.scan(/(?<=)([^.!?]+#{query}[^.!?]+)(?=(\.|!|\?))/)
     return nil if fragments.nil?
 
     linked_body = ''
@@ -31,9 +31,13 @@ class PostDecorator < Draper::Decorator
       linked_body << '...'
     end
 
-    linked_body = Sanitize.clean(linked_body)
-
-    linked_body.html_safe
+    linked_body.empty? ? nil : linked_body
   end
 
+end
+
+class String
+  def strip_tags
+     ActionController::Base.helpers.strip_tags(self)
+  end
 end
