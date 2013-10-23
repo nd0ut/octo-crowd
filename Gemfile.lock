@@ -7,7 +7,7 @@ GIT
 
 GIT
   remote: git://github.com/gregbell/active_admin.git
-  revision: ecfb8bb04d2d85f16d46f2e36e2f9098e4195f6b
+  revision: 2482f0edeeb9b0192e90d1afa1a5bf715936aa5c
   specs:
     activeadmin (0.6.1)
       arbre (~> 1.0)
@@ -52,13 +52,13 @@ GIT
       railties (>= 3.1)
 
 GIT
-  remote: git@github.com:danielgatis/acts_as_commentable_with_threading.git
-  revision: 694714980ea11b55275e272fd9fbdc98f7c63022
+  remote: git@github.com:ebbflowgo/acts_as_commentable_with_threading.git
+  revision: 590b7b1b2e2cfdafbc9ea7c547da56996fc1ea03
   branch: rails4
   specs:
     acts_as_commentable_with_threading (1.1.2)
-      activerecord (~> 4.0)
-      activesupport (~> 4.0)
+      activerecord (>= 3.0)
+      activesupport (>= 3.0)
       awesome_nested_set (>= 2.0)
 
 GIT
@@ -100,7 +100,7 @@ GEM
     addressable (2.3.5)
     arbre (1.0.1)
       activesupport (>= 3.0.0)
-    arel (4.0.0)
+    arel (4.0.1)
     atomic (1.1.14)
     awesome_nested_set (2.1.6)
       activerecord (>= 3.0.0)
@@ -114,8 +114,6 @@ GEM
       rake (>= 10.0.0)
       sshkit (>= 0.0.23)
     capistrano-rails (1.0.0)
-      capistrano
-    capistrano-unicorn (0.1.10)
       capistrano
     carrierwave (0.9.0)
       activemodel (>= 3.2.0)
@@ -256,7 +254,7 @@ GEM
     quiet_assets (1.0.2)
       railties (>= 3.1, < 5.0)
     rack (1.5.2)
-    rack-protection (1.5.0)
+    rack-protection (1.5.1)
       rack
     rack-test (0.6.2)
       rack (>= 1.0)
@@ -302,6 +300,8 @@ GEM
     sdoc (0.3.20)
       json (>= 1.1.3)
       rdoc (~> 3.10)
+    sepastian-capistrano3-unicorn (0.3.0)
+      capistrano (~> 3.0.0)
     sidekiq (2.15.2)
       celluloid (>= 0.15.2)
       connection_pool (>= 1.0.0)
@@ -311,7 +311,7 @@ GEM
     simple_form (3.0.0)
       actionpack (>= 4.0.0, < 4.1)
       activemodel (>= 4.0.0, < 4.1)
-    sinatra (1.4.3)
+    sinatra (1.4.4)
       rack (~> 1.4)
       rack-protection (~> 1.4)
       tilt (~> 1.3, >= 1.3.4)
@@ -385,7 +385,6 @@ DEPENDENCIES
   by_star!
   capistrano (~> 3.0.0)
   capistrano-rails
-  capistrano-unicorn
   carrierwave
   chosen-rails
   coffee-rails (~> 4.0.0)
@@ -416,6 +415,7 @@ DEPENDENCIES
   sanitize
   sass-rails (~> 4.0.0)
   sdoc
+  sepastian-capistrano3-unicorn
   sidekiq
   simple_form
   sinatra (>= 1.3.0)
