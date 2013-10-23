@@ -20,4 +20,28 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  layouts:
+    navbar:
+      write_post: "Write post"
+      admin: "Admin"
+      sign_up: "Sign up"
+      log_in: "Log in"
+      log_out: "Log out"
+
+  categories:
+    show:
+      categories: "Categories"
+
+  posts:
+    index:
+      categories: "Categories"
+
+    new:
+      preview: "Preview"
+      hide: "Hide"
+      create_new_post: "Create new post"
+      submit: "Submit"
+
+    search:
+      search: "Search"
+      categories: "Categories"

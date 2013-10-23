@@ -7,7 +7,7 @@
             = render 'partials/social_buttons'
           .col-lg-6.col-lg-pull-6
             span
-              h2 Log in
+              h2= t('.log_in')
 
       .panel-body
         = simple_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
@@ -16,4 +16,4 @@
           = button_tag(type: 'submit', class: 'btn btn-lg btn-primary btn-block') do
             i.icon-ok.large
             | &nbsp;&nbsp;
-            | Submit
+            = t('.submit')

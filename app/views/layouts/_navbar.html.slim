@@ -17,16 +17,16 @@ nav.navbar.navbar-static-top role='navigation'
     - unless signed_in?
       li class=('active' if current_page?(new_user_session_path))
         = link_to :new_user_session do
-          = icon_with_label 'Log in', 'icon-signin'
+          = icon_with_label t('.log_in'), 'icon-signin'
 
       li class=('active' if current_page?(new_user_registration_path))
         = link_to :new_user_registration do
-          = icon_with_label 'Sign up', 'icon-plus-sign'
+          = icon_with_label t('.sign_up'), 'icon-plus-sign'
 
     - else
       li class=('active' if current_page?(new_post_path))
         =link_to :new_post do
-          = icon_with_label 'Write post', 'icon-pencil'
+          = icon_with_label t('.write_post'), 'icon-pencil'
 
       li.divider-vertical
       li.dropdown
@@ -36,7 +36,7 @@ nav.navbar.navbar-static-top role='navigation'
         ul.dropdown-menu
           - if current_user.admin?
             li= link_to :admin_root, data: { 'no-turbolink' => nil } do
-              = icon_with_label 'Admin', 'icon-key'
+              = icon_with_label t('.admin'), 'icon-key'
 
           li= link_to :destroy_user_session, :method => :delete do
-            = icon_with_label 'Log out', 'icon-signout'
+            = icon_with_label t('.log_out'), 'icon-signout'

@@ -7,7 +7,7 @@
             = render 'partials/social_buttons'
           .col-lg-6.col-lg-pull-6
             span
-              h2 Sign Up
+              h2= t('.sign_up')
               - if session_provider.present?
                 span.label.label-default
                   = session_provider
@@ -26,11 +26,11 @@
               button.btn.btn-lg.btn-primary.btn-block
                 i.icon-ok.large
                 | &nbsp;&nbsp;
-                | Submit
+                = t('.submit')
 
             - if session_provider.present?
               .col-lg-4
                 button.btn.btn-lg.btn-danger.btn-block name='reset'
                   i.icon-off.large
                   | &nbsp;&nbsp;
-                  | Cancel
+                  = t('.cancel')

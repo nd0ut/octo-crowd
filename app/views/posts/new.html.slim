@@ -1,15 +1,15 @@
 .js-post-preview style="display: none"
   .row
     .page-header
-      h1 Preview
+      h1= t('.preview')
       a.btn.btn-link.js-preview-hide
-        = label_with_icon 'Hide', 'icon-angle-up'
+        = label_with_icon t('.hide'), 'icon-angle-up'
 
   .row.js-post-preview-container
 
 .row
   .page-header
-    h1 Create new post
+    h1= t('.create_new_post')
 
 .row.js-new-post
   = simple_form_for(@post) do |f|
@@ -26,8 +26,8 @@
     .row
       .col-lg-2
         button.btn.btn-primary.btn-block
-          = icon_with_label 'Submit', 'icon-ok large'
+          = icon_with_label t('.submit'), 'icon-ok large'
 
       .col-lg-2
         .btn.btn-warning
-          .js-preview-btn= icon_with_label 'Preview', 'icon-eye-open large'
+          .js-preview-btn= icon_with_label t('.preview'), 'icon-eye-open large'
