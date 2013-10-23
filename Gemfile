@@ -47,6 +47,11 @@ group :development do
   gem 'capistrano-rails', require: false
   gem 'sepastian-capistrano3-unicorn', require: false
   gem 'capistrano-rvm', require: false
+  gem 'capistrano-bundler', require: false
+end
+
+group :production do
+  gem 'unicorn', :platforms => :ruby
 end
 
 # devise
