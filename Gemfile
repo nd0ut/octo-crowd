@@ -44,9 +44,9 @@ group :development do
   gem 'letter_opener'
 
   gem 'capistrano', '~> 3.0.0'
-  gem 'capistrano-rails', require: false
-  gem 'sepastian-capistrano3-unicorn', require: false
-  gem 'capistrano-rvm', require: false
+  gem 'capistrano-rails'
+  gem 'sepastian-capistrano3-unicorn'
+  gem 'capistrano-rvm'
 end
 
 # devise
