@@ -1,5 +1,6 @@
 # Set your full path to application.
 app_path = "/home/rails/octo-crowd/current"
+shared = File.expand_path(File.join(app_path, '../shared'))
 
 # Set unicorn options
 worker_processes 1
@@ -17,11 +18,11 @@ working_directory app_path
 rails_env = ENV['RAILS_ENV'] || 'production'
 
 # Log everything to one file
-stderr_path "log/unicorn.log"
-stdout_path "log/unicorn.log"
+stderr_path File.join(shared, 'log/unicorn.error.log')
+stdout_path File.join(shared, 'log/unicorn.access.log')
 
 # Set master PID location
-pid "#{app_path}/tmp/pids/unicorn.pid"
+pid File.join(shared, 'pids/unicorn.pid')
 
 before_fork do |server, worker|
   ActiveRecord::Base.connection.disconnect!
