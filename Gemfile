@@ -59,6 +59,7 @@ gem 'devise'
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-vkontakte'
+gem 'omniauth-twitter'
 gem 'devise-async'
 
 # capistrano
@@ -80,7 +81,7 @@ gem 'sinatra', '>= 1.3.0', require: nil
 gem 'sidekiq'
 gem 'acts-as-taggable-on'
 gem 'activeadmin', github: 'gregbell/active_admin'
-
+gem "rails_config"
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
