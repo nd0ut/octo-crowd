@@ -76,13 +76,13 @@ gem 'acts_as_commentable_with_threading', git: 'git@github.com:ebbflowgo/acts_as
 gem 'sanitize'
 gem 'kaminari'
 gem 'factory_girl'
-gem 'lorem-ipsum-me'
 gem 'by_star', git: 'git://github.com/radar/by_star'
 gem 'sinatra', '>= 1.3.0', require: nil
 gem 'sidekiq'
 gem 'acts-as-taggable-on'
 gem 'activeadmin', github: 'gregbell/active_admin'
 gem "rails_config"
+gem 'faker', git: 'git@github.com:stympy/faker.git'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.

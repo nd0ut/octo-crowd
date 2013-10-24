@@ -68,6 +68,13 @@ GIT
     js-routes (0.9.3)
       rails (>= 3.2)
 
+GIT
+  remote: git@github.com:stympy/faker.git
+  revision: 5ddc6772150c62a9e4852a259945f4414b54e11a
+  specs:
+    faker (1.2.0)
+      i18n (~> 0.5)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -208,7 +215,6 @@ GEM
     letter_opener (1.1.2)
       launchy (~> 2.2)
     libv8 (3.16.14.3)
-    lorem-ipsum-me (0.1.0)
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
@@ -420,6 +426,7 @@ DEPENDENCIES
   devise-async
   draper
   factory_girl
+  faker!
   jbuilder (~> 1.2)
   jquery-rails
   jquery-turbolinks
@@ -427,7 +434,6 @@ DEPENDENCIES
   kaminari
   less-rails
   letter_opener
-  lorem-ipsum-me
   mini_magick
   momentjs-rails
   mysql2
