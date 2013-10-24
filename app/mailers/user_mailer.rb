@@ -1,6 +1,4 @@
 class UserMailer < ActionMailer::Base
-  default from: "mailer@octo-crowd.com"
-
   def post_accepted(post)
     @post = post.decorate
     mail(to: @post.author.email, subject: 'Your post accepted')
