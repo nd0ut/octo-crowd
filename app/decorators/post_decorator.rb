@@ -23,6 +23,8 @@ class PostDecorator < Draper::Decorator
   end
 
   def search_fragment(query)
+    return nil if query.nil
+
     fragments = object.body.strip_tags.scan(/(?<=)([^.!?]+#{query}[^.!?]+)(?=(\.|!|\?))/)
     return nil if fragments.nil?
 
