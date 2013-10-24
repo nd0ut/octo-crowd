@@ -447,7 +447,7 @@ DEPENDENCIES
   quiet_assets
   rails (= 4.0.0)
   rails_config
-  redactor-rails (= 0.3.7)
+  redactor-rails
   sanitize
   sass-rails (~> 4.0.0)
   sdoc

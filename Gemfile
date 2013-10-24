@@ -2,13 +2,34 @@ source 'https://rubygems.org'
 
 gem 'rails', '4.0.0'
 
+group :doc do
+  gem 'sdoc', require: false
+end
+
+# development
+group :development do
+  gem 'pry-rails'
+  gem 'quiet_assets'
+  gem 'letter_opener'
+
+    # capistrano
+  gem 'capistrano', '~> 3.0.0', require: false
+  gem 'capistrano-rvm', '~> 0.0.2', require: false
+  gem 'capistrano-rails', require: false
+  gem 'sepastian-capistrano3-unicorn', require: false
+  gem 'capistrano-ext', require: false
+  gem 'capistrano-bundler', require: false
+  gem 'capistrano-rails', require: false
+end
+
+group :production do
+  gem 'unicorn', :platforms => :ruby
+end
+
 # db adapters
+gem 'mysql2'
 gem 'sqlite3'
 gem 'pg'
-
-# sphinx
-gem 'mysql2'
-gem 'thinking-sphinx'
 
 # middleware
 gem 'sass-rails', '~> 4.0.0'
@@ -26,7 +47,7 @@ gem 'jbuilder', '~> 1.2'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jquery-turbolinks'
-gem 'redactor-rails', '=0.3.7'
+gem 'redactor-rails'
 gem 'chosen-rails'
 gem 'momentjs-rails'
 gem 'js-routes', git: 'git@github.com:le0pard/js-routes.git'
@@ -37,35 +58,14 @@ gem 'twitter-typeahead-rails', git: 'git://github.com/yourabi/twitter-typeahead-
 gem 'twitter-bootstrap-rails', git: 'git://github.com/seyhunak/twitter-bootstrap-rails.git', branch: 'bootstrap3'
 gem 'simple_form'
 
-# development
-group :development do
-  gem 'pry-rails'
-  gem 'quiet_assets'
-  gem 'letter_opener'
-
-  gem 'capistrano-rails', require: false
-  gem 'sepastian-capistrano3-unicorn', require: false
-  gem 'capistrano-ext', require: false
-  gem 'capistrano-bundler', require: false
-  gem 'capistrano-rails', require: false
-end
-
-group :production do
-  gem 'unicorn', :platforms => :ruby
-end
-
 # devise
 gem 'devise'
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-vkontakte'
 gem 'omniauth-twitter'
-gem "omniauth-github"
+gem 'omniauth-github'
 gem 'devise-async'
-
-# capistrano
-gem 'capistrano', '~> 3.0.0'
-gem 'capistrano-rvm', '~> 0.0.2'
 
 # other
 gem 'carrierwave'
@@ -81,13 +81,10 @@ gem 'sinatra', '>= 1.3.0', require: nil
 gem 'sidekiq'
 gem 'acts-as-taggable-on'
 gem 'activeadmin', github: 'gregbell/active_admin'
-gem "rails_config"
+gem 'rails_config'
 gem 'faker', git: 'git@github.com:stympy/faker.git'
+gem 'thinking-sphinx'
 
-group :doc do
-  # bundle exec rake doc:rails generates the API under doc/api.
-  gem 'sdoc', require: false
-end
 
 
 
