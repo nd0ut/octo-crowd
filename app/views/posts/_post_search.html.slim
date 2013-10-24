@@ -19,7 +19,7 @@
 
     .panel-body
       p
-        - if text = post.search_fragment(@query)
+        - if @query && text = post.search_fragment(@query)
           = raw text
         - else
           = raw post.announce
