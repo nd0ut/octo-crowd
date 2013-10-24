@@ -6,7 +6,7 @@ class PostDecorator < Draper::Decorator
 
   def read_next_link(label = 'Read next')
     h.link_to h.post_url(object), class: 'btn btn-default btn-xs read-next' do
-      "#{label}&nbsp;&nbsp;#{h.content_tag :i, nil, class: 'icon-long-arrow-right'}".html_safe
+      "#{h.content_tag :div, nil, class: 'clearfix'}#{label}&nbsp;&nbsp;#{h.content_tag :i, nil, class: 'icon-long-arrow-right'}".html_safe
     end
   end
 
