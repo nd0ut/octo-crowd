@@ -23,9 +23,6 @@ set :rvm_ruby_version, '2.0.0@rails4'
 set :rvm_custom_path, '/home/rails/.rvm'
 set :bundle_cmd, '/home/rails/.rvm/bin/OctoCrowd_bundle'
 
-SSHKit.config.command_map[:sidekiq] = "bundle exec sidekiq"
-SSHKit.config.command_map[:sidekiqctl] = "bundle exec sidekiqctl"
-
 after 'deploy', 'unicorn:restart'
 
 namespace :deploy do
