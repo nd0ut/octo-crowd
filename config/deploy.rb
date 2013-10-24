@@ -4,7 +4,9 @@ set :branch, 'master'
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
 
 set :deploy_to, '/home/rails/octo-crowd'
+set :deploy_via, :remote_cache
 set :scm, :git
+
 
 set :format, :pretty
 set :log_level, :debug
@@ -20,8 +22,6 @@ set :rvm_type, :user
 set :rvm_ruby_version, '2.0.0@rails4'
 set :rvm_custom_path, '/home/rails/.rvm'
 set :bundle_cmd, '/home/rails/.rvm/bin/OctoCrowd_bundle'
-
-before 'unicorn:start', 'rvm:hook'
 
 after 'deploy', 'unicorn:restart'
 
