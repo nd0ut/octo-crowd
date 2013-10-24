@@ -79,13 +79,16 @@ OctoCrowd::Application.configure do
   config.log_formatter = ::Logger::Formatter.new
 
 
+  config.action_mailer.default_url_options = { :host => "gmail.com" }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
     address:              'smtp.gmail.com',
     port:                 587,
     domain:               'gmail.com',
-    user_name:            'octo-crowd',
+    user_name:            'octo.crowd@gmail.com',
     password:             'octo-crowd',
     authentication:       'plain',
-    enable_starttls_auto: true  }
+    enable_starttls_auto: true
+  }
+
 end
