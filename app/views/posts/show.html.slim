@@ -27,7 +27,7 @@
 
       .panel-footer
         .row
-          .col-lg-9
+          .col-lg-5
             i.icon-tags
             span.text-primary.tags
               - tags = @post.tags
@@ -36,9 +36,9 @@
                   span.tag= tag.name
                 = ', ' if i != tags.length - 1
 
-          .col-lg-2
+          .col-lg-4
             = icon_with_label nil, 'icon-time', class: 'momentjs-calendar', data: { time: @post.time }
-          .col-lg-1
+          .col-lg-3
             .pull-right
               = icon_with_label @post.author.username, 'icon-user'
 
@@ -46,12 +46,14 @@
   / Comments
   - if @comments.any?
     .row.comments
-      i.icon-comments
-      | &nbsp;&nbsp;
-      h3= t('.comments')
+      div
+        i.icon-comments
+        | &nbsp;&nbsp;
+        h3= t('.comments')
 
+      div
       - @comments.each do |c|
-        = render partial: 'comment_thread', locals: { parent_comment: c }
+        = render partial: 'comment_thread', locals: { parent_comment: c, level: 0 }
 
 
   / New comment

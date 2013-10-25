@@ -14,4 +14,16 @@ module ApplicationHelper
     "#{label}&nbsp;&nbsp;<i class=\"#{icon_class}\"></i>".html_safe
   end
 
+  def callout_type(level_for)
+    types = %w[danger warning info]
+
+    type_num = level_for
+
+    if type_num > types.length - 1
+      type_num = type_num / types.length
+    end
+
+    types[type_num]
+  end
+
 end

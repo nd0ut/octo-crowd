@@ -33,6 +33,8 @@ en:
       categories: "Categories"
 
   posts:
+    show:
+      comments: "Comments"
     index:
       categories: "Categories"
 

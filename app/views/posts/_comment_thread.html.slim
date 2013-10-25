@@ -1,5 +1,5 @@
-= render partial: 'comment', locals: { comment: parent_comment }
+= render partial: 'comment', locals: { comment: parent_comment, level: level }
 
 - parent_comment.children.each do |c|
   .thread
-    = render partial: 'comment_thread', locals: { parent_comment: c }
+    = render partial: 'comment_thread', locals: { parent_comment: c, level: level + 1 }

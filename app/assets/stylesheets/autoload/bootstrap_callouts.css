@@ -5,7 +5,7 @@
 
 /* Base styles (regardless of theme) */
 .bs-callout {
-  margin: 20px 0;
+  margin: 10px 0;
   padding: 15px 30px 15px 15px;
   border-left: 5px solid #eee;
 }
@@ -29,6 +29,11 @@
   background-color: #fefbed;
   border-color: #f1e7bc;
 }
+.bs-callout-info {
+  background-color: #f0f7fd;
+  border-color: #d0e3f0;
+}
+
 .bs-callout-info {
   background-color: #f0f7fd;
   border-color: #d0e3f0;
