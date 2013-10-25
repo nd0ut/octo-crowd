@@ -1,4 +1,6 @@
 class Posts::CommentsController < ApplicationController
+  before_filter :authenticate_admin_user!, only: [:destroy]
+
   def create
     post = Post.find(params[:post_id]).decorate
     user = current_user || nil
