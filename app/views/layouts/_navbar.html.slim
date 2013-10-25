@@ -34,7 +34,7 @@ nav.navbar.navbar-static-top role='navigation'
           = label_with_icon "#{current_user.username}", 'icon-caret-down icon-large'
 
         ul.dropdown-menu
-          - if current_user.admin?
+          - if current_user.try(:admin?)
             li= link_to :admin_root, data: { 'no-turbolink' => nil } do
               = icon_with_label t('.admin'), 'icon-key'
 

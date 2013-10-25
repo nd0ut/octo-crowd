@@ -3,8 +3,9 @@
   .row
     .panel
       .panel-heading
-        a.js-post-delete href="#"
-          i.pull-right.icon-remove
+        - if current_user.try(:admin?)
+          a.js-post-delete href="#"
+            i.pull-right.icon-remove
 
         h1.panel-title.title
           i.icon-caret-right
