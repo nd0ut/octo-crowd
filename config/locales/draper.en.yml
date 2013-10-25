@@ -1,7 +1,17 @@
 en:
   draper:
     categories:
-      sport: "Sport"
+      gaming: "Gaming"
+      news: "News"
+      videos: "Videos"
+      business: "Business"
+      technology: "Technology"
+      science: "Science"
+      music: "Music"
+      movies: "Movies"
+      books: "Books"
+      asks: "Asks"
+      sports: "Sports"
       health: "Health"
-      tech: "Technology"
+      politics: "Politics"
       lifehacks: "Lifehacks"

@@ -4,8 +4,6 @@ FactoryGirl.define do
   sequence(:random_body) {|n| Faker::Lorem.paragraphs(rand(1..5)).join + '<cut/>' + Faker::Lorem.paragraphs(rand(1..20)).join}
   sequence(:random_tags) {|n| Faker::Lorem.words(rand(1..5)).join(',') }
 
-  sequence(:random_category) {|n| Faker::Lorem.sentence(1, false, 2) }
-
   sequence(:random_name) {|n| Faker::Internet.user_name }
   sequence(:random_email) {|n| Faker::Internet.email }
   sequence(:random_password) {|n| Faker::Internet.password(8) }
@@ -23,7 +21,7 @@ FactoryGirl.define do
     title { generate(:random_title) }
     body { generate(:random_body) }
     moderation_state "accepted"
-    categories { [Category.first(offset: rand(Category.count))] }
+    categories { Category.order("RANDOM()").limit(rand(1..3)) }
     tag_list { generate(:random_tags) }
   end
 
@@ -34,8 +32,9 @@ FactoryGirl.define do
 end
 
 # Categories
-10.times do
-  FactoryGirl.create(:category)
+categories = %w[gaming news videos business technology science music movies books asks sports health politics lifehacks]
+categories.each do |c|
+  Category.create(name: c)
 end
 
 # Posts
