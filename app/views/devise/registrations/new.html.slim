@@ -21,16 +21,17 @@
             = f.input :password
             = f.input :password_confirmation
 
-          .row
-            div class=('col-lg-8' if session_provider.present?)
-              button.btn.btn-lg.btn-primary.btn-block
-                i.icon-ok.large
-                | &nbsp;&nbsp;
-                = t('.submit')
-
-            - if session_provider.present?
-              .col-lg-4
-                button.btn.btn-lg.btn-danger.btn-block name='reset'
-                  i.icon-off.large
+          .form-group
+            .row
+              div class=(session_provider.present? ? 'col-lg-8' : 'col-lg-12')
+                button.btn.btn-lg.btn-primary.btn-block
+                  i.icon-ok.large
                   | &nbsp;&nbsp;
-                  = t('.cancel')
+                  = t('.submit')
+
+              - if session_provider.present?
+                .col-lg-4
+                  button.btn.btn-lg.btn-danger.btn-block name='reset'
+                    i.icon-off.large
+                    | &nbsp;&nbsp;
+                    = t('.cancel')
