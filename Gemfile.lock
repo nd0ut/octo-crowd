@@ -404,6 +404,9 @@ GEM
       raindrops (~> 0.7)
     warden (1.2.3)
       rack (>= 1.0)
+    whenever (0.8.4)
+      activesupport (>= 2.3.4)
+      chronic (>= 0.6.3)
 
 PLATFORMS
   ruby
@@ -466,3 +469,4 @@ DEPENDENCIES
   twitter-typeahead-rails!
   uglifier (>= 1.3.0)
   unicorn
+  whenever
