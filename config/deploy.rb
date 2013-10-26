@@ -1,11 +1,13 @@
 set :application, 'OctoCrowd'
+# ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
+
+set :scm, :git
+
 set :repo_url, 'git@github.com:nd0ut/octo-crowd.git'
 set :branch, 'master'
-# ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
 
 set :deploy_to, '/home/rails/octo-crowd'
 set :deploy_via, :remote_cache
-set :scm, :git
 
 
 set :format, :pretty
@@ -21,7 +23,10 @@ set :keep_releases, 1
 set :rvm_type, :user
 set :rvm_ruby_version, '2.0.0@rails4'
 set :rvm_custom_path, '/home/rails/.rvm'
-set :bundle_cmd, '/home/rails/.rvm/bin/OctoCrowd_bundle'
+set :bundle_cmd, 'OctoCrowd_bundle'
+
+SSHKit.config.command_map[:sidekiq] = "bundle exec sidekiq"
+SSHKit.config.command_map[:sidekiqctl] = "bundle exec sidekiqctl"
 
 after 'deploy', 'unicorn:restart'
 
@@ -43,7 +48,4 @@ namespace :deploy do
       # end
     end
   end
-
-  after :finishing, 'deploy:cleanup'
-
 end
