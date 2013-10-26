@@ -35,6 +35,8 @@ en:
   posts:
     show:
       comments: "Comments"
+      write_comment: "Write comment"
+      submit: "Submit"
     index:
       categories: "Categories"
 
