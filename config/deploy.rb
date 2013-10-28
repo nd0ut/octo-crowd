@@ -25,8 +25,16 @@ set :rvm_ruby_version, '2.0.0@rails4'
 set :rvm_custom_path, '/home/rails/.rvm'
 set :bundle_cmd, 'OctoCrowd_bundle'
 
-SSHKit.config.command_map[:sidekiq] = "bundle exec sidekiq"
-SSHKit.config.command_map[:sidekiqctl] = "bundle exec sidekiqctl"
+# set :sidekiq_cmd, "#{fetch :bundle_cmd} exec sidekiq"
+# set :sidekiqctl_cmd, "#{fetch :bundle_cmd} exec sidekiqctl"
+set :sidekiq_timeout, 10
+set :sidekiq_role, :app
+set :sidekiq_pid, "tmp/pids/sidekiq.pid"
+set :sidekiq_processes, 1
+
+SSHKit.config.command_map[:bundle] = "#{fetch :bundle_cmd}"
+SSHKit.config.command_map[:sidekiq] = "#{fetch :bundle_cmd} exec sidekiq"
+SSHKit.config.command_map[:sidekiqctl] = "#{fetch :bundle_cmd} exec sidekiqctl"
 
 after 'deploy', 'unicorn:restart'
 

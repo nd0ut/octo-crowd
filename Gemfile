@@ -78,7 +78,7 @@ gem 'kaminari'
 gem 'factory_girl'
 gem 'by_star', git: 'git://github.com/radar/by_star'
 gem 'sinatra', '>= 1.3.0', require: nil
-gem 'sidekiq'
+gem 'sidekiq', git: 'git@github.com:mperham/sidekiq.git'
 gem 'acts-as-taggable-on'
 gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'rails_config'
