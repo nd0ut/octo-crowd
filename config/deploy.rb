@@ -15,7 +15,7 @@ set :format, :pretty
 set :log_level, :debug
 set :pty, false
 
-set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets public/system}
+set :linked_dirs, %w{db/sphinx log tmp/pids tmp/cache tmp/sockets public/system}
 
 set :default_env, { path: "/home/rails/.rvm/bin:$PATH" }
 set :keep_releases, 1
@@ -39,7 +39,15 @@ SSHKit.config.command_map[:sidekiqctl] = "#{fetch :rvm_custom_path}/bin/bundle e
 # deploy hooks
 after 'deploy', 'unicorn:restart'
 after 'deploy', 'sidekiq:restart'
+after 'deploy', 'thinking_sphinx:restart'
 
+
+# sphinx hooks
+before "thinking_sphinx:configure", 'rvm:hook'
+before "thinking_sphinx:index", 'rvm:hook'
+before "thinking_sphinx:restart", 'rvm:hook'
+before "thinking_sphinx:start", 'rvm:hook'
+before "thinking_sphinx:stop", 'rvm:hook'
 
 # sidekiq hooks
 before 'sidekiq:quiet', 'rvm:hook'

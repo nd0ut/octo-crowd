@@ -1,0 +1,83 @@
+namespace :load do
+  task :defaults do
+
+  set :thinking_sphinx_roles, ->{ :db }
+  set :thinking_sphinx_options, ->{ {:roles => fetch(:thinking_sphinx_roles)} }
+  end
+end
+
+namespace :thinking_sphinx do
+  desc 'Generate the Sphinx configuration file.'
+  task :configure do
+    on roles fetch(:thinking_sphinx_roles) do
+      within current_path do
+        with rails_env: fetch(:rails_env) do
+          execute :rake, 'ts:configure'
+        end
+      end
+    end
+  end
+
+  desc 'Build Sphinx indexes into the shared path and symlink them into your release.'
+  task :index do
+    on roles fetch(:thinking_sphinx_roles) do
+      within current_path do
+        with rails_env: fetch(:rails_env) do
+          execute :rake, 'ts:index'
+        end
+      end
+    end
+  end
+
+  desc 'Start the Sphinx search daemon.'
+  task :start do
+    on roles fetch(:thinking_sphinx_roles) do
+      within current_path do
+        with rails_env: fetch(:rails_env) do
+          execute :rake, 'ts:start'
+        end
+      end
+    end
+  end
+  before 'thinking_sphinx:start', 'thinking_sphinx:configure'
+
+  desc 'Stop the Sphinx search daemon.'
+  task :stop do
+    on roles fetch(:thinking_sphinx_roles) do
+      within current_path do
+        with rails_env: fetch(:rails_env) do
+          execute :rake, 'ts:stop'
+        end
+      end
+    end
+  end
+
+  desc 'Restart the Sphinx search daemon.'
+  task :restart do
+    on roles fetch(:thinking_sphinx_roles) do
+      within current_path do
+        with rails_env: fetch(:rails_env) do
+          execute :rake, 'ts:stop ts:configure ts:start'
+        end
+      end
+    end
+  end
+
+  desc <<-DESC
+Stop, reindex, and then start the Sphinx search daemon. This task must be executed \
+if you alter the structure of your indexes.
+  DESC
+  task :rebuild do
+    on roles fetch(:thinking_sphinx_roles) do
+      within current_path do
+        with rails_env: fetch(:rails_env) do
+          execute :rake, 'ts:rebuild'
+        end
+      end
+    end
+  end
+
+  # Logical flow for deploying an app
+  after  'deploy', 'thinking_sphinx:index'
+  after  'deploy', 'thinking_sphinx:start'
+end
