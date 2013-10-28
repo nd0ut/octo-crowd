@@ -1,41 +1,38 @@
 set :application, 'OctoCrowd'
-# ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
 
+
+# git
 set :scm, :git
-
 set :repo_url, 'git@github.com:nd0ut/octo-crowd.git'
-set :branch, 'master'
+set :branch, 'testing'
 
 set :deploy_to, '/home/rails/octo-crowd'
 set :deploy_via, :remote_cache
 
 
+# capistrano config
 set :format, :pretty
 set :log_level, :debug
-# set :pty, true
+set :pty, true
 
-# set :linked_files, %w{config/database.yml}
 set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets public/system}
 
 set :default_env, { path: "/home/rails/.rvm/bin:$PATH" }
 set :keep_releases, 1
 
+
+# rvm config
 set :rvm_type, :user
 set :rvm_ruby_version, '2.0.0@rails4'
 set :rvm_custom_path, '/home/rails/.rvm'
-set :bundle_cmd, 'OctoCrowd_bundle'
 
-# set :sidekiq_cmd, "#{fetch :bundle_cmd} exec sidekiq"
-# set :sidekiqctl_cmd, "#{fetch :bundle_cmd} exec sidekiqctl"
-set :sidekiq_timeout, 10
-set :sidekiq_role, :app
-set :sidekiq_pid, "tmp/pids/sidekiq.pid"
-set :sidekiq_processes, 1
 
-SSHKit.config.command_map[:bundle] = "#{fetch :bundle_cmd}"
-SSHKit.config.command_map[:sidekiq] = "#{fetch :bundle_cmd} exec sidekiq"
-SSHKit.config.command_map[:sidekiqctl] = "#{fetch :bundle_cmd} exec sidekiqctl"
+# unicorn config
+set :unicorn_bundle, "#{fetch :rvm_custom_path}/bin/bundle"
 
+
+# hooks
+before 'unicorn:start', 'rvm:hook'
 after 'deploy', 'unicorn:restart'
 
 namespace :deploy do

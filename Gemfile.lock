@@ -69,6 +69,15 @@ GIT
       rails (>= 3.2)
 
 GIT
+  remote: git@github.com:leehambley/sshkit.git
+  revision: ffbce7622ae57bb960d4a75375f5afb18b9228b7
+  specs:
+    sshkit (1.0.0)
+      net-scp
+      net-ssh
+      term-ansicolor
+
+GIT
   remote: git@github.com:mperham/sidekiq.git
   revision: 3d3ab8421c9ee5324c912849b3fa2261c5833fe4
   specs:
@@ -371,10 +380,6 @@ GEM
       activesupport (>= 3.0)
       sprockets (~> 2.8)
     sqlite3 (1.3.8)
-    sshkit (1.1.0)
-      net-scp
-      net-ssh
-      term-ansicolor
     state_machine (1.2.0)
     subexec (0.2.3)
     temple (0.6.7)
@@ -467,6 +472,7 @@ DEPENDENCIES
   skim
   slim-rails
   sqlite3
+  sshkit!
   state_machine
   therubyracer
   thinking-sphinx
