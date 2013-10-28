@@ -32,6 +32,7 @@ set :unicorn_bundle, "#{fetch :rvm_custom_path}/bin/bundle"
 
 
 # sidekiq config
+set :sidekiq_pid, "tmp/pids/sidekiq.pid"
 SSHKit.config.command_map[:sidekiq] = "#{fetch :rvm_custom_path}/bin/bundle exec sidekiq"
 SSHKit.config.command_map[:sidekiqctl] = "#{fetch :rvm_custom_path}/bin/bundle exec sidekiqctl"
 
