@@ -13,7 +13,7 @@ set :deploy_via, :remote_cache
 # capistrano config
 set :format, :pretty
 set :log_level, :debug
-set :pty, true
+set :pty, false
 
 set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets public/system}
 
@@ -31,9 +31,33 @@ set :rvm_custom_path, '/home/rails/.rvm'
 set :unicorn_bundle, "#{fetch :rvm_custom_path}/bin/bundle"
 
 
-# hooks
-before 'unicorn:start', 'rvm:hook'
+# sidekiq config
+SSHKit.config.command_map[:sidekiq] = "#{fetch :rvm_custom_path}/bin/bundle exec sidekiq"
+SSHKit.config.command_map[:sidekiqctl] = "#{fetch :rvm_custom_path}/bin/bundle exec sidekiqctl"
+
+
+# deploy hooks
 after 'deploy', 'unicorn:restart'
+after 'deploy', 'sidekiq:restart'
+
+
+# sidekiq hooks
+before 'sidekiq:quiet', 'rvm:hook'
+before 'sidekiq:restart', 'rvm:hook'
+before 'sidekiq:start', 'rvm:hook'
+before 'sidekiq:stop', 'rvm:hook'
+
+# unicorn hooks
+before "unicorn:add_worker", 'rvm:hook'
+before "unicorn:duplicate", 'rvm:hook'
+before "unicorn:reload", 'rvm:hook'
+before "unicorn:remove_worker", 'rvm:hook'
+before "unicorn:restart", 'rvm:hook'
+before "unicorn:show_vars", 'rvm:hook'
+before "unicorn:shutdown", 'rvm:hook'
+before "unicorn:start", 'rvm:hook'
+before "unicorn:stop", 'rvm:hook'
+
 
 namespace :deploy do
 
