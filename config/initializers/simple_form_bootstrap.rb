@@ -8,7 +8,7 @@ SimpleForm.setup do |config|
   config.wrappers :bootstrap3, tag: 'div', class: 'form-group', error_class: 'has-error',
       defaults: { input_html: { class: 'default_class' } } do |b|
 
-    b.use :html5
+    # b.use :html5
     b.use :min_max
     b.use :maxlength
     b.use :placeholder
@@ -24,7 +24,7 @@ SimpleForm.setup do |config|
  config.wrappers :bootstrap3_horizontal, tag: 'div', class: 'form-group', error_class: 'has-error',
       defaults: { input_html: { class: 'default-class '}, wrapper_html: { class: "col-lg-10 col-md-10"} } do |b|
 
-    b.use :html5
+    # b.use :html5
     b.use :min_max
     b.use :maxlength
     b.use :placeholder
@@ -43,7 +43,7 @@ SimpleForm.setup do |config|
   config.wrappers :group, tag: 'div', class: "form-group", error_class: 'has-error',
       defaults: { input_html: { class: 'default-class '} }  do |b|
 
-    b.use :html5
+    # b.use :html5
     b.use :min_max
     b.use :maxlength
     b.use :placeholder
