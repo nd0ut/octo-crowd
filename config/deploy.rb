@@ -37,11 +37,18 @@ SSHKit.config.command_map[:sidekiq] = "#{fetch :rvm_custom_path}/bin/bundle exec
 SSHKit.config.command_map[:sidekiqctl] = "#{fetch :rvm_custom_path}/bin/bundle exec sidekiqctl"
 
 
+set :whenever_command, "bundle exec whenever"
+set :whenever_identifier, ->{ "#{fetch :application}_#{fetch :stage}" }
+
 # deploy hooks
 after 'deploy', 'unicorn:restart'
 after 'deploy', 'sidekiq:restart'
 after 'deploy', 'thinking_sphinx:restart'
+after 'deploy', 'whenever:update_crontab'
 
+# whenever hooks
+before 'whenever:update_crontab', 'rvm:hook'
+before 'whenever:clear_crontab', 'rvm:hook'
 
 # sphinx hooks
 before "thinking_sphinx:configure", 'rvm:hook'
