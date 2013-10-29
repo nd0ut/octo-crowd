@@ -5,7 +5,7 @@
   params = undefined
   params = csrf_param + "=" + encodeURIComponent(csrf_token)  if csrf_param isnt `undefined` and csrf_token isnt `undefined`
 
-  $(".js-new-post .redactor").redactor
+  $("#new_post .redactor").redactor
     imageUpload:  "/redactor_rails/pictures?" + params
     imageGetJson: "/redactor_rails/pictures"
     fileUpload:   "/redactor_rails/documents?" + params
