@@ -9,10 +9,9 @@ class UserMailer < ActionMailer::Base
     mail(to: @post.author.email, subject: 'Your post rejected. Sorry.')
   end
 
-  def announce_post(user, post, category)
-    @category = category.decorate
+  def announce_post(user, post)
     @post = post.decorate
 
-    mail(to: user.email, subject: "New post at #{@category.name} category")
+    mail(to: user.email, subject: @post.title)
   end
 end

@@ -10,6 +10,7 @@ class Post < ActiveRecord::Base
   belongs_to :author, class_name: 'User'
   has_and_belongs_to_many :categories
   has_many :comments, foreign_key: 'commentable_id', dependent: :destroy
+  has_many :subscriptions, through: :categories
 
   validates :title, presence: true,
                     length: { minimum: 3, maximum: 140 }
@@ -64,10 +65,10 @@ class Post < ActiveRecord::Base
     end
 
     after_transition :waiting => :accepted do |post|
-      post.categories.each do |c|
-        c.subscriptions.each do |s|
-          UserMailer.delay.announce_post(s.user, post, c)
-        end
+      subscriptions = post.subscriptions.uniq
+
+      subscriptions.each do |s|
+        UserMailer.delay.announce_post(s.user, post)
       end
     end
   end
