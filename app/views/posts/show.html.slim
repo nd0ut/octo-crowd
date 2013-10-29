@@ -1,26 +1,23 @@
 .post data-post-id="#{@post.id}"
   / Post body
-  .row
+  .row.post
     .panel
       .panel-heading
-        - if current_user.try(:admin?)
-          a.js-post-delete href="#"
-            i.pull-right.icon-remove
-
         h1.panel-title.title
           i.icon-caret-right
           | &nbsp;&nbsp;
-          = @post.title
+          =link_to @post.title, post_path(@post)
 
         .categories
           ul.list-inline
-            - categories = @post.categories.decorate
+            / post.categories.decorate causes N + 1
+            - categories = CategoryDecorator.decorate_collection(@post.categories)
             - categories.each_with_index do |c, i|
               li
                 =link_to category_path(c) do
                   .small.text-success
                     = c.name
-                = ',' if i != categories.length - 1
+                    = ',' if i != categories.length - 1
 
 
       .panel-body
