@@ -3,7 +3,7 @@ class PostsController < ApplicationController
   before_filter :authenticate_admin_user!, only: [:destroy]
 
   def index
-    @posts = Post.with_moderation_state(:accepted).page(params[:page])
+    @posts = Post.with_moderation_state(:accepted).includes(:author, :tags, :categories).page(params[:page])
     @categories = Category.all.decorate
   end
 

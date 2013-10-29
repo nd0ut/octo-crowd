@@ -8,7 +8,8 @@
 
       .categories
         ul.list-inline
-          - categories = post.categories.decorate
+          / post.categories.decorate causes N + 1
+          - categories = CategoryDecorator.decorate_collection(post.categories)
           - categories.each_with_index do |c, i|
             li
               =link_to category_path(c) do
