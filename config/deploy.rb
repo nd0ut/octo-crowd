@@ -4,7 +4,7 @@ set :application, 'OctoCrowd'
 # git
 set :scm, :git
 set :repo_url, 'git@github.com:nd0ut/octo-crowd.git'
-set :branch, 'testing'
+set :branch, 'master'
 
 set :deploy_to, '/home/rails/octo-crowd'
 set :deploy_via, :remote_cache
