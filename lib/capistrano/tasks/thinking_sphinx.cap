@@ -78,6 +78,7 @@ if you alter the structure of your indexes.
   end
 
   # Logical flow for deploying an app
+  before  'thinking_sphinx:start', 'thinking_sphinx:index'
   after  'deploy', 'thinking_sphinx:index'
   after  'deploy', 'thinking_sphinx:start'
 end
