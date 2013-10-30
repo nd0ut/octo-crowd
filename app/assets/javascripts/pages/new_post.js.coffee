@@ -29,6 +29,10 @@ $ ->
 
           categories
 
+    # remove cut
+    html = $('<div>' + html + '</div>')
+    html.find('cut').remove()
+
     # replace preview div html with partial html and animate it
     $('.js-post-preview-container').html(html)
     $('.js-post-preview').slideDown()
