@@ -52,7 +52,7 @@ class PostsController < ApplicationController
 
   def by_tag
     @tag = params[:tag]
-    @posts = Post.tagged_with(@tag).page(params[:page])
+    @posts = Post.tagged_with(@tag).includes(:author, :tags, :categories).page(params[:page])
     @categories = Category.all.decorate
 
     render 'search'
