@@ -19,6 +19,10 @@ class PostDecorator < Draper::Decorator
     object.body.split(Post::CUT_HTML).first
   end
 
+  def has_cut?
+    object.body.include?(Post::CUT_HTML)
+  end
+
   def body
     object.body.gsub(Post::CUT_HTML, '')
   end

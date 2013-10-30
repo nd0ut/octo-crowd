@@ -20,7 +20,7 @@
 
     .panel-body
       p= raw post.announce
-      = post.read_next_link
+      = post.read_next_link if post.has_cut?
 
     .panel-footer
       .row
