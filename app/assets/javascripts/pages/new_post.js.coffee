@@ -95,7 +95,7 @@ $ ->
     errorPlacement: (error, element) ->
       element.closest('.form-group').append(error)
 
-    submitHandler: (validator, form, event) ->
+    submitHandler: (form, event) ->
       post_body = $form.find('textarea[name="post[body]"]').val()
       has_cut = $('<div>' + post_body + '</div>').find('cut').length > 0
 
