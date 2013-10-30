@@ -18,7 +18,7 @@ class Post < ActiveRecord::Base
   validates :body, presence: true,
                     length: {
                       minimum: 3,
-                      tokenizer: lambda { |str| str.strip_tags.scan(/\[^ ,.!?\]+/) },
+                      tokenizer: lambda { |str| binding.pry || str.strip_tags.scan(/[^ ,.!?]+/) },
                       too_short: "must have at least %{count} words",
                       too_long:  "must have at most %{count} words"
                     }
