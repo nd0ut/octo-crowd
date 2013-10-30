@@ -16,7 +16,12 @@ class Post < ActiveRecord::Base
                     length: { minimum: 3, maximum: 140 }
 
   validates :body, presence: true,
-                    length: { minimum: 10 }
+                    length: {
+                      minimum: 3,
+                      tokenizer: lambda { |str| str.strip_tags.scan(/\w+/) },
+                      too_short: "must have at least %{count} words",
+                      too_long:  "must have at most %{count} words"
+                    }
 
 
   validates :categories,  presence: true,
@@ -43,7 +48,7 @@ class Post < ActiveRecord::Base
     end
   end
 
-  state_machine :moderation_state, :initial => :waiting do
+  state_machine :moderation_state, initial: :waiting do
     state :waiting
     state :accepted
     state :rejected
@@ -56,15 +61,15 @@ class Post < ActiveRecord::Base
       transition any => :rejected
     end
 
-    after_transition :waiting => :accepted do |post|
+    after_transition waiting: :accepted do |post|
       UserMailer.delay.post_accepted(post)
     end
 
-    after_transition :waiting => :rejected do |post|
+    after_transition waiting: :rejected do |post|
       UserMailer.delay.post_rejected(post)
     end
 
-    after_transition :waiting => :accepted do |post|
+    after_transition waiting: :accepted do |post|
       subscriptions = post.subscriptions.uniq
 
       subscriptions.each do |s|
