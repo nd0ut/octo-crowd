@@ -56,7 +56,7 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to @post }
-      format.json { render json: { html: render_to_string(partial: 'posts/post_preview.html.slim', locals: { post: @post }) } }
+      format.json { render json: { html: render_to_string(partial: 'posts/post_preview.html.slim', locals: { post: @post, tags: @tags}) } }
     end
   end
 

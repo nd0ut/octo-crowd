@@ -10,7 +10,7 @@
 
         .categories
           ul.list-inline
-            - categories = @post.categories.decorate
+            - categories = CategoryDecorator.decorate_collection(post.categories)
             - categories.each_with_index do |c, i|
               li
                 =link_to category_path(c) do
