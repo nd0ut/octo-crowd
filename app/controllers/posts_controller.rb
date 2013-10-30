@@ -68,7 +68,7 @@ class PostsController < ApplicationController
 
   private
   def search_query
-    Riddle::Query.escape(ActionController::Base.helpers.strip_tags(params[:search]))
+    Riddle::Query.escape(params[:search].strip_tags)
   end
 
   def post_params
