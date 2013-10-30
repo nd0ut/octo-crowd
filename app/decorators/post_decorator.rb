@@ -5,12 +5,13 @@ class PostDecorator < Draper::Decorator
   delegate_all
 
   def read_next_link(options = {})
-    { label: "Read next", with_icon: true }.merge(options)
+    options.merge!(label: "Read next", with_icon: true)
 
     h.link_to h.post_url(object), class: 'btn btn-default btn-xs read-next' do
       text = "#{h.content_tag :div, nil, class: 'clearfix'}#{options[:label]}"
       icon = "&nbsp;&nbsp;#{h.content_tag :i, nil, class: 'icon-long-arrow-right'}"
 
+      binding.pry
       (text + "#{icon if options[:with_icon]}").html_safe
     end
   end
