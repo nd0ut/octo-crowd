@@ -2,10 +2,15 @@ require 'rubygems'
 require 'sanitize'
 
 class Post < ActiveRecord::Base
+  include ThinkingSphinx::Scopes
+
   acts_as_commentable
   acts_as_taggable
 
   default_scope -> { order('created_at DESC') }
+
+  sphinx_scope(:date_order) { {:order => 'created_at DESC'} }
+  default_sphinx_scope :date_order
 
   belongs_to :author, class_name: 'User'
   has_and_belongs_to_many :categories
