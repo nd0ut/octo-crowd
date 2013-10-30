@@ -23,12 +23,6 @@
         callback: (buttonName, buttonDOM, buttonObject) ->
           this.insertHtml('<cut/><br>');
 
-    blurCallback: (e) ->
-      this.$source.blur()
-
-    changeCallback: (e) ->
-      this.$source.blur()
-
 
   $(".js-new-comment .js-redactor").redactor
     imageUpload:  "/redactor_rails/pictures?" + params

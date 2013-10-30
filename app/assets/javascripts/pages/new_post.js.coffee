@@ -56,23 +56,6 @@ $ ->
   $form.find('#post_tag_list').tokenfield
     minLength: 2
 
-  # set of dirty hacks to make client validations work
-  # don't remove timeouts
-  $form.find('.tokenfield').on 'afterCreateToken', ->
-    setTimeout ->
-      $form.find('#post_tag_list').blur()
-    , 0
-
-  $form.find('#post_tag_list').parent().find('.token-input').blur ->
-    $form.find('#post_tag_list').blur()
-
-  $form.find('#post_category_ids').parent().find('.search-field input').blur ->
-    setTimeout ->
-      $form.find('#post_category_ids').blur()
-    , 100
-
-  $form.find('.chosen-select').chosen().change ->
-    $form.find('#post_category_ids').blur()
 
   # setup validation
   $form.validate
