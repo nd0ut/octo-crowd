@@ -19,7 +19,7 @@ class User < ActiveRecord::Base
   end
 
   def has_subscription_to?(category)
-    self.subscription.categories.where(id: category.id).present?
+    self.subscription.categories.select { |cat| cat.id == category.id }.present?
   end
 
   def self.from_omniauth(auth)
