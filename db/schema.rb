@@ -11,7 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131021190854) do
+ActiveRecord::Schema.define(version: 20131030172530) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -24,9 +27,9 @@ ActiveRecord::Schema.define(version: 20131021190854) do
     t.datetime "updated_at"
   end
 
-  add_index "active_admin_comments", ["author_type", "author_id"], name: "index_active_admin_comments_on_author_type_and_author_id"
-  add_index "active_admin_comments", ["namespace"], name: "index_active_admin_comments_on_namespace"
-  add_index "active_admin_comments", ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id"
+  add_index "active_admin_comments", ["author_type", "author_id"], name: "index_active_admin_comments_on_author_type_and_author_id", using: :btree
+  add_index "active_admin_comments", ["namespace"], name: "index_active_admin_comments_on_namespace", using: :btree
+  add_index "active_admin_comments", ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id", using: :btree
 
   create_table "categories", force: true do |t|
     t.string   "name"
@@ -39,18 +42,18 @@ ActiveRecord::Schema.define(version: 20131021190854) do
     t.integer "post_id"
   end
 
-  add_index "categories_posts", ["category_id", "post_id"], name: "index_categories_posts_on_category_id_and_post_id"
-  add_index "categories_posts", ["category_id"], name: "index_categories_posts_on_category_id"
-  add_index "categories_posts", ["post_id"], name: "index_categories_posts_on_post_id"
+  add_index "categories_posts", ["category_id", "post_id"], name: "index_categories_posts_on_category_id_and_post_id", using: :btree
+  add_index "categories_posts", ["category_id"], name: "index_categories_posts_on_category_id", using: :btree
+  add_index "categories_posts", ["post_id"], name: "index_categories_posts_on_post_id", using: :btree
 
   create_table "categories_subscriptions", id: false, force: true do |t|
     t.integer "category_id"
     t.integer "subscription_id"
   end
 
-  add_index "categories_subscriptions", ["category_id", "subscription_id"], name: "index_categories_subscription"
-  add_index "categories_subscriptions", ["category_id"], name: "index_categories_subscriptions_on_category_id"
-  add_index "categories_subscriptions", ["subscription_id"], name: "index_categories_subscriptions_on_subscription_id"
+  add_index "categories_subscriptions", ["category_id", "subscription_id"], name: "index_categories_subscription", using: :btree
+  add_index "categories_subscriptions", ["category_id"], name: "index_categories_subscriptions_on_category_id", using: :btree
+  add_index "categories_subscriptions", ["subscription_id"], name: "index_categories_subscriptions_on_subscription_id", using: :btree
 
   create_table "comments", force: true do |t|
     t.string   "title",            limit: 50, default: ""
@@ -67,9 +70,9 @@ ActiveRecord::Schema.define(version: 20131021190854) do
     t.integer  "rgt"
   end
 
-  add_index "comments", ["commentable_id"], name: "index_comments_on_commentable_id"
-  add_index "comments", ["commentable_type"], name: "index_comments_on_commentable_type"
-  add_index "comments", ["user_id"], name: "index_comments_on_user_id"
+  add_index "comments", ["commentable_id"], name: "index_comments_on_commentable_id", using: :btree
+  add_index "comments", ["commentable_type"], name: "index_comments_on_commentable_type", using: :btree
+  add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
 
   create_table "posts", force: true do |t|
     t.integer  "author_id"
@@ -78,9 +81,10 @@ ActiveRecord::Schema.define(version: 20131021190854) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "moderation_state"
+    t.boolean  "delta",            default: true, null: false
   end
 
-  add_index "posts", ["author_id"], name: "index_posts_on_author_id"
+  add_index "posts", ["author_id"], name: "index_posts_on_author_id", using: :btree
 
   create_table "redactor_assets", force: true do |t|
     t.integer  "user_id"
@@ -96,8 +100,8 @@ ActiveRecord::Schema.define(version: 20131021190854) do
     t.datetime "updated_at"
   end
 
-  add_index "redactor_assets", ["assetable_type", "assetable_id"], name: "idx_redactor_assetable"
-  add_index "redactor_assets", ["assetable_type", "type", "assetable_id"], name: "idx_redactor_assetable_type"
+  add_index "redactor_assets", ["assetable_type", "assetable_id"], name: "idx_redactor_assetable", using: :btree
+  add_index "redactor_assets", ["assetable_type", "type", "assetable_id"], name: "idx_redactor_assetable_type", using: :btree
 
   create_table "subscriptions", force: true do |t|
     t.integer  "user_id"
@@ -105,7 +109,7 @@ ActiveRecord::Schema.define(version: 20131021190854) do
     t.datetime "updated_at"
   end
 
-  add_index "subscriptions", ["user_id"], name: "index_subscriptions_on_user_id"
+  add_index "subscriptions", ["user_id"], name: "index_subscriptions_on_user_id", using: :btree
 
   create_table "taggings", force: true do |t|
     t.integer  "tag_id"
@@ -117,8 +121,8 @@ ActiveRecord::Schema.define(version: 20131021190854) do
     t.datetime "created_at"
   end
 
-  add_index "taggings", ["tag_id"], name: "index_taggings_on_tag_id"
-  add_index "taggings", ["taggable_id", "taggable_type", "context"], name: "index_taggings_on_taggable_id_and_taggable_type_and_context"
+  add_index "taggings", ["tag_id"], name: "index_taggings_on_tag_id", using: :btree
+  add_index "taggings", ["taggable_id", "taggable_type", "context"], name: "index_taggings_on_taggable_id_and_taggable_type_and_context", using: :btree
 
   create_table "tags", force: true do |t|
     t.string "name"
@@ -147,9 +151,9 @@ ActiveRecord::Schema.define(version: 20131021190854) do
     t.string   "unconfirmed_email"
   end
 
-  add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-  add_index "users", ["username"], name: "index_users_on_username", unique: true
+  add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+  add_index "users", ["username"], name: "index_users_on_username", unique: true, using: :btree
 
 end
