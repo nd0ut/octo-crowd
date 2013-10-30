@@ -110,3 +110,14 @@ $ ->
       $.each event.target, (i, e) ->
         if $(e).attr('name') != undefined && $(e).attr('name').indexOf('post') != -1
           $(e).blur()
+
+    submitHandler: (event, validator) ->
+      post_body = $form.find('textarea[name="post[body]"]').val()
+      has_cut = $('<div>' + post_body + '</div>').find('cut').length > 0
+
+      if has_cut == true
+        event.target.submit()
+      else
+        bootbox.dialog
+          title: "There is no cut in your post"
+          message: JST["partials/no_cut_modal"]()
