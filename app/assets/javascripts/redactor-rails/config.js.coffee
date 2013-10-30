@@ -5,7 +5,7 @@
   params = undefined
   params = csrf_param + "=" + encodeURIComponent(csrf_token)  if csrf_param isnt `undefined` and csrf_token isnt `undefined`
 
-  $("#new_post .redactor").redactor
+  $("#new_post .js-redactor").redactor
     imageUpload:  "/redactor_rails/pictures?" + params
     imageGetJson: "/redactor_rails/pictures"
     fileUpload:   "/redactor_rails/documents?" + params
@@ -30,7 +30,7 @@
       this.$source.blur()
 
 
-  $(".js-new-comment .redactor").redactor
+  $(".js-new-comment .js-redactor").redactor
     imageUpload:  "/redactor_rails/pictures?" + params
     imageGetJson: "/redactor_rails/pictures"
     fileUpload:   "/redactor_rails/documents?" + params
@@ -39,5 +39,5 @@
     css:          "style.css"
     minHeight:    150
 
-$(document).ready ->
+$ ->
   @initRedactor()

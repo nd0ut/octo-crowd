@@ -59,7 +59,7 @@
     h4= t('.write_comment')
 
     = simple_form_for(@new_comment, url: post_comments_path(@post)) do |f|
-      = f.input :body, as: :text, label: false, input_html: { class: 'redactor' }
+      = f.input :body, as: :text, label: false, input_html: { class: 'js-redactor' }
 
       button.btn.btn-primary
         = icon_with_label t('.submit'), 'icon-ok large'
