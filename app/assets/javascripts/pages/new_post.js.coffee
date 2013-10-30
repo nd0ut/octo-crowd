@@ -1,6 +1,7 @@
 $ ->
   # our form
   $form = $('form#new_post')
+  $form.find('input[name="post[category_ids][]"]').remove() # simpleform creates that shit
 
   # click on preview button
   $form.find('.js-preview-btn').click (e) ->
@@ -59,6 +60,7 @@ $ ->
 
   # setup validation
   $form.validate
+    ignore: ""
     onfocusout: (el, e) ->
       $(el).valid()
 
@@ -93,12 +95,7 @@ $ ->
     errorPlacement: (error, element) ->
       element.closest('.form-group').append(error)
 
-    invalidHandler: (event, validator) ->
-      $.each event.target, (i, e) ->
-        if $(e).attr('name') != undefined && $(e).attr('name').indexOf('post') != -1
-          $(e).blur()
-
-    submitHandler: (event, validator) ->
+    submitHandler: (validator, form, event) ->
       post_body = $form.find('textarea[name="post[body]"]').val()
       has_cut = $('<div>' + post_body + '</div>').find('cut').length > 0
 
@@ -116,6 +113,8 @@ $ ->
             save_as_is:
               label: "Save without cut"
               className: 'btn-primary'
+              callback: ->
+                event.target.submit()
 
             cancel:
               label: "Cancel"
