@@ -23,6 +23,8 @@
 //= require twitter/typeahead
 //= require bootstrap-tokenfield
 //= require jquery.highlight
+//= require jquery.validate
+//= require additional-methods
 //
 //= require turbolinks
 //= require_tree .

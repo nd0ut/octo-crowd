@@ -15,9 +15,10 @@
   = simple_form_for(@post) do |f|
     .row
       .col-lg-6
-        = f.association :categories, collection: Category.all.decorate, include_blank: true, input_html: { class: 'chosen-select' }
+        = f.association :categories, collection: Category.all.decorate, include_blank: true, \
+                                                                        input_html: { class: 'chosen-select', data: { conditional: 'categories' } }
       .col-lg-6
-        = f.input :tag_list
+        = f.input :tag_list, input_html: { data: { conditional: 'tags' } }
 
     = f.input :title
 
