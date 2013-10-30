@@ -11,7 +11,6 @@ class PostDecorator < Draper::Decorator
       text = "#{h.content_tag :div, nil, class: 'clearfix'}#{options[:label]}"
       icon = "&nbsp;&nbsp;#{h.content_tag :i, nil, class: 'icon-long-arrow-right'}"
 
-      binding.pry
       (text + "#{icon if options[:with_icon]}").html_safe
     end
   end
