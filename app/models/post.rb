@@ -70,7 +70,7 @@ class Post < ActiveRecord::Base
     end
 
     after_transition waiting: :accepted do |post|
-      subscriptions = post.subscriptions.uniq
+      subscriptions = post.subscriptions.includes(:user).uniq
 
       subscriptions.each do |s|
         UserMailer.delay.announce_post(s.user, post)
