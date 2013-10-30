@@ -19,5 +19,10 @@
 /log/*
 /tmp
 
-# Sublime files
+# Ignore sublime-text files
 *.sublime-*
+
+# Ignore some public assets
+/public/system
+/public/assets
+/public/uploads
