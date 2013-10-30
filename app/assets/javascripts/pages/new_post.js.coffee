@@ -13,11 +13,11 @@ $ ->
       data: $form.serialize()
 
       success: (data) ->
-        $form.find('.js-post-preview-container').html(data.html)
-        $form.find('.js-post-preview').slideDown()
+        $('.js-post-preview-container').html(data.html)
+        $('.js-post-preview').slideDown()
 
         $('html, body').animate({
-            scrollTop: ($form.find('.js-post-preview').first().offset().top)
+            scrollTop: ($('.js-post-preview').first().offset().top)
         },500);
 
         window.momentjs_init()
@@ -27,23 +27,36 @@ $ ->
 
 
   # hide post preview
-  $form.find('.js-preview-hide').click ->
-    $form.find('.js-post-preview').slideUp()
+  $('.js-preview-hide').click ->
+    $('.js-post-preview').slideUp()
 
 
-  # init tags input
+  # set of dirty hacks to make this validations work
+  # don't remove timeouts
   $form.find('#post_tag_list').tokenfield
     minLength: 2
+
+  $form.find('.tokenfield').on 'afterCreateToken', ->
+    setTimeout ->
+      $form.find('#post_tag_list').blur()
+    , 0
 
   $form.find('#post_tag_list').parent().find('.token-input').blur ->
     $form.find('#post_tag_list').blur()
 
   $form.find('#post_category_ids').parent().find('.search-field input').blur ->
+    setTimeout ->
+      $form.find('#post_category_ids').blur()
+    , 100
+
+  $form.find('.chosen-select').chosen().change ->
     $form.find('#post_category_ids').blur()
 
+  # setup validation
   $form.validate
     onfocusout: (el, e) ->
       $(el).valid()
+
     rules:
       'post[body]':
         minWords: 3
@@ -75,3 +88,7 @@ $ ->
     errorPlacement: (error, element) ->
       element.closest('.form-group').append(error)
 
+    invalidHandler: (event, validator) ->
+      $.each event.target, (i, e) ->
+        if $(e).attr('name') != undefined && $(e).attr('name').indexOf('post') != -1
+          $(e).blur()

@@ -26,6 +26,9 @@
     blurCallback: (e) ->
       this.$source.blur()
 
+    changeCallback: (e) ->
+      this.$source.blur()
+
 
   $(".js-new-comment .redactor").redactor
     imageUpload:  "/redactor_rails/pictures?" + params
