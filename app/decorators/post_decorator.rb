@@ -4,9 +4,15 @@ require 'sanitize'
 class PostDecorator < Draper::Decorator
   delegate_all
 
-  def read_next_link(label = 'Read next')
+  def read_next_link(options = {})
+    options[:label] ||= 'Read next'
+    options[:with_icon] = true if options[:with_icon].nil?
+
     h.link_to h.post_url(object), class: 'btn btn-default btn-xs read-next' do
-      "#{h.content_tag :div, nil, class: 'clearfix'}#{label}&nbsp;&nbsp;#{h.content_tag :i, nil, class: 'icon-long-arrow-right'}".html_safe
+      text = "#{h.content_tag :div, nil, class: 'clearfix'}#{options[:label]}"
+      icon = "&nbsp;&nbsp;#{h.content_tag :i, nil, class: 'icon-long-arrow-right'}"
+
+      (text + "#{icon if options[:with_icon]}").html_safe
     end
   end
 

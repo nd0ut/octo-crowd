@@ -1,3 +1,8 @@
-h1= raw @post.title
-p= raw @post.announce
-= @post.read_next_link
+doctype html
+html lang="en"
+  head
+
+  body
+    h1= raw @post.title
+    p= raw @post.announce
+    = @post.read_next_link(with_icon: false)
