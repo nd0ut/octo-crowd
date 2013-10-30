@@ -1,9 +1,10 @@
 $ ->
   # our form
-  $form = $('#new_post')
+  $form = $('form#new_post')
 
   # click on preview button
   $form.find('.js-preview-btn').click (e) ->
+    # use skim partial
     html = JST["partials/post_preview"]
       post:
         title: $form.find('[name="post[title]"]').val()
@@ -13,9 +14,13 @@ $ ->
         categories: ->
           categories = []
 
+          # get category names from select input
           $select = $form.find('select[name="post[category_ids][]"]')
 
+          # get category ids from select input
           ids = $select.val() || []
+
+          # merge it
           $.each ids, (i, id) ->
             category_name = $select.find('option[value=' + id + ']').html()
             categories.push
@@ -24,6 +29,7 @@ $ ->
 
           categories
 
+    # replace preview div html with partial html and animate it
     $('.js-post-preview-container').html(html)
     $('.js-post-preview').slideDown()
 
@@ -31,22 +37,23 @@ $ ->
         scrollTop: ($('.js-post-preview').first().offset().top)
     },500);
 
+    # show post date
     window.momentjs_init()
 
     e.stopPropagation()
     e.preventDefault()
 
 
-  # hide post preview
+  # hide post preview on click
   $('.js-preview-hide').click ->
     $('.js-post-preview').slideUp()
 
-
-  # set of dirty hacks to make this validations work
-  # don't remove timeouts
+  # init tags input
   $form.find('#post_tag_list').tokenfield
     minLength: 2
 
+  # set of dirty hacks to make client validations work
+  # don't remove timeouts
   $form.find('.tokenfield').on 'afterCreateToken', ->
     setTimeout ->
       $form.find('#post_tag_list').blur()
