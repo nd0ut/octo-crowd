@@ -121,3 +121,15 @@ $ ->
         bootbox.dialog
           title: "There is no cut in your post"
           message: JST["partials/no_cut_modal"]()
+          buttons:
+            i_will:
+              label: "Ok, I'll use it"
+              className: 'btn-success'
+
+            save_as_is:
+              label: "Save without cut"
+              className: 'btn-primary'
+
+            cancel:
+              label: "Cancel"
+              className: "btn-danger"

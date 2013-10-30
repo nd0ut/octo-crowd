@@ -18,14 +18,14 @@
 	}
 
 	jQuery.validator.addMethod("maxWords", function(value, element, params) {
-		var value = stripHtml(value).match(/\b\w+\b/g);
+		var value = stripHtml(value).match(/[^ ,.!?]+/g);
 		if(value === null) value = "";
 
 		return this.optional(element) || value.length <= params;
 	}, jQuery.validator.format("Please enter {0} words or less."));
 
 	jQuery.validator.addMethod("minWords", function(value, element, params) {
-		var value = stripHtml(value).match(/\b\w+\b/g);
+		var value = stripHtml(value).match(/[^ ,.!?]+/g);
 		if(value === null) value = "";
 
 		return this.optional(element) || value.length >= params;

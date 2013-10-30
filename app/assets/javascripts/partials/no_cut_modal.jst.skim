@@ -1,0 +1,4 @@
+p Cut is the tool that separates the post announce from its contents.
+p
+  | It's placed on the editor toolbar:
+  span.redactor_cut_icon
