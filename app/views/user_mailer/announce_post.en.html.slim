@@ -6,3 +6,8 @@ html lang="en"
     h1= raw @post.title
     p= raw @post.announce
     = @post.read_next_link(with_icon: false)
+    br
+    br
+    br
+    small
+      = link_to "Unsubscribe", subscriptions_url
