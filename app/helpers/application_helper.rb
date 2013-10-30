@@ -10,8 +10,8 @@ module ApplicationHelper
     "<i class=\"#{icon_class}\"></i>&nbsp;&nbsp;#{content_tag :span, label, label_options}</a>".html_safe
   end
 
-  def label_with_icon(label, icon_class)
-    "#{label}&nbsp;&nbsp;<i class=\"#{icon_class}\"></i>".html_safe
+  def label_with_icon(label, icon_class, label_options = nil)
+    "#{content_tag :span, label, label_options}&nbsp;&nbsp;<i class=\"#{icon_class}\"></i>".html_safe
   end
 
   def callout_type(level_for)

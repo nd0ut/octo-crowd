@@ -31,7 +31,7 @@ nav.navbar.navbar-static-top role='navigation'
       li.divider-vertical
       li.dropdown
         a.dropdown-toggle href='#' data-toggle='dropdown'
-          = label_with_icon "#{current_user.username}", 'icon-caret-down icon-large'
+          = label_with_icon "#{current_user.username}", 'icon-caret-down icon-large', class: 'js-current-user'
 
         ul.dropdown-menu
           - if current_user.try(:admin?)

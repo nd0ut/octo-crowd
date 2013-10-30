@@ -1,0 +1,46 @@
+.post
+  / Post body
+  .row
+    .panel
+      .panel-heading
+        h1.panel-title.title
+          i.icon-caret-right
+          | &nbsp;&nbsp;
+          = @safe @post.title
+
+        .categories
+          ul.list-inline
+            - categories = @post.categories()
+            - $.each categories, (i, c) =>
+              li
+                a href="#"
+                  .small.text-success
+                    = c.name
+                    = ',' if i != categories.length - 1
+
+
+      .panel-body
+        p= @safe @post.body
+
+      .panel-footer
+        .row
+          .col-lg-9
+            i.icon-tags
+            span.text-primary.tags
+              - tags = @post.tags
+              - $.each tags, (i, t) =>
+                a href="#"
+                  span.tag= t.label
+                = ', ' if i != tags.length - 1
+
+          .col-lg-2
+            i.icon-time
+            | &nbsp;&nbsp;
+            span.momentjs-calendar data-time="#{new Date()}"
+              = new Date()
+
+          .col-lg-1
+            .pull-right
+              i.icon-user
+              | &nbsp;&nbsp;
+              = @safe @post.author

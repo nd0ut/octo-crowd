@@ -4,23 +4,34 @@ $ ->
 
   # click on preview button
   $form.find('.js-preview-btn').click (e) ->
-    $.post Routes.post_preview_path(), $form.serialize()
+    html = JST["partials/post_preview"]
+      post:
+        title: $form.find('[name="post[title]"]').val()
+        body: $form.find('[name="post[body]"]').val()
+        tags: $form.find('#post_tag_list').tokenfield('getTokens')
+        author: $('.js-current-user').html()
+        categories: ->
+          categories = []
 
-    # send ajax query which returns post's html
-    $.ajax
-      type: "POST"
-      url: Routes.post_preview_path()
-      data: $form.serialize()
+          $select = $form.find('select[name="post[category_ids][]"]')
 
-      success: (data) ->
-        $('.js-post-preview-container').html(data.html)
-        $('.js-post-preview').slideDown()
+          ids = $select.val() || []
+          $.each ids, (i, id) ->
+            category_name = $select.find('option[value=' + id + ']').html()
+            categories.push
+              id: id
+              name: category_name
 
-        $('html, body').animate({
-            scrollTop: ($('.js-post-preview').first().offset().top)
-        },500);
+          categories
 
-        window.momentjs_init()
+    $('.js-post-preview-container').html(html)
+    $('.js-post-preview').slideDown()
+
+    $('html, body').animate({
+        scrollTop: ($('.js-post-preview').first().offset().top)
+    },500);
+
+    window.momentjs_init()
 
     e.stopPropagation()
     e.preventDefault()
