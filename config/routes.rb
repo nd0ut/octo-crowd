@@ -3,7 +3,7 @@ require 'sidekiq/web'
 OctoCrowd::Application.routes.draw do
   mount RedactorRails::Engine => '/redactor_rails'
 
-  # USERS
+  # AUTH
   devise_for :users, :controllers => {
     :omniauth_callbacks => "users/omniauth_callbacks",
     :registrations => "users/registrations"
@@ -11,6 +11,9 @@ OctoCrowd::Application.routes.draw do
 
   post "/auth/:provider/callback" => "authentications#create"
 
+
+  # USER
+  get 'subscriptions' => 'subscriptions#show'
 
   # POSTS
   resources :posts do

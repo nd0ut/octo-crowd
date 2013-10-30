@@ -27,6 +27,7 @@ en:
       sign_up: "Sign up"
       log_in: "Log in"
       log_out: "Log out"
+      subscriptions: "Subscriptions"
 
   categories:
     show:
@@ -49,3 +50,9 @@ en:
     search:
       search: "Search"
       categories: "Categories"
+
+  subscriptions:
+    show:
+      categories: "Categories"
+      unsubscribe: "Unsubscribe"
+      subscriptions: "Subscriptions"

@@ -1,0 +1,17 @@
+.js-subscriptions
+  .row
+    .page-header
+      h1= t('.subscriptions')
+
+  .row.js-categories
+    .col-lg-3
+      h3= t('.categories')
+
+      .list-group
+        - @subscription.categories.decorate.each do |c|
+          li.list-group-item.js-category data-category-id="#{c.id}"
+            = link_to c.name, category_path(c)
+
+            a.js-unsubscribe href='#'
+              span.label.label-default.pull-right
+                = t('.unsubscribe')
