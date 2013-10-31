@@ -85,7 +85,7 @@ gem 'rails_config'
 gem 'faker', git: 'git@github.com:stympy/faker.git'
 gem 'thinking-sphinx'
 gem 'whenever', :require => false
-
+gem "cancan"
 
 
 
