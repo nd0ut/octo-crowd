@@ -13,7 +13,8 @@ class UserMailer < ActionMailer::Base
 
   def announce_post(user, post)
     @post = post.decorate
+    @user = user
 
-    mail(to: user.email, subject: @post.title)
+    mail(to: @user.email, subject: @post.title)
   end
 end
