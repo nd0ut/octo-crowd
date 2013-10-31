@@ -1,6 +1,8 @@
 class CommentDecorator < Draper::Decorator
   delegate_all
 
+  decorates_association :children
+
   def author_name
     object.user.try(:username) || 'anonymous'
   end
