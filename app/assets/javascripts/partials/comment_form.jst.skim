@@ -1,6 +1,6 @@
 form#new_comment.simple_form.new_comment accept-charset="UTF-8" action="#{@path}" method="post"
   div style="margin:0;padding:0;display:inline"
-    input name="parent" type="hidden" value="#{@parent}"
+    input name="comment[parent]" type="hidden" value="#{@parent}"
     input name="utf8" type="hidden" value="✓"
     input name="authenticity_token" type="hidden" value="#{@authenticity_token}"
 

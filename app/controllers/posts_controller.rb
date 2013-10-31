@@ -1,6 +1,5 @@
 class PostsController < ApplicationController
-  before_filter :authenticate_user!, only: [:new, :create]
-  before_filter :authenticate_admin_user!, only: [:destroy]
+  load_and_authorize_resource only: [:create, :destroy, :update]
 
   def index
     @posts = Post.with_moderation_state(:accepted).includes(:author, :tags, :categories).page(params[:page])
