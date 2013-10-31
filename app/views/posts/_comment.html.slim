@@ -10,9 +10,10 @@
       .small.pull-right
         = icon_with_label nil, 'icon-time', class: 'momentjs-calendar', data: { time: comment.time }
 
-        - if current_user.try(:admin?)
+        - if can? :destroy, comment
           a.js-comment-delete href="#"
             i.pull-right.icon-remove
+
       .clearfix
 
     .body
@@ -22,4 +23,4 @@
       a.js-comment-answer href="#"
         = icon_with_label t('.answer'), 'icon-comment'
 
-      .js-new-comment
+      .js-comment-body

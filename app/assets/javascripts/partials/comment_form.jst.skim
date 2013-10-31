@@ -5,7 +5,7 @@ form#new_comment.simple_form.new_comment accept-charset="UTF-8" action="#{@path}
     input name="authenticity_token" type="hidden" value="#{@authenticity_token}"
 
   .form-group.text.required.comment_body
-    textarea#comment_body.text.required.form-control.js-redactor aria-required="true" name="comment[body]" required="required"
+    textarea#comment_body.text.required.form-control.js-comment-redactor aria-required="true" name="comment[body]" required="required"
 
   button.btn.btn-primary
     i.icon-ok.large>

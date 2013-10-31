@@ -5,7 +5,7 @@
   params = undefined
   params = csrf_param + "=" + encodeURIComponent(csrf_token)  if csrf_param isnt `undefined` and csrf_token isnt `undefined`
 
-  $("#new_post .js-redactor").redactor
+  $(".js-post-redactor").redactor
     imageUpload:  "/redactor_rails/pictures?" + params
     imageGetJson: "/redactor_rails/pictures"
     fileUpload:   "/redactor_rails/documents?" + params
@@ -24,7 +24,7 @@
           this.insertHtml('<cut/><br>');
 
 
-  $(".js-new-comment .js-redactor").redactor
+  $(".js-comment-redactor").redactor
     imageUpload:  "/redactor_rails/pictures?" + params
     imageGetJson: "/redactor_rails/pictures"
     fileUpload:   "/redactor_rails/documents?" + params

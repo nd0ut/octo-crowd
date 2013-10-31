@@ -27,7 +27,7 @@ $ ->
       return
 
     # прячем остальные открытые формы
-    $('.comments .js-new-comment form').remove()
+    $('.comments .js-comment-body form').remove()
 
     # csrf
     authenticity_token = $("meta[name=csrf-token]").attr("content")
@@ -39,7 +39,7 @@ $ ->
     # рендерим форму
     $form = $(JST["partials/comment_form"] (path: Routes.post_comments_path(post_id), parent: comment_id, authenticity_token: authenticity_token))
 
-    placeholder = comment.find('.js-new-comment')
+    placeholder = comment.find('.js-comment-body')
 
     placeholder.append($form)
 

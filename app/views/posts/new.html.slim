@@ -1,34 +1,35 @@
-.js-post-preview style="display: none"
+.js-post
+  .js-post-preview style="display: none"
+    .row
+      .page-header
+        h1= t('.preview')
+        a.btn.btn-link.js-preview-hide
+          = label_with_icon t('.hide'), 'icon-angle-up'
+
+    .row.js-post-preview-container
+
   .row
     .page-header
-      h1= t('.preview')
-      a.btn.btn-link.js-preview-hide
-        = label_with_icon t('.hide'), 'icon-angle-up'
+      h1= t('.create_new_post')
 
-  .row.js-post-preview-container
+  .row
+    = simple_form_for(@post) do |f|
+      .row
+        .col-lg-6
+          = f.association :categories, collection: Category.all.decorate, include_blank: true, \
+                                                                          input_html: { class: 'chosen-select', data: { conditional: 'categories' } }
+        .col-lg-6
+          = f.input :tag_list, input_html: { data: { conditional: 'tags' } }
 
-.row
-  .page-header
-    h1= t('.create_new_post')
+      = f.input :title
 
-.row
-  = simple_form_for(@post) do |f|
-    .row
-      .col-lg-6
-        = f.association :categories, collection: Category.all.decorate, include_blank: true, \
-                                                                        input_html: { class: 'chosen-select', data: { conditional: 'categories' } }
-      .col-lg-6
-        = f.input :tag_list, input_html: { data: { conditional: 'tags' } }
+      = f.input :body, as: :text, input_html: { class: 'js-post-redactor' }
 
-    = f.input :title
+      .row
+        .col-lg-2
+          button.btn.btn-primary.btn-block
+            = icon_with_label t('.submit'), 'icon-ok large'
 
-    = f.input :body, as: :text, input_html: { class: 'js-redactor' }
-
-    .row
-      .col-lg-2
-        button.btn.btn-primary.btn-block
-          = icon_with_label t('.submit'), 'icon-ok large'
-
-      .col-lg-2
-        .btn.btn-warning
-          .js-preview-btn= icon_with_label t('.preview'), 'icon-eye-open large'
+        .col-lg-2
+          .btn.btn-warning
+            .js-preview-btn= icon_with_label t('.preview'), 'icon-eye-open large'
