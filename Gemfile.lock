@@ -52,6 +52,12 @@ GIT
       railties (>= 3.1)
 
 GIT
+  remote: git@github.com:clemensg/cancan.git
+  revision: f632b8519443091c8f3d9457ba74931203861b3f
+  specs:
+    cancan (1.6.10)
+
+GIT
   remote: git@github.com:ebbflowgo/acts_as_commentable_with_threading.git
   revision: 590b7b1b2e2cfdafbc9ea7c547da56996fc1ea03
   branch: rails4
@@ -127,7 +133,6 @@ GEM
       sass (>= 3.2.0)
       thor
     builder (3.1.4)
-    cancan (1.6.10)
     capistrano (3.0.0)
       i18n
       rake (>= 10.0.0)
@@ -423,7 +428,7 @@ DEPENDENCIES
   acts-as-taggable-on
   acts_as_commentable_with_threading!
   by_star!
-  cancan
+  cancan!
   capistrano (~> 3.0.0)
   capistrano-bundler
   capistrano-ext
