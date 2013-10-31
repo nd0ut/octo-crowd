@@ -1,6 +1,4 @@
 class Posts::CommentsController < ApplicationController
-  before_filter :authenticate_admin_user!, only: [:destroy]
-
   def create
     post = Post.find(params[:post_id]).decorate
     user = current_user || nil
@@ -24,13 +22,13 @@ class Posts::CommentsController < ApplicationController
 
       respond_to do |format|
         format.html { redirect_to :back }
-        format.json { render nothing: true, stasus: 200 }
+        format.json { render nothing: true, status: 200 }
       end
 
     else
       respond_to do |format|
         format.html { redirect_to @post }
-        format.json { render nothing: true, stasus: 404 }
+        format.json { render nothing: true, status: 404 }
       end
     end
 

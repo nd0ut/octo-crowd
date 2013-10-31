@@ -11,7 +11,7 @@ class CategoriesController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to :back }
-      format.json { render nothing: true, stasus: 200 }
+      format.json { render nothing: true, status: 200 }
     end
   end
 
@@ -21,7 +21,7 @@ class CategoriesController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to :back }
-      format.json { render nothing: true, stasus: 200 }
+      format.json { render nothing: true, status: 200 }
     end
   end
 end

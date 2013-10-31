@@ -30,6 +30,20 @@ class PostsController < ApplicationController
     @new_comment = Comment.new
   end
 
+  def edit
+    @post = Post.find(params[:id])
+  end
+
+  def update
+    @post = Post.find(params[:id])
+
+    if @post.update(post_params)
+      redirect_to @post
+    else
+      render 'edit'
+    end
+  end
+
   def destroy
     @post = Post.find(params[:id])
 
@@ -38,13 +52,13 @@ class PostsController < ApplicationController
 
       respond_to do |format|
         format.html { redirect_to :back }
-        format.json { render nothing: true, stasus: 200 }
+        format.json { render nothing: true, status: 200 }
       end
 
     else
       respond_to do |format|
         format.html { redirect_to @post }
-        format.json { render nothing: true, stasus: 404 }
+        format.json { render nothing: true, status: 404 }
       end
     end
 
