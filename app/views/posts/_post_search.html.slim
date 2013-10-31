@@ -19,11 +19,14 @@
 
     .panel-body
       p
-        - if @query && text = post.search_fragment(@query)
-          = raw text
+        - if @query && search_fragments = post.search_fragments(@query)
+          - search_fragments.each do |f|
+            p= raw f
+
         - else
           = raw post.announce
-          = post.read_next_link if post.has_cut?
+
+      = post.read_next_link if post.has_cut?
 
 
     .panel-footer
