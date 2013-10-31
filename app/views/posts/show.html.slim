@@ -8,6 +8,15 @@
           | &nbsp;&nbsp;
           =link_to @post.title, post_path(@post)
 
+        .small.pull-right
+          - if can? :destroy, @post
+            a.js-post-delete href="#"
+              i.pull-right.icon-remove
+
+          - if can? :update, @post
+            a href="#{edit_post_path}"
+              i.pull-right.icon-edit
+
         .categories
           ul.list-inline
             / post.categories.decorate causes N + 1
@@ -55,11 +64,11 @@
 
 
   / New comment
-  .row.comment_form.js-new-comment
+  .row.comment_form.js-comment-body
     h4= t('.write_comment')
 
     = simple_form_for(@new_comment, url: post_comments_path(@post)) do |f|
-      = f.input :body, as: :text, label: false, input_html: { class: 'js-redactor' }
+      = f.input :body, as: :text, label: false, input_html: { class: 'js-comment-redactor' }
 
       button.btn.btn-primary
         = icon_with_label t('.submit'), 'icon-ok large'
