@@ -51,6 +51,9 @@ en:
       search: "Search"
       categories: "Categories"
 
+    comment:
+      answer: "Answer"
+
   subscriptions:
     show:
       categories: "Categories"
