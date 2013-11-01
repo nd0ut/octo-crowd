@@ -71,7 +71,7 @@ $ ->
 
       'post[title]':
         minlength: 3
-        maxlength: 15
+        maxlength: 140
         required: true
 
       'post[tag_list]':
