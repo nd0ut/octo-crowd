@@ -13,6 +13,13 @@ FactoryGirl.define do
     email { generate(:random_email) }
     password { generate(:random_password) }
     admin true
+
+    after(:create) do |user, evaluator|
+      Category.limit(rand(0..Category.count).each do |c|
+        user.reload
+        user.add_subscription_to c
+      end
+    end
   end
 
   factory :post do
