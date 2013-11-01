@@ -63,25 +63,27 @@ class PostsController < ApplicationController
 
   end
 
-  def by_tag
-    @tag = params[:tag]
-    @posts = Post.tagged_with(@tag).includes(:author, :tags, :categories).page(params[:page])
-    @categories = Category.all.decorate
-
-    render 'search'
-  end
-
   def search
-    @query = search_query
-    @posts = Post.search(@query).page(params[:page])
-    @categories = Category.all.decorate
+    @search_query = search_query
 
-    render 'search'
+    @posts = Post.search(@search_query[:query], conditions: { tags: @search_query[:tags] }).page(params[:page])
+    @categories = Category.all.decorate
   end
 
   private
   def search_query
-    Riddle::Query.escape(params[:search].strip_tags)
+    query = Riddle::Query.escape(params[:search].strip_tags)
+
+    tag_regex = /\[[^\[\]]+\]/i
+
+    tags = []
+
+    query.gsub!(tag_regex) do |tag|
+      tags << tag.delete('[]')
+      nil
+    end
+
+    { query: query, tags: tags }
   end
 
   def post_params
