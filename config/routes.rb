@@ -14,6 +14,7 @@ OctoCrowd::Application.routes.draw do
 
   # USER
   get 'subscriptions' => 'subscriptions#show'
+  get '/unsubscribe/:signature' => 'users#unsubscribe', as: 'unsubscribe'
 
   # POSTS
   resources :posts do

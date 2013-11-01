@@ -10,6 +10,7 @@ class User < ActiveRecord::Base
 
   after_create :create_subscription
 
+
   def add_subscription_to(category)
     self.subscription.categories << category
   end
@@ -22,16 +23,28 @@ class User < ActiveRecord::Base
     self.subscription.categories.select { |cat| cat.id == category.id }.present?
   end
 
+
+  def access_token
+    verifier.generate(self.id)
+  end
+
+  def self.read_access_token(signature)
+    begin
+      id = verifier.verify(signature)
+      User.find_by_id id
+    rescue ActiveSupport::MessageVerifier::InvalidSignature
+      nil
+    end
+  end
+
   def self.from_omniauth(auth)
-    user = where(provider: auth.provider, uid: auth.uid.to_s).first_or_initialize do |user|
+    where(provider: auth.provider, uid: auth.uid.to_s).first_or_initialize do |user|
       user.provider = auth.provider
       user.uid = auth.uid
       user.username = auth.info.nickname.present? ? auth.info.nickname : auth.info.name
       user.email = auth.info.email
       user.password = Devise.friendly_token[0,20]
     end
-
-    user
   end
 
   def self.new_with_session(params, session)
@@ -47,6 +60,10 @@ class User < ActiveRecord::Base
 
   private
   def create_subscription
-    Subscription.create(user_id: self.id)
+    Subscription.create(user_id: self.id) if subscription.nil?
+  end
+
+  def self.verifier
+    @verifier ||= ActiveSupport::MessageVerifier.new(OctoCrowd::Application.config.secret_key_base)
   end
 end

@@ -10,4 +10,6 @@ html lang="en"
     br
     br
     small
-      = link_to "Unsubscribe", subscriptions_url
+      = link_to "Edit my subscriptions", subscriptions_url
+      | &nbsp;|&nbsp;
+      = link_to "Unsubscribe from post announces", unsubscribe_url(@user.access_token)
