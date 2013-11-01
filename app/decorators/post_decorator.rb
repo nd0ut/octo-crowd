@@ -32,17 +32,20 @@ class PostDecorator < Draper::Decorator
   end
 
   def search_fragments(query)
-    return nil if query.nil?
-
-    regex = /(?<=.| |)(([^.!?]+|)#{query}([^.!?]+|))(?=(|\s|\.|!|\?))/i
-
-    matches = object.body.strip_tags.scan(regex)
+    return nil unless query.present?
 
     fragments = []
 
-    matches.each_with_index do |m, i|
-      fragments << m.join.strip
-      fragments << '...' if i < matches.length - 1
+    query.split(' ').each do |q|
+      regex =  /(?<=.| |)(([^.!?]+|)#{q}([^.!?]+|))(?=(|\s|\.|!|\?))/i
+
+      matches = object.body.strip_tags.scan(regex)
+
+      matches.each_with_index do |m, i|
+        fragments << m.join.strip
+        fragments << '...' if i < matches.length - 1
+      end
+
     end
 
     fragments
