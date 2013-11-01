@@ -25,12 +25,12 @@ class User < ActiveRecord::Base
 
 
   def access_token
-    verifier.generate(self.id)
+    User.verifier.generate(self.id)
   end
 
   def self.read_access_token(signature)
     begin
-      id = verifier.verify(signature)
+      id = User.verifier.verify(signature)
       User.find_by_id id
     rescue ActiveSupport::MessageVerifier::InvalidSignature
       nil
