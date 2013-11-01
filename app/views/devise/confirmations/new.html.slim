@@ -1,0 +1,17 @@
+.row
+  .col-lg-5.col-lg-offset-3
+    .panel
+      .panel-heading
+        h2= t('.resend_confirmation')
+
+      .panel-body
+        = simple_form_for(resource, :as => resource_name, :url => confirmation_path(resource_name)) do |f|
+            = f.input :email
+
+            = button_tag(type: 'submit', class: 'btn btn-primary') do
+              i.icon-ok.large
+              | &nbsp;&nbsp;
+              = t('.submit')
+
+      .panel-footer
+        = render partial: 'devise/shared/footer'
