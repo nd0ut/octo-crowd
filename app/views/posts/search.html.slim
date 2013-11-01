@@ -12,8 +12,9 @@
                 = button_tag 'Go!', class: 'js-search-btn btn btn-primary'
 
     .posts
-      - PostDecorator.decorate_collection(@posts).each do |post|
-        = render partial: 'post_search', locals: { post: post, query: @query }
+      - if @posts.present?
+        - PostDecorator.decorate_collection(@posts).each do |post|
+          = render partial: 'post_search', locals: { post: post, query: @query }
 
   .col-lg-3.col-lg-offset-1
     .category-list
@@ -37,4 +38,4 @@
 
 
 .row
-  = paginate @posts, :theme => 'twitter-bootstrap-3'
+  = paginate @posts, :theme => 'twitter-bootstrap-3' if @posts.present?

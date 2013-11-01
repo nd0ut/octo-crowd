@@ -66,13 +66,19 @@ class PostsController < ApplicationController
   def search
     @search_query = search_query
 
-    @posts = Post.search(@search_query[:query], conditions: { tags: @search_query[:tags] }).page(params[:page])
     @categories = Category.all.decorate
+
+    if @search_query.present?
+      @posts = Post.search(@search_query[:query], conditions: { tags: @search_query[:tags] }).page(params[:page])
+    end
   end
 
   private
   def search_query
-    query = Riddle::Query.escape(params[:q].strip_tags)
+    query = params[:q].try(:strip_tags)
+    return nil unless query.present?
+
+    query = Riddle::Query.escape(query)
 
     tag_regex = /\[[^\[\]]+\]/i
 
