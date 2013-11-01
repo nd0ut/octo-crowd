@@ -377,10 +377,6 @@ GEM
       activesupport (>= 3.0)
       sprockets (~> 2.8)
     sqlite3 (1.3.8)
-    squeel (1.1.1)
-      activerecord (>= 3.0)
-      activesupport (>= 3.0)
-      polyamorous (~> 0.6.0)
     sshkit (1.1.0)
       net-scp
       net-ssh
@@ -478,7 +474,6 @@ DEPENDENCIES
   skim
   slim-rails
   sqlite3
-  squeel
   state_machine
   therubyracer
   thinking-sphinx
