@@ -86,8 +86,4 @@ gem 'faker', git: 'git@github.com:stympy/faker.git'
 gem 'thinking-sphinx'
 gem 'whenever', :require => false
 gem "cancan", git: 'git@github.com:clemensg/cancan.git'
-
-
-
-
-
+gem 'squeel'
