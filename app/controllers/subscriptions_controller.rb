@@ -5,7 +5,7 @@ class SubscriptionsController < ApplicationController
     @subscription = current_user.subscription
   end
 
-  def unsubscribe
+  def reset
     if user = User.read_access_token(params[:signature])
       user.subscription.categories.delete_all
 

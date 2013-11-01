@@ -60,8 +60,7 @@ en:
       unsubscribe: "Unsubscribe"
       subscriptions: "Subscriptions"
 
-  users:
-    unsubscribe:
+    reset:
       signed_unsubscribed: "You has been successfully unsubscribed from the new announcements!"
       unsigned_unsubscribed: "Your account with the email %{email} has been successfully unsubscribed from the new announcements!"
       invalid_link: "Sorry, invalid unsubscribe link."

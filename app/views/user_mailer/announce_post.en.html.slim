@@ -12,4 +12,4 @@ html lang="en"
     small
       = link_to "Edit my subscriptions", subscriptions_url
       | &nbsp;|&nbsp;
-      = link_to "Unsubscribe from post announces", unsubscribe_url(@user.access_token)
+      = link_to "Unsubscribe from post announces", reset_subscriptions_url(@user.access_token)

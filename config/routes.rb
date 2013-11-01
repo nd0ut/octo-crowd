@@ -2,20 +2,14 @@ require 'sidekiq/web'
 
 OctoCrowd::Application.routes.draw do
 
+  # USERS
   devise_for :users, :controllers => {
     :omniauth_callbacks => "users/omniauth_callbacks",
     :registrations => "users/registrations"
   }
 
 
-  resource :subscriptions, only: [:show] do
-
-    collection do
-      get 'unsubscribe/:signature' => 'subscriptions#unsubscribe', as: 'unsubscribe'
-    end
-  end
-
-
+  # POSTS
   resources :posts do
     resources :comments, only: [:create, :destroy], shallow: true
 
@@ -26,8 +20,8 @@ OctoCrowd::Application.routes.draw do
   end
 
 
+  # CATEGORIES
   resources :categories, only: [:show] do
-
     member do
       post 'unsubscribe'
       post 'subscribe'
@@ -35,17 +29,22 @@ OctoCrowd::Application.routes.draw do
   end
 
 
+  # SUBSCRIPTIONS
+  resource :subscriptions, only: [:show] do
+    collection do
+      get 'reset/:signature' => 'subscriptions#reset', as: 'reset'
+    end
+  end
 
+
+  # OTHER
   mount RedactorRails::Engine => '/redactor_rails'
 
-
   ActiveAdmin.routes(self)
-
 
   authenticate :user, lambda { |u| u.admin? } do
     mount Sidekiq::Web => '/sidekiq'
   end
-
 
   root 'posts#index'
 end
