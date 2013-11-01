@@ -10,7 +10,7 @@ $ ->
       category_id = $(this).closest('.js-category').attr('data-category-id')
 
       $.ajax
-        url: Routes.category_unsubscribe_path(category_id)
+        url: Routes.unsubscribe_category_path(category_id)
         type: 'post'
 
         statusCode:

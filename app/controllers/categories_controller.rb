@@ -6,7 +6,7 @@ class CategoriesController < ApplicationController
   end
 
   def subscribe
-    category = Category.find(params[:category_id])
+    category = Category.find(params[:id])
     current_user.add_subscription_to(category)
 
     respond_to do |format|
@@ -16,7 +16,7 @@ class CategoriesController < ApplicationController
   end
 
   def unsubscribe
-    category = Category.find(params[:category_id])
+    category = Category.find(params[:id])
     current_user.remove_subscription_from(category)
 
     respond_to do |format|

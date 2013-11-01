@@ -6,7 +6,7 @@ $ ->
       comment_id = $(this).closest('.comment').data('comment-id')
 
       $.ajax
-        url: Routes.post_destroy_comment_path(post_id, comment_id, format: 'json')
+        url: Routes.comment_path(comment_id, format: 'json')
         type: 'delete'
 
         statusCode:

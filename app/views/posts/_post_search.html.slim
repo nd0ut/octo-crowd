@@ -19,7 +19,7 @@
 
     .panel-body
       p
-        - if @query && search_fragments = post.search_fragments(@query)
+        - if @search_query && search_fragments = post.search_fragments(@search_query[:query])
           - search_fragments.each do |f|
             p= raw f
 
@@ -36,7 +36,7 @@
           span.text-primary.tags
             - tags = post.tags
             - tags.each_with_index do |tag, i|
-              = link_to tag_search_path(tag.name) do
+              = link_to search_posts_path(tag_with_brackets(tag.name)) do
                 span.tag= tag.name
               = ', ' if i != tags.length - 1
 

@@ -72,7 +72,7 @@ class PostsController < ApplicationController
 
   private
   def search_query
-    query = Riddle::Query.escape(params[:search].strip_tags)
+    query = Riddle::Query.escape(params[:q].strip_tags)
 
     tag_regex = /\[[^\[\]]+\]/i
 

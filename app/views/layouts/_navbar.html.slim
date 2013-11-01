@@ -8,9 +8,9 @@ nav.navbar.navbar-static-top role='navigation'
 
   ul.nav.navbar-nav.navbar-right
     .search.navbar-left
-      = simple_form_for '', url: search_path do |f|
+      = simple_form_for '', url: search_posts_path, method: :get do |f|
         .navbar-form role="search"
-          = f.input :search, input_html: { value: params[:search], class: 'js-search-input form-control', placeholder: 'Search' }, label: false
+          = f.input :q, input_html: { value: params[:q], class: 'js-search-input form-control', placeholder: 'Search' }, label: false
           = button_tag '#', class: 'js-search-btn btn btn-link'do
             i.icon-search.icon-large
 

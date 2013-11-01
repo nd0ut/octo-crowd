@@ -4,10 +4,10 @@
       h1
         = t('.search')
       .row
-        = form_for '', url: search_posts_path, html: { role: 'search' } do |f|
+        = form_for '', url: search_posts_path, html: { method: :get, role: 'search' } do |f|
           .col-lg-12
             .input-group
-              = f.search_field :search, value: params[:search], class: 'js-search-input form-control'
+              = f.search_field :q, value: params[:q], class: 'js-search-input form-control'
               span.input-group-btn
                 = button_tag 'Go!', class: 'js-search-btn btn btn-primary'
 

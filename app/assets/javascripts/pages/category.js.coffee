@@ -49,7 +49,7 @@ $ ->
 
     if subscribed
       $.ajax
-        url: Routes.category_unsubscribe_path(category_id)
+        url: Routes.unsubscribe_category_path(category_id)
         type: 'post'
 
         statusCode:
@@ -58,7 +58,7 @@ $ ->
 
     else
       $.ajax
-        url: Routes.category_subscribe_path(category_id)
+        url: Routes.subscribe_category_path(category_id)
         type: 'post'
 
         statusCode:

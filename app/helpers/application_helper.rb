@@ -26,4 +26,8 @@ module ApplicationHelper
     types[type_num]
   end
 
+  def tag_with_brackets(tag)
+    '[' + tag + ']'
+  end
+
 end
