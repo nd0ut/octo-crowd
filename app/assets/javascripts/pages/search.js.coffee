@@ -4,4 +4,4 @@ $ ->
   query = search_box.val().replace(/[-'`~!@#$%^&*()_|+=?;:'",.<>\{\}\[\]\\\/]/gi, '')
 
   if query
-    $('body').highlight(query)
+    $('body').highlight(query.split(' '))

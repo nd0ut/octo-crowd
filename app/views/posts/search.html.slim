@@ -3,11 +3,13 @@
     .row.page-header
       h1
         = t('.search')
-        - if @tag
-          | &nbsp;
-          = t('.for')
-          | &nbsp;
-          span.label.label-default.js-search-tag= @tag
+      .row
+        = form_for '', url: search_posts_path, html: { role: 'search' } do |f|
+          .col-lg-12
+            .input-group
+              = f.search_field :search, value: params[:search], class: 'js-search-input form-control'
+              span.input-group-btn
+                = button_tag 'Go!', class: 'js-search-btn btn btn-primary'
 
     .posts
       - PostDecorator.decorate_collection(@posts).each do |post|
