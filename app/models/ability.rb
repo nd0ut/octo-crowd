@@ -12,7 +12,7 @@ class Ability
       can :read, Post, moderation_state: 'accepted'
       can :create, Post
 
-      can :update, Post, user_id: user.id
+      can :update, Post, author_id: user.id
 
       # COMMENTS
       can :read, Comment
