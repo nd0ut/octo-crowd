@@ -16,6 +16,7 @@ class Ability
 
       # COMMENTS
       can :read, Comment
+      can :read, Subscription
       can :create, Comment
     else
       can :read, Post, moderation_state: 'accepted'
